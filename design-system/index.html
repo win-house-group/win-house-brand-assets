@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.9.2</title>
+<title>Win-House Design System v3.9.3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.9.2 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.9.3 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
    Last Updated: 2026-05-26
    ============================================================ */
@@ -685,88 +685,12 @@ body {
 .dodont.dont li::before { content: '−'; position: absolute; left: 0; color: #4A6B8A; font-weight: 700; }
 
 /* WINGO */
-.wingo-hero {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: var(--r-2xl);
-  padding: var(--sp-6);
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--sp-7);
-  align-items: center;
-  margin-bottom: var(--sp-3);
-}
-.wingo-hero-image {
-  background: linear-gradient(135deg, #FAFAFA 0%, #F0F0F0 100%);
-  border-radius: var(--r-xl);
-  padding: var(--sp-4);
-  display: grid; place-items: center;
-  aspect-ratio: 1;
-  position: relative;
-  overflow: hidden;
-}
-.wingo-hero-image::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(201,148,31,0.08) 0%, transparent 60%);
-}
-.wingo-hero-image img {
-  max-width: 100%; max-height: 100%;
-  object-fit: contain; position: relative; z-index: 1;
-}
 .wingo-placeholder {
   position: relative;
   z-index: 1;
   display: grid;
   place-items: center;
 }
-.wingo-hero-content { display: flex; flex-direction: column; gap: var(--sp-3); }
-.wingo-tag {
-  font-family: var(--font-ui);
-  font-size: 11px; font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  align-self: flex-start;
-  padding: 3px 10px;
-  background: var(--gold-soft);
-  border-radius: var(--r-sm);
-}
-.wingo-name {
-  font-family: var(--font-display);
-  font-weight: 500; font-size: 56px;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-.wingo-tagline {
-  font-family: var(--font-ui);
-  font-size: 14px;
-  color: var(--text-2);
-  letter-spacing: 0.02em;
-  margin-top: -4px;
-}
-.wingo-bio {
-  font-size: 13px; color: var(--text-2);
-  line-height: 1.7;
-  margin-top: var(--sp-2);
-}
-.wingo-spec-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-3) var(--sp-5);
-  margin-top: var(--sp-3);
-  padding-top: var(--sp-4);
-  border-top: 1px solid var(--border);
-}
-.wingo-spec-label {
-  font-family: var(--font-ui);
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-3);
-  margin-bottom: 2px;
-}
-.wingo-spec-value { font-size: 13px; font-weight: 500; color: var(--text-1); }
 .wingo-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -834,6 +758,66 @@ html[data-lang="en"] .wingo-rule-label { font-family: var(--font-ui); }
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--gold);
+}
+
+/* WINGO HEADER (標題 + 圖左右佈局) */
+.wingo-header {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--sp-7);
+  align-items: center;
+  margin-bottom: var(--sp-7);
+}
+.wingo-header-text { min-width: 0; }
+.wingo-header-image {
+  background: linear-gradient(135deg, #FAFAFA 0%, #FFFBF2 100%);
+  border-radius: var(--r-2xl);
+  border: 1px solid var(--border);
+  padding: var(--sp-5);
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.wingo-header-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(201,148,31,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.wingo-header-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* WINGO SLOGAN (放大標語樣式) */
+.wingo-slogan {
+  font-family: var(--font-ui), var(--font-cn-tc);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-1);
+  max-width: 640px;
+  margin-top: var(--sp-4);
+  letter-spacing: 0.01em;
+}
+html[data-lang="zh-Hans"] .wingo-slogan { font-family: var(--font-ui), var(--font-cn-sc); }
+html[data-lang="en"] .wingo-slogan { font-family: var(--font-ui); }
+.wingo-slogan strong {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: var(--sp-2);
 }
 
 /* WINGO 次標題(統一樣式) */
@@ -978,6 +962,8 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 }
 
 @media (max-width: 768px) {
+  .wingo-header { grid-template-columns: 1fr; }
+  .wingo-header-image { max-width: 280px; margin: 0 auto; }
   .wingo-origin-grid { flex-direction: column; }
   .wingo-origin-plus { transform: rotate(90deg); }
   .wingo-decision-grid { grid-template-columns: 1fr; }
@@ -1035,7 +1021,6 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
   .hero-title { font-size: 56px; }
 }
 @media (max-width: 768px) {
-  .wingo-hero { grid-template-columns: 1fr; }
   .wingo-info-grid { grid-template-columns: 1fr; }
   .dodont-grid { grid-template-columns: 1fr; }
   .topnav { padding: var(--sp-3) var(--sp-4); }
@@ -1049,7 +1034,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
   <div class="topnav-brand">
     <div class="brand-mark">W</div>
     <div class="brand-text">WIN-HOUSE</div>
-    <span class="brand-version">DS v3.9.2</span>
+    <span class="brand-version">DS v3.9.3</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1154,7 +1139,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.9.2 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.9.3 · WINGO Story Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1162,9 +1147,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.9.2 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.9.2 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.9.2 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.9.3 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.9.3 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.9.3 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1200,7 +1185,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.9.2 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.9.3 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1753,86 +1738,28 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- WINGO -->
     <section id="wingo" class="section">
-      <div class="section-eyebrow">11 · Brand Assets</div>
-      <h2 class="section-title">WINGO</h2>
-      <div class="section-subtitle">
-        <span data-lang-zh-hant>品牌吉祥物 · AI 業務導航員</span>
-        <span data-lang-zh-hans>品牌吉祥物 · AI 业务导航员</span>
-        <span data-lang-en>Brand Mascot · AI Sales Navigator</span>
-      </div>
-      <p class="section-intro">
-        <span data-lang-zh-hant>WINGO 是 WIN-HOUSE 文浩集團的 AI 導航員。他擅長在複雜資訊中,找出真正有價值的機會,每一次挑戰,都是成長的開始。<strong style="color:var(--gold);">YOUR BEST PARTNER!</strong></span>
-        <span data-lang-zh-hans>WINGO 是 WIN-HOUSE 文浩集团的 AI 导航员。他擅长在复杂信息中,找出真正有价值的机会,每一次挑战,都是成长的开始。<strong style="color:var(--gold);">YOUR BEST PARTNER!</strong></span>
-        <span data-lang-en>WINGO is the AI Navigator of WIN-HOUSE Group. He excels at finding genuinely valuable opportunities within complex information — every challenge marks the beginning of growth. <strong style="color:var(--gold);">YOUR BEST PARTNER!</strong></span>
-      </p>
-
-      <div class="wingo-hero">
-        <div class="wingo-hero-image">
+      <div class="wingo-header">
+        <div class="wingo-header-text">
+          <div class="section-eyebrow">11 · Brand Assets</div>
+          <h2 class="section-title">WINGO</h2>
+          <div class="section-subtitle">
+            <span data-lang-zh-hant>品牌吉祥物 · AI 業務導航員</span>
+            <span data-lang-zh-hans>品牌吉祥物 · AI 业务导航员</span>
+            <span data-lang-en>Brand Mascot · AI Sales Navigator</span>
+          </div>
+          <p class="wingo-slogan">
+            <span data-lang-zh-hant>WINGO 是 WIN-HOUSE 文浩集團的 AI 導航員。他擅長在複雜資訊中,找出真正有價值的機會,每一次挑戰,都是成長的開始。<br><strong>YOUR BEST PARTNER!</strong></span>
+            <span data-lang-zh-hans>WINGO 是 WIN-HOUSE 文浩集团的 AI 导航员。他擅长在复杂信息中,找出真正有价值的机会,每一次挑战,都是成长的开始。<br><strong>YOUR BEST PARTNER!</strong></span>
+            <span data-lang-en>WINGO is the AI Navigator of WIN-HOUSE Group. He excels at finding genuinely valuable opportunities within complex information — every challenge marks the beginning of growth.<br><strong>YOUR BEST PARTNER!</strong></span>
+          </p>
+        </div>
+        <div class="wingo-header-image">
           <img
             id="wingo-img"
             src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/wingo/wingo-hi.png"
             alt="WINGO"
             data-fallback-1="https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/wingo/wingo-hi.png"
             data-fallback-2="https://cdn.statically.io/gh/timfan119/winhouse-brand-assets/main/wingo/wingo-hi.png" />
-        </div>
-        <div class="wingo-hero-content">
-          <div class="wingo-name">WINGO</div>
-          <div class="wingo-tagline">Your Best Partner!</div>
-          <p class="wingo-bio">
-            <span data-lang-zh-hant>老鷹、商務西裝、品牌色配置。WINGO 在介面中扮演引導者、回饋者、慶祝者三種角色 — 出現於職級晉升提示、KPI 達標慶賀、系統空狀態引導等需要溫度與親和感的場景。</span>
-            <span data-lang-zh-hans>老鹰、商务西装、品牌色配置。WINGO 在界面中扮演引导者、反馈者、庆祝者三种角色 — 出现于职级晋升提示、KPI 达标庆贺、系统空状态引导等需要温度与亲和感的场景。</span>
-            <span data-lang-en>An eagle in business suit with brand color palette. WINGO serves three roles in interfaces — guide, feedback giver, celebrator. Appears in promotion notifications, KPI achievement celebrations, and system empty states where warmth and approachability are needed.</span>
-          </p>
-          <div class="wingo-spec-grid">
-            <div>
-              <div class="wingo-spec-label">
-                <span data-lang-zh-hant>物種</span>
-                <span data-lang-zh-hans>物种</span>
-                <span data-lang-en>Species</span>
-              </div>
-              <div class="wingo-spec-value">
-                <span data-lang-zh-hant>老鷹</span>
-                <span data-lang-zh-hans>老鹰</span>
-                <span data-lang-en>Eagle</span>
-              </div>
-            </div>
-            <div>
-              <div class="wingo-spec-label">
-                <span data-lang-zh-hant>配色</span>
-                <span data-lang-zh-hans>配色</span>
-                <span data-lang-en>Palette</span>
-              </div>
-              <div class="wingo-spec-value">
-                <span data-lang-zh-hant>黑 · 白 · 紅 · 金</span>
-                <span data-lang-zh-hans>黑 · 白 · 红 · 金</span>
-                <span data-lang-en>Black · White · Red · Gold</span>
-              </div>
-            </div>
-            <div>
-              <div class="wingo-spec-label">
-                <span data-lang-zh-hant>定位</span>
-                <span data-lang-zh-hans>定位</span>
-                <span data-lang-en>Role</span>
-              </div>
-              <div class="wingo-spec-value">
-                <span data-lang-zh-hant>AI 業務導航員</span>
-                <span data-lang-zh-hans>AI 业务导航员</span>
-                <span data-lang-en>AI Sales Navigator</span>
-              </div>
-            </div>
-            <div>
-              <div class="wingo-spec-label">
-                <span data-lang-zh-hant>語氣</span>
-                <span data-lang-zh-hans>语气</span>
-                <span data-lang-en>Tone</span>
-              </div>
-              <div class="wingo-spec-value">
-                <span data-lang-zh-hant>親切 · 專業</span>
-                <span data-lang-zh-hans>亲切 · 专业</span>
-                <span data-lang-en>Warm · Professional</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -2075,7 +2002,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.9.2 · 2026-05-26</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.9.3 · 2026-05-26</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 
