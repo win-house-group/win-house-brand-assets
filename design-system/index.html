@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.9.8</title>
+<title>Win-House Design System v3.9.9</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.9.8 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.9.9 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
    Last Updated: 2026-05-26
    ============================================================ */
@@ -114,21 +114,10 @@ body {
   display: flex; align-items: center; justify-content: space-between;
 }
 .topnav-brand { display: flex; align-items: center; gap: var(--sp-3); }
-.brand-mark {
-  width: 28px; height: 28px;
-  background: var(--logo-red);
-  border-radius: var(--r-sm);
-  display: grid; place-items: center;
-  color: white;
-  font-family: var(--font-display);
-  font-weight: 700; font-size: 16px;
-  letter-spacing: -0.02em;
-}
-.brand-text {
-  font-family: var(--font-display);
-  font-weight: 500; font-size: 18px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.brand-logo {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 .brand-version {
   font-family: var(--font-ui);
@@ -381,6 +370,18 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: var(--sp-3);
 }
+.data-palette-group { margin-bottom: var(--sp-5); }
+.data-palette-group:last-child { margin-bottom: 0; }
+.data-palette-group-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  padding-left: var(--sp-1);
+}
 .swatch {
   background: var(--surface-3);
   border: 1px solid var(--border);
@@ -424,16 +425,31 @@ body {
 .subhead:first-child { margin-top: 0; }
 
 /* Chart Demo (Data Palette showcase) */
+.chart-strategy {
+  margin-bottom: var(--sp-5);
+}
+.chart-strategy:last-of-type { margin-bottom: 0; }
+.chart-strategy-label {
+  font-family: var(--font-ui), var(--font-cn-tc);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: var(--sp-3);
+  letter-spacing: 0.01em;
+}
+html[data-lang="zh-Hans"] .chart-strategy-label { font-family: var(--font-ui), var(--font-cn-sc); }
+html[data-lang="en"] .chart-strategy-label { font-family: var(--font-ui); }
+
 .chart-demo {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: var(--sp-3);
   align-items: end;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
   padding: var(--sp-5);
-  min-height: 280px;
+  min-height: 220px;
 }
 .chart-bar {
   background: var(--c);
@@ -459,7 +475,7 @@ body {
 html[data-lang="zh-Hans"] .chart-bar span { font-family: var(--font-ui), var(--font-cn-sc); }
 html[data-lang="en"] .chart-bar span { font-family: var(--font-ui); }
 @media (max-width: 768px) {
-  .chart-demo { grid-template-columns: repeat(4, 1fr); }
+  .domain-grid { grid-template-columns: 1fr; }
 }
 
 /* Application Domain Mapping Grid */
@@ -1347,9 +1363,12 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 <!-- TOP NAV -->
 <header class="topnav">
   <div class="topnav-brand">
-    <div class="brand-mark">W</div>
-    <div class="brand-text">WIN-HOUSE</div>
-    <span class="brand-version">DS v3.9.8</span>
+    <img
+      class="brand-logo"
+      src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
+      alt="WIN-HOUSE Group"
+      onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
+    <span class="brand-version">DS v3.9.9</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1459,7 +1478,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.9.8 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.9.9 · WINGO Story Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1467,9 +1486,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.9.8 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.9.8 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.9.8 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.9.9 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.9.9 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.9.9 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1505,7 +1524,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.9.8 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.9.9 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1564,9 +1583,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Core Brand · Single Anchor</span>
       </div>
       <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:680px;">
-        <span data-lang-zh-hant>v3.9.8 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
-        <span data-lang-zh-hans>v3.9.8 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
-        <span data-lang-en>From v3.9.8, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
+        <span data-lang-zh-hant>v3.9.9 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
+        <span data-lang-zh-hans>v3.9.9 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
+        <span data-lang-en>From v3.9.9, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#E1251B"></div><div class="swatch-name">Logo Red</div><div class="swatch-hex">#E1251B</div><div class="swatch-role">LOGO ONLY</div></div>
@@ -1611,16 +1630,43 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-zh-hans>取自 Charles Demuth《I Saw the Figure 5 in Gold》(暖金土系)与 Richard Diebenkorn《Seawall》(冷蓝绿系),提供 9 色扩展。<strong>仅用于 Chart / Dashboard / 数据可视化</strong>,不替代主品牌色。黑白灰仍为主视觉,Data Palette 为辅助。</span>
         <span data-lang-en>Inspired by Charles Demuth's <em>I Saw the Figure 5 in Gold</em> (warm earth tones) and Richard Diebenkorn's <em>Seawall</em> (cool blue-greens), this 9-color extension is <strong>strictly for charts, dashboards, and data visualization</strong>. It does not replace the primary brand palette. Black/white/gray remain dominant; the data palette is supplementary.</span>
       </p>
-      <div class="swatch-grid">
-        <div class="swatch"><div class="swatch-color" style="background:#E4AF79"></div><div class="swatch-name">Gold Light</div><div class="swatch-hex">#E4AF79</div><div class="swatch-role">DATA · 01</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#DF9C41"></div><div class="swatch-name">Gold</div><div class="swatch-hex">#DF9C41</div><div class="swatch-role">DATA · 02</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#AF7231"></div><div class="swatch-name">Bronze</div><div class="swatch-hex">#AF7231</div><div class="swatch-role">DATA · 03</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#923621"></div><div class="swatch-name">Rust</div><div class="swatch-hex">#923621</div><div class="swatch-role">DATA · 04</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#2D2A28"></div><div class="swatch-name">Charcoal</div><div class="swatch-hex">#2D2A28</div><div class="swatch-role">DATA · 05</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#2677A5"></div><div class="swatch-name">Blue Deep</div><div class="swatch-hex">#2677A5</div><div class="swatch-role">DATA · 06</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#639BC1"></div><div class="swatch-name">Blue Light</div><div class="swatch-hex">#639BC1</div><div class="swatch-role">DATA · 07</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#90A74A"></div><div class="swatch-name">Olive</div><div class="swatch-hex">#90A74A</div><div class="swatch-role">DATA · 08</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#5D8722"></div><div class="swatch-name">Green</div><div class="swatch-hex">#5D8722</div><div class="swatch-role">DATA · 09</div></div>
+      <div class="data-palette-group">
+        <div class="data-palette-group-label">
+          <span data-lang-zh-hant>暖系 · Warm</span>
+          <span data-lang-zh-hans>暖系 · Warm</span>
+          <span data-lang-en>Warm</span>
+        </div>
+        <div class="swatch-grid">
+          <div class="swatch"><div class="swatch-color" style="background:#E4AF79"></div><div class="swatch-name">Gold Light</div><div class="swatch-hex">#E4AF79</div><div class="swatch-role">WARM · 01</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#DF9C41"></div><div class="swatch-name">Gold</div><div class="swatch-hex">#DF9C41</div><div class="swatch-role">WARM · 02</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#AF7231"></div><div class="swatch-name">Bronze</div><div class="swatch-hex">#AF7231</div><div class="swatch-role">WARM · 03</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#923621"></div><div class="swatch-name">Rust</div><div class="swatch-hex">#923621</div><div class="swatch-role">WARM · 04</div></div>
+        </div>
+      </div>
+
+      <div class="data-palette-group">
+        <div class="data-palette-group-label">
+          <span data-lang-zh-hant>冷系 · Cool</span>
+          <span data-lang-zh-hans>冷系 · Cool</span>
+          <span data-lang-en>Cool</span>
+        </div>
+        <div class="swatch-grid">
+          <div class="swatch"><div class="swatch-color" style="background:#2677A5"></div><div class="swatch-name">Blue Deep</div><div class="swatch-hex">#2677A5</div><div class="swatch-role">COOL · 01</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#639BC1"></div><div class="swatch-name">Blue Light</div><div class="swatch-hex">#639BC1</div><div class="swatch-role">COOL · 02</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#90A74A"></div><div class="swatch-name">Olive</div><div class="swatch-hex">#90A74A</div><div class="swatch-role">COOL · 03</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#5D8722"></div><div class="swatch-name">Green</div><div class="swatch-hex">#5D8722</div><div class="swatch-role">COOL · 04</div></div>
+        </div>
+      </div>
+
+      <div class="data-palette-group">
+        <div class="data-palette-group-label">
+          <span data-lang-zh-hant>中性 · Neutral</span>
+          <span data-lang-zh-hans>中性 · Neutral</span>
+          <span data-lang-en>Neutral</span>
+        </div>
+        <div class="swatch-grid">
+          <div class="swatch"><div class="swatch-color" style="background:#2D2A28"></div><div class="swatch-name">Charcoal</div><div class="swatch-hex">#2D2A28</div><div class="swatch-role">NEUTRAL · 09</div></div>
+        </div>
       </div>
 
       <!-- Application Domain Color Mapping -->
@@ -1763,21 +1809,59 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         </div>
       </div>
 
-      <!-- Demo Dashboard Bars using Domain Mapping -->
+      <!-- Demo Dashboard Bars - Three Strategies -->
       <div class="subhead">
-        <span data-lang-zh-hant>應用示範 · Dashboard 條狀圖</span>
-        <span data-lang-zh-hans>应用示范 · Dashboard 条状图</span>
-        <span data-lang-en>Usage Demo · Dashboard Bar Chart</span>
+        <span data-lang-zh-hant>應用示範 · Dashboard 用色策略</span>
+        <span data-lang-zh-hans>应用示范 · Dashboard 用色策略</span>
+        <span data-lang-en>Usage Demo · Dashboard Color Strategies</span>
       </div>
-      <div class="chart-demo">
-        <div class="chart-bar" style="--h:80%; --c:#E4AF79;"><span>光通訊 Optical</span></div>
-        <div class="chart-bar" style="--h:65%; --c:#2677A5;"><span>汽車 Auto</span></div>
-        <div class="chart-bar" style="--h:70%; --c:#639BC1;"><span>網通 Network</span></div>
-        <div class="chart-bar" style="--h:55%; --c:#AF7231;"><span>工業 Industrial</span></div>
-        <div class="chart-bar" style="--h:30%; --c:#923621;"><span>電源 Power</span></div>
-        <div class="chart-bar" style="--h:60%; --c:#DF9C41;"><span>消費 Consumer</span></div>
-        <div class="chart-bar" style="--h:40%; --c:#2D2A28;"><span>機器人 Robot</span></div>
-        <div class="chart-bar" style="--h:35%; --c:#5D8722;"><span>AR / 衛星</span></div>
+      <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:720px;">
+        <span data-lang-zh-hant>圖表用色「<strong>少即是多</strong>」。一般 Dashboard 建議單次使用 4-5 色,而非全部 9 色。以下提供三種推薦策略:同色族漸層、暖冷雙軸、對比強調。</span>
+        <span data-lang-zh-hans>图表用色「<strong>少即是多</strong>」。一般 Dashboard 建议单次使用 4-5 色,而非全部 9 色。以下提供三种推荐策略:同色族渐变、暖冷双轴、对比强调。</span>
+        <span data-lang-en>For charts, <strong>less is more</strong>. Use 4-5 colors per dashboard, not all 9. Three recommended strategies below: same-family gradient, warm-cool dual axis, and contrast emphasis.</span>
+      </p>
+
+      <div class="chart-strategy">
+        <div class="chart-strategy-label">
+          <span data-lang-zh-hant>策略 A · 同色族漸層 — 適合「程度差異」(如:庫存等級、業績區間)</span>
+          <span data-lang-zh-hans>策略 A · 同色族渐变 — 适合「程度差异」(如:库存等级、业绩区间)</span>
+          <span data-lang-en>Strategy A · Same-family Gradient — for "degree of difference" (e.g., stock levels, revenue tiers)</span>
+        </div>
+        <div class="chart-demo">
+          <div class="chart-bar" style="--h:85%; --c:#E4AF79;"><span>Q1</span></div>
+          <div class="chart-bar" style="--h:70%; --c:#DF9C41;"><span>Q2</span></div>
+          <div class="chart-bar" style="--h:55%; --c:#AF7231;"><span>Q3</span></div>
+          <div class="chart-bar" style="--h:40%; --c:#923621;"><span>Q4</span></div>
+        </div>
+      </div>
+
+      <div class="chart-strategy">
+        <div class="chart-strategy-label">
+          <span data-lang-zh-hant>策略 B · 暖冷雙軸 — 適合「兩類別對比」(如:成長 vs 衰退、新客 vs 舊客)</span>
+          <span data-lang-zh-hans>策略 B · 暖冷双轴 — 适合「两类别对比」(如:成长 vs 衰退、新客 vs 旧客)</span>
+          <span data-lang-en>Strategy B · Warm-Cool Dual Axis — for "two-category comparison" (growth vs decline, new vs existing clients)</span>
+        </div>
+        <div class="chart-demo">
+          <div class="chart-bar" style="--h:80%; --c:#DF9C41;"><span>暖 · 成長</span></div>
+          <div class="chart-bar" style="--h:60%; --c:#AF7231;"><span>暖 · 持平</span></div>
+          <div class="chart-bar" style="--h:45%; --c:#639BC1;"><span>冷 · 觀察</span></div>
+          <div class="chart-bar" style="--h:30%; --c:#2677A5;"><span>冷 · 衰退</span></div>
+        </div>
+      </div>
+
+      <div class="chart-strategy">
+        <div class="chart-strategy-label">
+          <span data-lang-zh-hant>策略 C · 對比強調 — 適合「凸顯重點」(目標色 + 灰階配角)</span>
+          <span data-lang-zh-hans>策略 C · 对比强调 — 适合「凸显重点」(目标色 + 灰阶配角)</span>
+          <span data-lang-en>Strategy C · Contrast Emphasis — for "highlighting key data" (focus color + neutral supporting)</span>
+        </div>
+        <div class="chart-demo">
+          <div class="chart-bar" style="--h:45%; --c:#E5E5E5;"><span>A</span></div>
+          <div class="chart-bar" style="--h:55%; --c:#E5E5E5;"><span>B</span></div>
+          <div class="chart-bar" style="--h:85%; --c:#DF9C41;"><span>C ★</span></div>
+          <div class="chart-bar" style="--h:40%; --c:#E5E5E5;"><span>D</span></div>
+          <div class="chart-bar" style="--h:50%; --c:#E5E5E5;"><span>E</span></div>
+        </div>
       </div>
     </section>
 
@@ -2696,7 +2780,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.9.8 · 2026-05-26</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.9.9 · 2026-05-26</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 
