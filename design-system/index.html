@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.9.9</title>
+<title>Win-House Design System v3.9.14</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.9.9 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.9.14 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
    Last Updated: 2026-05-26
    ============================================================ */
@@ -202,7 +202,7 @@ body {
   font-size: 11px; font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--gold);
+  color: var(--gold-hover);
   margin-bottom: var(--sp-3);
 }
 .section-title {
@@ -299,8 +299,9 @@ body {
 
 /* AI REF BLOCK */
 .ai-ref-block {
-  background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%);
-  color: #FFFFFF;
+  background: var(--surface-1);
+  color: var(--text-1);
+  border: 1px solid var(--border);
   border-radius: var(--r-2xl);
   padding: var(--sp-6);
   margin-bottom: var(--sp-7);
@@ -309,23 +310,23 @@ body {
 }
 .ai-ref-block::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 90% 10%, rgba(201,148,31,0.08) 0%, transparent 50%);
+  background: radial-gradient(circle at 90% 10%, rgba(201,148,31,0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 .ai-ref-header { position: relative; z-index: 1; margin-bottom: var(--sp-4); }
 .ai-ref-title {
   font-size: 15px; font-weight: 600;
-  color: #FFFFFF; margin-bottom: 4px;
+  color: var(--text-1); margin-bottom: 4px;
 }
-.ai-ref-sub { font-size: 12px; color: #A1A1AA; }
+.ai-ref-sub { font-size: 12px; color: var(--text-2); }
 .ai-ref-grid {
   position: relative; z-index: 1;
   display: flex; flex-direction: column;
   gap: var(--sp-2);
 }
 .ai-ref-row {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: var(--sp-3) var(--sp-4);
   display: grid;
@@ -336,29 +337,29 @@ body {
   transition: all 0.2s ease;
 }
 .ai-ref-row:hover {
-  background: rgba(201,148,31,0.08);
-  border-color: rgba(201,148,31,0.3);
+  background: var(--surface-2);
+  border-color: var(--gold);
 }
 .ai-ref-label {
   font-size: 12px; font-weight: 600;
-  color: var(--gold);
+  color: var(--gold-hover);
   margin-bottom: 2px;
 }
 .ai-ref-url {
   font-size: 11px;
-  color: #A1A1AA;
+  color: var(--text-2);
   word-break: break-all;
 }
 .ai-ref-copy {
   font-size: 10px; font-weight: 700;
   letter-spacing: 0.12em;
-  color: #71717A;
+  color: var(--text-2);
   padding: 6px 10px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid var(--border);
   border-radius: var(--r-sm);
 }
 .ai-ref-row.copied .ai-ref-copy {
-  color: var(--gold);
+  color: var(--gold-hover);
   border-color: var(--gold);
   background: rgba(201,148,31,0.1);
 }
@@ -637,7 +638,7 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   font-size: 11px; font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: var(--gold-hover);
   margin-bottom: var(--sp-3);
 }
 .card-title {
@@ -726,9 +727,9 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   background: var(--surface-1);
   color: var(--text-2);
 }
-.tag-gold { background: var(--gold-soft); color: var(--gold); border-color: transparent; }
+.tag-gold { background: var(--gold-soft); color: var(--gold-hover); border-color: transparent; }
 .tag-solid { background: var(--text-1); color: var(--bg); border-color: transparent; }
-.tag-slate { background: rgba(74,107,138,0.12); color: var(--slate-blue); border-color: transparent; }
+.tag-slate { background: var(--surface-1); color: var(--text-2); border: 1px solid var(--border); }
 .tag-red { background: rgba(225,37,27,0.08); color: var(--logo-red); border-color: transparent; }
 
 /* INPUTS */
@@ -775,7 +776,8 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   text-align: center;
   padding-top: var(--sp-2);
 }
-.spacing-bar .bar { background: var(--gold); margin: 0 auto var(--sp-2); border-radius: 2px; }
+.spacing-bar .bar { background: var(--text-2); margin: 0 auto var(--sp-2); border-radius: 2px; }
+.spacing-bar .bar.bar-gold { background: var(--gold); }
 .spacing-bar .label {
   font-family: var(--font-ui);
   font-size: 10px; font-weight: 600;
@@ -1091,6 +1093,48 @@ html[data-lang="en"] .logo-rule-label { font-family: var(--font-ui); }
   .logo-rules { grid-template-columns: 1fr; }
 }
 
+/* Logo Formal Document Note */
+.logo-formal-note {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--logo-red);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  margin-top: var(--sp-5);
+}
+.logo-formal-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--logo-red);
+  color: #FFFFFF;
+  border-radius: var(--r-md);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+}
+.logo-formal-content { flex: 1; min-width: 0; }
+.logo-formal-title {
+  font-family: var(--font-ui), var(--font-cn-tc);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--logo-red);
+  letter-spacing: 0.03em;
+  margin-bottom: var(--sp-2);
+}
+html[data-lang="zh-Hans"] .logo-formal-title { font-family: var(--font-ui), var(--font-cn-sc); }
+html[data-lang="en"] .logo-formal-title { font-family: var(--font-ui); }
+.logo-formal-text {
+  font-size: 13px;
+  color: var(--text-1);
+  line-height: 1.7;
+}
+
 /* WINGO HEADER (標題 + 圖左右佈局) */
 .wingo-header {
   display: grid;
@@ -1251,17 +1295,6 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
   border-radius: var(--r-md);
   margin-top: var(--sp-5);
 }
-.wingo-origin-slogan {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 32px;
-  letter-spacing: 0.02em;
-  color: var(--gold);
-  text-align: center;
-  margin-top: var(--sp-6);
-  text-transform: uppercase;
-}
-
 /* WINGO DECISION RULES */
 .wingo-decision-grid {
   display: grid;
@@ -1319,7 +1352,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 }
 .token-table td.token {
   font-family: var(--font-ui);
-  color: var(--gold);
+  color: var(--gold-hover);
   font-weight: 600;
 }
 .token-table td.value {
@@ -1368,7 +1401,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
       alt="WIN-HOUSE Group"
       onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
-    <span class="brand-version">DS v3.9.9</span>
+    <span class="brand-version">DS v3.9.14</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1478,7 +1511,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.9.9 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.9.14 · WINGO Story Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1486,9 +1519,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.9.9 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.9.9 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.9.9 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.9.14 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.9.14 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.9.14 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1524,7 +1557,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.9.9 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.9.14 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1583,9 +1616,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Core Brand · Single Anchor</span>
       </div>
       <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:680px;">
-        <span data-lang-zh-hant>v3.9.9 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
-        <span data-lang-zh-hans>v3.9.9 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
-        <span data-lang-en>From v3.9.9, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
+        <span data-lang-zh-hant>v3.9.14 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
+        <span data-lang-zh-hans>v3.9.14 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
+        <span data-lang-en>From v3.9.14, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#E1251B"></div><div class="swatch-name">Logo Red</div><div class="swatch-hex">#E1251B</div><div class="swatch-role">LOGO ONLY</div></div>
@@ -1937,9 +1970,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Spacing System</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>採 4px 為基底節奏,所有間距為 4 的倍數。Section 級採 64-88px;Card 級採 24-32px;元件內距採 8-16px。</span>
-        <span data-lang-zh-hans>采 4px 为基底节奏,所有间距为 4 的倍数。Section 级采 64-88px;Card 级采 24-32px;组件内距采 8-16px。</span>
-        <span data-lang-en>Base 4px rhythm; all spacing is a multiple of 4. Sections use 64–88px; cards use 24–32px; component padding uses 8–16px.</span>
+        <span data-lang-zh-hant>採 4px 為基底節奏,所有間距為 4 的倍數。Section 級採 64-88px;Card 級採 24-32px;元件內距採 8-16px。標示軸線以<strong>深灰為主</strong>,僅最大值(sp-9)以金色點綴,呼應「黑灰 80% / 金 20%」配色比例。</span>
+        <span data-lang-zh-hans>采 4px 为基底节奏,所有间距为 4 的倍数。Section 级采 64-88px;Card 级采 24-32px;组件内距采 8-16px。标示轴线以<strong>深灰为主</strong>,仅最大值(sp-9)以金色点缀,呼应「黑灰 80% / 金 20%」配色比例。</span>
+        <span data-lang-en>Base 4px rhythm; all spacing is a multiple of 4. Sections use 64–88px; cards use 24–32px; component padding uses 8–16px. Indicator bars are <strong>primarily dark gray</strong>, with only the largest (sp-9) accented in gold — echoing the "80% black-gray / 20% gold" color ratio.</span>
       </p>
       <div class="spacing-demo">
         <div class="spacing-bar"><div class="bar" style="width:4px;height:60px;"></div><div class="label">4 · sp-1</div></div>
@@ -1950,7 +1983,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <div class="spacing-bar"><div class="bar" style="width:32px;height:60px;"></div><div class="label">32 · sp-6</div></div>
         <div class="spacing-bar"><div class="bar" style="width:48px;height:60px;"></div><div class="label">48 · sp-7</div></div>
         <div class="spacing-bar"><div class="bar" style="width:64px;height:60px;"></div><div class="label">64 · sp-8</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:88px;height:60px;"></div><div class="label">88 · sp-9</div></div>
+        <div class="spacing-bar"><div class="bar bar-gold" style="width:88px;height:60px;"></div><div class="label">88 · sp-9</div></div>
       </div>
     </section>
 
@@ -2504,6 +2537,23 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
           </ul>
         </div>
       </div>
+
+      <!-- 正式文件規範 -->
+      <div class="logo-formal-note">
+        <div class="logo-formal-icon">§</div>
+        <div class="logo-formal-content">
+          <div class="logo-formal-title">
+            <span data-lang-zh-hant>正式文件規範</span>
+            <span data-lang-zh-hans>正式文件规范</span>
+            <span data-lang-en>Formal Document Standard</span>
+          </div>
+          <p class="logo-formal-text">
+            <span data-lang-zh-hant>用於<strong>合約、報價單、發票、法律文件、正式公文</strong>等正式場合時,除 Logo 外,必須使用<strong>完整公司抬頭(法定登記全名)</strong>,而非簡稱或品牌名,才符合正規與法律效力。日常行銷、簡報、網站等非正式場景可使用品牌簡稱「WIN-HOUSE Group / 文浩集團」。</span>
+            <span data-lang-zh-hans>用于<strong>合约、报价单、发票、法律文件、正式公文</strong>等正式场合时,除 Logo 外,必须使用<strong>完整公司抬头(法定登记全名)</strong>,而非简称或品牌名,才符合正规与法律效力。日常营销、演示、网站等非正式场景可使用品牌简称「WIN-HOUSE Group / 文浩集团」。</span>
+            <span data-lang-en>For <strong>contracts, quotations, invoices, legal documents, and official correspondence</strong>, the <strong>full registered company name (legal entity title)</strong> must be used alongside the logo — not the abbreviation or brand name — to ensure formality and legal validity. The brand short name "WIN-HOUSE Group" may be used for marketing, presentations, websites, and other informal contexts.</span>
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- WINGO -->
@@ -2578,7 +2628,6 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
           <span data-lang-zh-hans>结合文浩的企业核心,WINGO 代表的是 — 陪伴文浩团队一起判断、行动、成交的 AI 业务导航员。</span>
           <span data-lang-en>Combined with WIN-HOUSE's core spirit, WINGO embodies — the AI Sales Navigator who walks alongside the WIN-HOUSE team to judge, act, and close deals together.</span>
         </div>
-        <div class="wingo-origin-slogan">YOUR BEST PARTNER!</div>
       </div>
 
       <!-- WINGO 使用規範 -->
@@ -2780,7 +2829,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.9.9 · 2026-05-26</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.9.14 · 2026-05-26</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 

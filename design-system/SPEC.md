@@ -1,6 +1,6 @@
-# WIN-HOUSE Design System v3.9.9 · Official Specification
+# WIN-HOUSE Design System v3.9.14 · Official Specification
 
-**版本** Version: v3.9.9 (Production)
+**版本** Version: v3.9.14 (Production)
 **狀態** Status: Active · Mandatory
 **最後更新** Last Updated: 2026-05-26
 **規範負責人** Owner: Tim Fan, CEO, WIN-HOUSE Group
@@ -9,11 +9,11 @@
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.9.8 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.9.13 全部廢止)。
 
-**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.9.8 are deprecated).
+**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.9.13 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.9.8 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.9.13 全部废止)。
 
 ---
 
@@ -26,6 +26,29 @@
 **[English]** From v3.9.6, Win-House colors are restructured into four layers: **single brand identity + Data Palette 9-color extension + Semantic Colors 3-set + Application Domain Mapping**. The original 5 brand colors (Gold / Slate Blue / Clay / Sage) are deprecated and replaced by Data Palette equivalents. **Black/white/gray remain dominant (80%+).**
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
+
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.9.14)
+
+**[繁中]**
+- 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
+- **白字僅用於深底色**(Hero、深色按鈕、實心標籤);若搭配底色,需確保對比充足。
+- **一般白底時禁用藍色字**——藍色僅作為色塊填充、邊框,或出現在深底色上。
+- 小型文字(標籤、token 名)若用金色,使用**深金 `--gold-hover` #AF7231**(非亮金 #DF9C41),確保白底可讀性。
+- **表格、資料區塊避免全黑為底**(太重);使用淺色表面 `--surface-1`,黑底僅保留給 Hero。
+
+**[English]**
+- Text is primarily **black and gray** (`--text-1` / `--text-2`).
+- **White text only on dark backgrounds** (Hero, dark buttons, solid tags); ensure sufficient contrast when paired with color.
+- **No blue text on plain white backgrounds** — blue only as fill, border, or on dark surfaces.
+- For small text in gold, use **deep gold `--gold-hover` #AF7231** (not bright #DF9C41) for white-background legibility.
+- **Avoid full-black backgrounds for tables/data blocks** (too heavy); use light `--surface-1`, reserve black for Hero only.
+
+**[简中]**
+- 文字以**黑、灰为主**(`--text-1` / `--text-2`)。
+- **白字仅用于深底色**(Hero、深色按钮、实心标签);若搭配底色,需确保对比充足。
+- **一般白底时禁用蓝色字**——蓝色仅作为色块填充、边框,或出现在深底色上。
+- 小型文字(标签、token 名)若用金色,使用**深金 `--gold-hover` #AF7231**(非亮金 #DF9C41),确保白底可读性。
+- **表格、数据区块避免全黑为底**(太重);使用浅色表面 `--surface-1`,黑底仅保留给 Hero。
 
 ### Core Brand · 核心品牌色(單一)
 
@@ -207,6 +230,10 @@ The Bipolar Accent pattern is updated in v3.9.6:
 | `--sp-8` | 64px | Major section |
 | `--sp-9` | 88px | Hero / page padding |
 
+**Indicator color rule · 標示軸線配色 · 标示轴线配色**:
+When visualizing the spacing scale (bars, rulers, guides), use **mid gray (`--text-2` #737373) as the default**, reserving gold only for a single accent (e.g., the largest value). This keeps the "80% black-gray / 20% gold" ratio. Do not make all spacing indicators gold.
+標示間距尺度時,軸線**預設用中灰 (--text-2 #737373)**,金色僅作單一強調(如最大值)。維持「黑灰 80% / 金 20%」比例,勿全部使用金色。
+
 ---
 
 ## ⭕ 04 · Radius · 圓角
@@ -333,6 +360,19 @@ WIN-HOUSE Group provides two logo variants. Choose by context while maintaining 
 - Do not overlay on busy images or low-contrast backgrounds · 不疊加在複雜圖像、低對比背景上
 - Do not add shadows, strokes, gradients, or effects · 不加陰影、外框、漸層、特效
 
+### ⚖️ Formal Document Standard · 正式文件規範 · 正式文件规范
+
+**[繁中]** 用於**合約、報價單、發票、法律文件、正式公文**等正式場合時,除 Logo 外,必須使用**完整公司抬頭(法定登記全名)**,而非簡稱或品牌名,才符合正規與法律效力。日常行銷、簡報、網站等非正式場景可使用品牌簡稱「WIN-HOUSE Group / 文浩集團」。
+
+**[English]** For **contracts, quotations, invoices, legal documents, and official correspondence**, the **full registered company name (legal entity title)** must be used alongside the logo — not the abbreviation or brand name — to ensure formality and legal validity. The brand short name "WIN-HOUSE Group" may be used for marketing, presentations, websites, and other informal contexts.
+
+**[简中]** 用于**合约、报价单、发票、法律文件、正式公文**等正式场合时,除 Logo 外,必须使用**完整公司抬头(法定登记全名)**,而非简称或品牌名,才符合正规与法律效力。日常营销、演示、网站等非正式场景可使用品牌简称「WIN-HOUSE Group / 文浩集团」。
+
+| Context · 場景 | Name to Use · 使用名稱 |
+|---|---|
+| Contracts, invoices, legal docs · 合約、發票、法律文件 | Full registered company name · 完整公司抬頭(法定全名) |
+| Marketing, web, presentations · 行銷、網站、簡報 | Brand short name · 品牌簡稱(WIN-HOUSE Group / 文浩集團) |
+
 ---
 
 ## 🦅 08 · WINGO Mascot · 吉祥物
@@ -434,6 +474,9 @@ These violate the design system. NEVER use:
 | Antonio for regular card titles, buttons, part numbers | Noto Sans / Inter |
 | Gold over 10% of viewport area | Keep Gold 5–10% for accent only |
 | Data palette as primary brand identity | Data palette for charts + accent usage |
+| **Full-black background for tables/data blocks** | **Light surfaces (`--surface-1`); reserve black for Hero only** |
+| **Blue text on white background** | **Black/gray text; blue only as fill/border or on dark surfaces** |
+| **Bright gold #DF9C41 as small text on white** | **Deep gold `--gold-hover` #AF7231 for small text (better contrast)** |
 
 ---
 
@@ -480,7 +523,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 > I am working with WIN-HOUSE Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.9.9. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.9.14. Fetch the full spec from:
 > https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -511,6 +554,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 > - **Group Logo** (two variants):
 >   - Full wordmark (logo + text): https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1
 >   - Standalone mark: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/winhouse%20logo%20red.png?v=1
+> - **Formal documents** (contracts, invoices, legal docs): use the FULL registered company name, not the brand short name. Brand short name "WIN-HOUSE Group" is for informal/marketing use only.
 >
 > Now produce: [your request here]
 >
@@ -524,7 +568,12 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 | Version | Date | Note |
 |---|---|---|
-| **v3.9.9** | 2026-05-26 | **Production** · Topnav logo upgraded to full wordmark PNG. Data Palette swatches regrouped by adjacency (Warm / Cool / Neutral). Dashboard color usage refined into 3 strategies (Gradient / Dual Axis / Contrast). |
+| **v3.9.14** | 2026-05-26 | **Production** · Removed duplicate "YOUR BEST PARTNER!" slogan from WINGO name-origin block (kept once in WINGO intro). |
+| v3.9.13 | 2026-05-26 | Formal Document Standard added — full registered company name required for contracts/invoices/legal docs; brand short name for informal contexts. |
+| v3.9.12 | 2026-05-26 | Spacing indicator bars use mid gray `--text-2` #737373 (auxiliary level), not near-black. |
+| v3.9.11 | 2026-05-26 | Spacing indicator bars default to gray, gold reserved as single accent (80/20 ratio). |
+| v3.9.10 | 2026-05-26 | Text & background rules added — no full-black table backgrounds (AI-ref block lightened to light surface), no blue text on white, deep gold `--gold-hover` for small text legibility. |
+| v3.9.9 | 2026-05-26 | Topnav logo upgraded to full wordmark PNG. Data Palette swatches regrouped by adjacency (Warm / Cool / Neutral). Dashboard color usage refined into 3 strategies (Gradient / Dual Axis / Contrast). |
 | v3.9.8 | 2026-05-26 | Logo section added (full wordmark + standalone mark on GitHub root). WINGO usage rules visually updated to green-check / red-cross. |
 | v3.9.7 | 2026-05-26 | Application Domain Color Mapping introduced (9 industries) |
 | v3.9.6 | 2026-05-26 | Brand 5-color deprecated, Semantic Colors introduced |
