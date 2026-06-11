@@ -1,6 +1,6 @@
-# WIN-HOUSE Design System v3.11.0 · Official Specification
+# WIN-HOUSE Design System v3.12.0 · Official Specification
 
-**版本** Version: v3.11.0 (Production)
+**版本** Version: v3.12.0 (Production)
 **狀態** Status: Active · Mandatory
 **最後更新** Last Updated: 2026-05-26
 **規範負責人** Owner: Tim Fan, CEO, WIN-HOUSE Group
@@ -9,11 +9,11 @@
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.10.1 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.11.1 全部廢止)。
 
-**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.10.1 are deprecated).
+**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.11.1 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.10.1 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.11.1 全部废止)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
 
-### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.11.0)
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.12.0)
 
 **[繁中]**
 - 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
@@ -278,6 +278,20 @@ When visualizing the spacing scale (bars, rulers, guides), use **mid gray (`--te
 | `--r-2xl` | 32px | Large card, hero block |
 | `--r-pill` | 9999px | Button, pill |
 
+### Motion · 動效 (v3.12)
+
+Apple-style easing, unified across all interactive elements:
+
+| Token | Value | Usage |
+|---|---|---|
+| `--ease` | `cubic-bezier(0.25, 0.1, 0.25, 1)` | All transitions · 全站統一緩動 |
+| `--dur-fast` | `0.18s` | Hover, small feedback · 懸停/小回饋 |
+| `--dur` | `0.32s` | Card lift, layout shifts · 卡片浮起 |
+
+- Buttons press down on click: `:active { transform: scale(0.97) }` · 按鈕點擊有按壓回饋
+- Never mix raw `ease`/durations — always reference motion tokens · 一律引用動效 token
+
+
 ---
 
 ## 🎨 05 · (Bipolar Accent moved to Section 01)
@@ -306,6 +320,20 @@ When visualizing the spacing scale (bars, rulers, guides), use **mid gray (`--te
 ```
 
 **Note**: Gold button uses **white text** (not black). Gold uses Data Palette's `#DF9C41` since v3.9.6.
+
+### Data Table · 資料表格 (v3.12.0)
+
+The core component for passive-components business: part-number lists, quotations, inventory, BOM.
+
+**Rules · 規則**:
+- Part numbers (`td.pn`): **Inter 600**, letter-spacing 0.02em · 料號用 Inter 600
+- Numeric columns (`.num`): **right-aligned + `font-variant-numeric: tabular-nums`** — prices and stock digits align vertically · 數字欄右對齊+等寬數字
+- Header: `--surface-1` bg, Inter 11px uppercase, 0.08em tracking · 表頭淺灰底
+- Row hover: `--surface-2` highlight; rows separated by 1px `--border` · hover 行高亮
+- Status tags (pill): in stock = green `--sem-green` 12% bg / low = yellow `--gold-hover` text on 14% gold bg / out = red `--sem-red` 10% bg · 狀態標籤:充足綠/吃緊黃/缺貨紅
+- Wrapper `.data-table-wrap`: white bg + `--card-border`, radius 12px, `overflow-x: auto`, **no resting shadow** (in-card rule)
+- Density: standard 44px row; compact 36px (`.data-table-compact`) for dense inventory/BOM views · 標準/緊湊兩種密度
+- First column (part no.) may be frozen for long tables · 長表格首欄可凍結
 
 ### Card
 
@@ -521,6 +549,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 |---|---|
 | **This spec (Markdown)** | `https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md` |
 | **Interactive HTML spec** | `https://timfan119.github.io/winhouse-brand-assets/design-system/` |
+| **Design Tokens CSS** | `https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/winhouse-tokens.css` |
 | WINGO Hi greeting | `https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/wingo/wingo-hi.png?v=2` |
 | Group Logo (full wordmark) | `https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1` |
 | Group Logo (standalone mark) | `https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/winhouse%20logo%20red.png?v=1` |
@@ -556,7 +585,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 > I am working with WIN-HOUSE Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.11.0. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.12.0. Fetch the full spec from:
 > https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -570,6 +599,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 >   - Green #5D8722 = UP / growth (`--sem-up`)
 >   - Red #C9302C = DOWN / decline (`--sem-down`)
 >   - Yellow #DF9C41 = WARN / attention (`--sem-warn`)
+> - **For any HTML/web output, link the official tokens stylesheet first**: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/winhouse-tokens.css
 > - **Elevation (v3.10+)**: light-gray page `--page-bg` #F4F4F3 + white section cards with soft warm shadows; in-card elements use thin `--card-border` #ECECEA, no nested shadows
 > - **Application Domain Mapping** (for industry charts):
 >   - Optical 光通訊 → #E4AF79 (warm light)
@@ -602,7 +632,9 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 | Version | Date | Note |
 |---|---|---|
-| **v3.11.0** | 2026-06-11 | **Production** · SaaS refinement: (1) Semantic colors flipped to Western convention — green=up `--sem-up`, red=down `--sem-down` (hex unchanged; `--tw-*` removed, swatch+assignment token layers added). (2) Do/Don't unified to green-check/red-cross. (3) Every section becomes a white card on the light-gray page; in-card elements drop resting shadows; sidebar white. |
+| **v3.12.0** | 2026-06-11 | **Production** · Apple-style UX pass: section descriptions collapse into ? popovers (tap/click, mobile-friendly); sections merged 15→12 (Spacing&Radius, Buttons&Tags, Cards&Stats) with renumbering 01–11; motion tokens `--ease/--dur` unified across 14 transitions; button press feedback scale(0.97); smooth scroll. |
+| v3.11.1 | 2026-06-11 | Data Table component added (part-no/quote/inventory). Design tokens extracted to standalone `winhouse-tokens.css` for CDN linking. |
+| v3.11.0 | 2026-06-11 | SaaS refinement: (1) Semantic colors flipped to Western convention — green=up `--sem-up`, red=down `--sem-down` (hex unchanged; `--tw-*` removed, swatch+assignment token layers added). (2) Do/Don't unified to green-check/red-cross. (3) Every section becomes a white card on the light-gray page; in-card elements drop resting shadows; sidebar white. |
 | v3.10.1 | 2026-06-11 | Legacy gold cleanup: removed deprecated-gold glows on white cards; copied-state bg → `--gold-soft`; Hero glow updated to current gold value. Zero deprecated colors remain. |
 | v3.10.0 | 2026-06-11 | Muze-inspired elevation system (color unchanged): light-gray page bg `--page-bg` #F4F4F3, top-level containers inverted to white cards with soft warm shadows, `--card-border` #ECECEA, sticky topnav float, Hero elevated. |
 | v3.9.14 | 2026-05-26 | Removed duplicate "YOUR BEST PARTNER!" slogan from WINGO name-origin block (kept once in WINGO intro). |

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.11.0</title>
+<title>Win-House Design System v3.12.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.11.0 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.12.0 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
    Last Updated: 2026-05-26
    ============================================================ */
@@ -64,6 +64,11 @@
   --card-border: #ECECEA;
   --shadow-card: 0 1px 2px rgba(28,25,20,0.03), 0 10px 30px rgba(28,25,20,0.06);
   --shadow-elevated: 0 2px 6px rgba(28,25,20,0.05), 0 20px 48px rgba(28,25,20,0.10);
+
+  /* Motion (v3.12 — Apple-style easing) */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --dur-fast: 0.18s;
+  --dur: 0.32s;
 
   /* Type */
   --font-display: 'Antonio', sans-serif;
@@ -158,7 +163,7 @@ body {
   padding: 6px 14px;
   border-radius: var(--r-pill);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all var(--dur) var(--ease);
 }
 .lang-switch button:hover { color: var(--text-1); }
 .lang-switch button.active {
@@ -198,7 +203,7 @@ body {
   padding: var(--sp-2) var(--sp-3);
   border-radius: var(--r-sm);
   margin-bottom: 2px;
-  transition: all 0.2s ease;
+  transition: all var(--dur-fast) var(--ease);
 }
 .sidebar a:hover { color: var(--text-1); background: var(--surface-1); }
 
@@ -245,6 +250,51 @@ body {
   max-width: 720px;
   margin-bottom: var(--sp-7);
   line-height: 1.7;
+}
+
+/* INFO TIP (v3.12 — descriptions collapse into ? popovers) */
+.section { position: relative; }
+.info-tip {
+  display: inline-grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  margin-left: var(--sp-2);
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--surface-1);
+  color: var(--text-2);
+  font-family: var(--font-ui);
+  font-size: 12px; font-weight: 600;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all var(--dur-fast) var(--ease);
+}
+.info-tip:hover {
+  background: var(--text-1);
+  color: var(--bg);
+  border-color: var(--text-1);
+  transform: scale(1.08);
+}
+.info-tip:active { transform: scale(0.94); }
+.section-intro.as-tip {
+  position: absolute;
+  z-index: 50;
+  max-width: 560px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-elevated);
+  padding: var(--sp-4) var(--sp-5);
+  margin: var(--sp-2) 0 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.section-intro.as-tip.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* HERO */
@@ -346,7 +396,7 @@ body {
   align-items: center;
   gap: var(--sp-4);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--dur-fast) var(--ease);
 }
 .ai-ref-row:hover {
   background: var(--surface-2);
@@ -400,7 +450,7 @@ body {
   border: 1px solid var(--card-border);
   border-radius: var(--r-lg);
   padding: var(--sp-3);
-  transition: all 0.2s ease;
+  transition: all var(--dur-fast) var(--ease);
 }
 .swatch:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
 .swatch-color {
@@ -469,7 +519,7 @@ html[data-lang="en"] .chart-strategy-label { font-family: var(--font-ui); }
   border-radius: var(--r-md) var(--r-md) 0 0;
   height: var(--h);
   position: relative;
-  transition: opacity 0.2s ease;
+  transition: opacity var(--dur-fast) var(--ease);
 }
 .chart-bar:hover { opacity: 0.85; }
 .chart-bar span {
@@ -503,7 +553,7 @@ html[data-lang="en"] .chart-bar span { font-family: var(--font-ui); }
   border: 1px solid var(--card-border);
   border-radius: var(--r-lg);
   padding: var(--sp-4);
-  transition: all 0.2s ease;
+  transition: all var(--dur-fast) var(--ease);
   display: flex;
   flex-direction: column;
   gap: var(--sp-2);
@@ -608,11 +658,12 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   border-radius: var(--r-pill);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--dur-fast) var(--ease);
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
 }
+.btn:active { transform: scale(0.97); }
 .btn-primary { background: var(--text-1); color: var(--bg); }
 .btn-primary:hover { background: var(--gold); color: #FFFFFF; }
 .btn-gold { background: var(--gold); color: #FFFFFF; }
@@ -638,7 +689,7 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   border: 1px solid var(--card-border);
   border-radius: var(--r-2xl);
   padding: var(--sp-5);
-  transition: all 0.3s ease;
+  transition: all var(--dur) var(--ease);
 }
 .card:hover {
   box-shadow: var(--shadow-elevated);
@@ -953,7 +1004,7 @@ html[data-lang="en"] .wingo-rule-label { font-family: var(--font-ui); }
   border: 1px solid var(--card-border);
   border-radius: var(--r-2xl);
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all var(--dur-fast) var(--ease);
   display: flex;
   flex-direction: column;
 }
@@ -1047,7 +1098,7 @@ html[data-lang="en"] .logo-name { font-family: var(--font-ui); }
   font-family: var(--font-ui);
   font-size: 11px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all var(--dur-fast) var(--ease);
 }
 .logo-url:hover {
   background: var(--bg);
@@ -1261,7 +1312,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
   padding: var(--sp-5) var(--sp-6);
   min-width: 200px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--dur) var(--ease);
 }
 .wingo-origin-card:hover {
   transform: translateY(-4px);
@@ -1339,6 +1390,61 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 }
 
 /* TOKEN TABLE */
+/* DATA TABLE (part numbers / quotes / inventory) */
+.data-table-wrap {
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-lg);
+  overflow-x: auto;
+}
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  min-width: 720px;
+}
+.data-table th, .data-table td {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.data-table th {
+  font-family: var(--font-ui);
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+  background: var(--surface-1);
+}
+.data-table tbody tr { transition: background var(--dur-fast) var(--ease); }
+.data-table tbody tr:hover { background: var(--surface-2); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table th.num, .data-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.data-table td.num { font-family: var(--font-ui); font-weight: 500; }
+.data-table td.pn {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-1);
+}
+.data-table-compact th, .data-table-compact td { padding: var(--sp-2) var(--sp-4); }
+.table-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+.table-tag.ok  { background: rgba(93,135,34,0.12);  color: var(--sem-green); }
+.table-tag.low { background: rgba(223,156,65,0.14); color: var(--gold-hover); }
+.table-tag.out { background: rgba(201,48,44,0.10);  color: var(--sem-red); }
+
 .token-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; background: var(--bg); border: 1px solid var(--card-border); border-radius: var(--r-lg); overflow: hidden; }
 .token-table th,
 .token-table td {
@@ -1406,7 +1512,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
       alt="WIN-HOUSE Group"
       onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
-    <span class="brand-version">DS v3.11.0</span>
+    <span class="brand-version">DS v3.12.0</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1438,43 +1544,33 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       <span data-lang-en>Typography</span>
     </a>
     <a href="#spacing">
-      <span data-lang-zh-hant>間距</span>
-      <span data-lang-zh-hans>间距</span>
-      <span data-lang-en>Spacing</span>
-    </a>
-    <a href="#radius">
-      <span data-lang-zh-hant>圓角</span>
-      <span data-lang-zh-hans>圆角</span>
-      <span data-lang-en>Radius</span>
+      <span data-lang-zh-hant>間距與圓角</span>
+      <span data-lang-zh-hans>间距与圆角</span>
+      <span data-lang-en>Spacing & Radius</span>
     </a>
 
     <h4 data-lang-zh-hant>元件</h4>
     <h4 data-lang-zh-hans>组件</h4>
     <h4 data-lang-en>Components</h4>
     <a href="#buttons">
-      <span data-lang-zh-hant>按鈕</span>
-      <span data-lang-zh-hans>按钮</span>
-      <span data-lang-en>Buttons</span>
+      <span data-lang-zh-hant>按鈕與標籤</span>
+      <span data-lang-zh-hans>按钮与标签</span>
+      <span data-lang-en>Buttons & Tags</span>
     </a>
     <a href="#cards">
-      <span data-lang-zh-hant>卡片</span>
-      <span data-lang-zh-hans>卡片</span>
-      <span data-lang-en>Cards</span>
-    </a>
-    <a href="#stats">
-      <span data-lang-zh-hant>數據</span>
-      <span data-lang-zh-hans>数据</span>
-      <span data-lang-en>Stats</span>
-    </a>
-    <a href="#tags">
-      <span data-lang-zh-hant>標籤</span>
-      <span data-lang-zh-hans>标签</span>
-      <span data-lang-en>Tags</span>
+      <span data-lang-zh-hant>卡片與數據</span>
+      <span data-lang-zh-hans>卡片与数据</span>
+      <span data-lang-en>Cards & Stats</span>
     </a>
     <a href="#forms">
       <span data-lang-zh-hant>表單</span>
       <span data-lang-zh-hans>表单</span>
       <span data-lang-en>Forms</span>
+    </a>
+    <a href="#datatable">
+      <span data-lang-zh-hant>資料表格</span>
+      <span data-lang-zh-hans>数据表格</span>
+      <span data-lang-en>Data Table</span>
     </a>
 
     <h4 data-lang-zh-hant>模式</h4>
@@ -1516,7 +1612,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.11.0 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.12.0 · WINGO Story Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1524,9 +1620,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.11.0 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.11.0 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.11.0 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.12.0 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.12.0 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.12.0 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1562,7 +1658,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.11.0 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.12.0 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1621,9 +1717,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Core Brand · Single Anchor</span>
       </div>
       <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:680px;">
-        <span data-lang-zh-hant>v3.11.0 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
-        <span data-lang-zh-hans>v3.11.0 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
-        <span data-lang-en>From v3.11.0, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
+        <span data-lang-zh-hant>v3.12.0 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
+        <span data-lang-zh-hans>v3.12.0 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
+        <span data-lang-en>From v3.12.0, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#E1251B"></div><div class="swatch-name">Logo Red</div><div class="swatch-hex">#E1251B</div><div class="swatch-role">LOGO ONLY</div></div>
@@ -1968,11 +2064,11 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     <!-- SPACING -->
     <section id="spacing" class="section">
       <div class="section-eyebrow">03 · Foundations</div>
-      <h2 class="section-title">Spacing</h2>
+      <h2 class="section-title">Spacing & Radius</h2>
       <div class="section-subtitle">
-        <span data-lang-zh-hant>間距系統</span>
-        <span data-lang-zh-hans>间距系统</span>
-        <span data-lang-en>Spacing System</span>
+        <span data-lang-zh-hant>間距與圓角系統</span>
+        <span data-lang-zh-hans>间距与圆角系统</span>
+        <span data-lang-en>Spacing & Radius System</span>
       </div>
       <p class="section-intro">
         <span data-lang-zh-hant>採 4px 為基底節奏,所有間距為 4 的倍數。Section 級採 64-88px;Card 級採 24-32px;元件內距採 8-16px。標示軸線以<strong>深灰為主</strong>,僅最大值(sp-9)以金色點綴,呼應「黑灰 80% / 金 20%」配色比例。</span>
@@ -1990,16 +2086,10 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <div class="spacing-bar"><div class="bar" style="width:64px;height:60px;"></div><div class="label">64 · sp-8</div></div>
         <div class="spacing-bar"><div class="bar bar-gold" style="width:88px;height:60px;"></div><div class="label">88 · sp-9</div></div>
       </div>
-    </section>
-
-    <!-- RADIUS -->
-    <section id="radius" class="section">
-      <div class="section-eyebrow">04 · Foundations</div>
-      <h2 class="section-title">Radius</h2>
-      <div class="section-subtitle">
-        <span data-lang-zh-hant>圓角系統</span>
-        <span data-lang-zh-hans>圆角系统</span>
-        <span data-lang-en>Radius System</span>
+      <div class="subhead" style="margin-top:var(--sp-7);">
+        <span data-lang-zh-hant>圓角 · Radius</span>
+        <span data-lang-zh-hans>圆角 · Radius</span>
+        <span data-lang-en>Radius</span>
       </div>
       <p class="section-intro">
         <span data-lang-zh-hant>圓角家族:4px / 8px / 16px / 28px / 32px / 9999px。小元件用 4-8px、卡片用 16-32px、按鈕與膠囊用 9999px。</span>
@@ -2016,14 +2106,16 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       </div>
     </section>
 
+    <!-- RADIUS -->
+
     <!-- BUTTONS -->
     <section id="buttons" class="section">
-      <div class="section-eyebrow">05 · Components</div>
-      <h2 class="section-title">Buttons</h2>
+      <div class="section-eyebrow">04 · Components</div>
+      <h2 class="section-title">Buttons & Tags</h2>
       <div class="section-subtitle">
-        <span data-lang-zh-hant>按鈕</span>
-        <span data-lang-zh-hans>按钮</span>
-        <span data-lang-en>Buttons</span>
+        <span data-lang-zh-hant>按鈕與標籤</span>
+        <span data-lang-zh-hans>按钮与标签</span>
+        <span data-lang-en>Buttons & Tags</span>
       </div>
       <p class="section-intro">
         <span data-lang-zh-hant>膠囊型按鈕(9999px radius),四種層級:Primary 主動作、Gold 強調動作、Secondary 次要、Ghost 連結型。Gold 按鈕用白字。</span>
@@ -2037,16 +2129,48 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <button class="btn btn-ghost">Ghost link →</button>
         <button class="btn btn-danger">Destructive</button>
       </div>
+      <div class="subhead" style="margin-top:var(--sp-7);">
+        <span data-lang-zh-hant>標籤 · Tags</span>
+        <span data-lang-zh-hans>标签 · Tags</span>
+        <span data-lang-en>Tags</span>
+      </div>
+      <p class="section-intro">
+        <span data-lang-zh-hant>小型 Inter 標籤,用於品牌、應用領域、客戶分級、狀態提示。</span>
+        <span data-lang-zh-hans>小型 Inter 标签,用于品牌、应用领域、客户分级、状态提示。</span>
+        <span data-lang-en>Compact Inter tags for brands, application domains, client tiers, and status indicators.</span>
+      </p>
+      <div class="tag-row">
+        <span class="tag">TDK</span>
+        <span class="tag">InvenSense</span>
+        <span class="tag">TDK-Lambda</span>
+        <span class="tag">Kingbright</span>
+        <span class="tag">Everlight</span>
+        <span class="tag">Akoustis</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-gold">Tier 1 Client</span>
+        <span class="tag tag-solid">Design-in Active</span>
+        <span class="tag tag-slate">Need Attention</span>
+        <span class="tag tag-red">Logo Use Only</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag">ADAS</span>
+        <span class="tag">AI POWER 48V</span>
+        <span class="tag">800G OPTICAL</span>
+        <span class="tag">ROBOTICS</span>
+        <span class="tag">AR GLASSES</span>
+        <span class="tag">LEO SATELLITE</span>
+      </div>
     </section>
 
     <!-- CARDS -->
     <section id="cards" class="section">
-      <div class="section-eyebrow">06 · Components</div>
-      <h2 class="section-title">Cards</h2>
+      <div class="section-eyebrow">05 · Components</div>
+      <h2 class="section-title">Cards & Stats</h2>
       <div class="section-subtitle">
-        <span data-lang-zh-hant>卡片</span>
-        <span data-lang-zh-hans>卡片</span>
-        <span data-lang-en>Cards</span>
+        <span data-lang-zh-hant>卡片與數據展示</span>
+        <span data-lang-zh-hans>卡片与数据展示</span>
+        <span data-lang-en>Cards & Stats</span>
       </div>
       <p class="section-intro">
         <span data-lang-zh-hant>大圓角卡片(32px),玻璃質感邊框 + 多層陰影系統。預設 hover 上浮 4px。</span>
@@ -2100,16 +2224,10 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
           <div class="card-meta"><span>PHOTONICS</span><span>ACTIVE</span></div>
         </div>
       </div>
-    </section>
-
-    <!-- STATS -->
-    <section id="stats" class="section">
-      <div class="section-eyebrow">07 · Components</div>
-      <h2 class="section-title">Data Cards</h2>
-      <div class="section-subtitle">
-        <span data-lang-zh-hant>數據卡 · KPI 展示</span>
-        <span data-lang-zh-hans>数据卡 · KPI 展示</span>
-        <span data-lang-en>Data Cards · KPI Display</span>
+      <div class="subhead" style="margin-top:var(--sp-7);">
+        <span data-lang-zh-hant>數據卡 · Stat Cards</span>
+        <span data-lang-zh-hans>数据卡 · Stat Cards</span>
+        <span data-lang-en>Stat Cards</span>
       </div>
       <p class="section-intro">
         <span data-lang-zh-hant>大數字風格,Noto Sans 高字重數字 + Inter 大寫字距標籤。配色採國際通用慣例:<strong>綠 = 上漲、紅 = 下跌、黃 = 警示</strong>。</span>
@@ -2177,47 +2295,13 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       </div>
     </section>
 
+    <!-- STATS -->
+
     <!-- TAGS -->
-    <section id="tags" class="section">
-      <div class="section-eyebrow">08 · Components</div>
-      <h2 class="section-title">Tags</h2>
-      <div class="section-subtitle">
-        <span data-lang-zh-hant>標籤</span>
-        <span data-lang-zh-hans>标签</span>
-        <span data-lang-en>Tags</span>
-      </div>
-      <p class="section-intro">
-        <span data-lang-zh-hant>小型 Inter 標籤,用於品牌、應用領域、客戶分級、狀態提示。</span>
-        <span data-lang-zh-hans>小型 Inter 标签,用于品牌、应用领域、客户分级、状态提示。</span>
-        <span data-lang-en>Compact Inter tags for brands, application domains, client tiers, and status indicators.</span>
-      </p>
-      <div class="tag-row">
-        <span class="tag">TDK</span>
-        <span class="tag">InvenSense</span>
-        <span class="tag">TDK-Lambda</span>
-        <span class="tag">Kingbright</span>
-        <span class="tag">Everlight</span>
-        <span class="tag">Akoustis</span>
-      </div>
-      <div class="tag-row">
-        <span class="tag tag-gold">Tier 1 Client</span>
-        <span class="tag tag-solid">Design-in Active</span>
-        <span class="tag tag-slate">Need Attention</span>
-        <span class="tag tag-red">Logo Use Only</span>
-      </div>
-      <div class="tag-row">
-        <span class="tag">ADAS</span>
-        <span class="tag">AI POWER 48V</span>
-        <span class="tag">800G OPTICAL</span>
-        <span class="tag">ROBOTICS</span>
-        <span class="tag">AR GLASSES</span>
-        <span class="tag">LEO SATELLITE</span>
-      </div>
-    </section>
 
     <!-- FORMS -->
     <section id="forms" class="section">
-      <div class="section-eyebrow">09 · Components</div>
+      <div class="section-eyebrow">06 · Components</div>
       <h2 class="section-title">Forms</h2>
       <div class="section-subtitle">
         <span data-lang-zh-hant>表單</span>
@@ -2273,9 +2357,134 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       </div>
     </section>
 
+    <!-- DATA TABLE -->
+    <section id="datatable" class="section">
+      <div class="section-eyebrow">07 · Components</div>
+      <h2 class="section-title">Data Table</h2>
+      <div class="section-subtitle">
+        <span data-lang-zh-hant>資料表格 · 料號 / 報價 / 庫存</span>
+        <span data-lang-zh-hans>数据表格 · 料号 / 报价 / 库存</span>
+        <span data-lang-en>Data Table · Part Numbers / Quotes / Inventory</span>
+      </div>
+      <p class="section-intro">
+        <span data-lang-zh-hant>被動元件業務的核心介面。規則:<strong>料號用 Inter 600</strong>;<strong>數字欄一律右對齊 + 等寬數字</strong>(tabular-nums,確保報價與庫存逐位對齊);表頭淺灰底 Inter 大寫字距;hover 行高亮;狀態以標籤呈現(充足=綠、吃緊=黃、缺貨=紅)。</span>
+        <span data-lang-zh-hans>被动元件业务的核心界面。规则:<strong>料号用 Inter 600</strong>;<strong>数字栏一律右对齐 + 等宽数字</strong>(tabular-nums,确保报价与库存逐位对齐);表头浅灰底 Inter 大写字距;hover 行高亮;状态以标签呈现(充足=绿、吃紧=黄、缺货=红)。</span>
+        <span data-lang-en>The core interface of passive-components business. Rules: <strong>part numbers in Inter 600</strong>; <strong>numeric columns right-aligned with tabular-nums</strong> (digit-aligned prices and stock); light-gray header in Inter uppercase tracking; row hover highlight; status as tags (in stock = green, low = yellow, out = red).</span>
+      </p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>
+                <span data-lang-zh-hant>料號 Part No.</span>
+                <span data-lang-zh-hans>料号 Part No.</span>
+                <span data-lang-en>Part No.</span>
+              </th>
+              <th>
+                <span data-lang-zh-hant>品牌</span>
+                <span data-lang-zh-hans>品牌</span>
+                <span data-lang-en>Brand</span>
+              </th>
+              <th>
+                <span data-lang-zh-hant>規格描述</span>
+                <span data-lang-zh-hans>规格描述</span>
+                <span data-lang-en>Description</span>
+              </th>
+              <th class="num">
+                <span data-lang-zh-hant>庫存</span>
+                <span data-lang-zh-hans>库存</span>
+                <span data-lang-en>Stock</span>
+              </th>
+              <th class="num">
+                <span data-lang-zh-hant>單價 USD</span>
+                <span data-lang-zh-hans>单价 USD</span>
+                <span data-lang-en>Unit USD</span>
+              </th>
+              <th class="num">
+                <span data-lang-zh-hant>交期</span>
+                <span data-lang-zh-hans>交期</span>
+                <span data-lang-en>L/T</span>
+              </th>
+              <th>
+                <span data-lang-zh-hant>狀態</span>
+                <span data-lang-zh-hans>状态</span>
+                <span data-lang-en>Status</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pn">C2012X7R1H104K125AA</td>
+              <td>TDK</td>
+              <td>MLCC 0805 100nF 50V X7R</td>
+              <td class="num">125,000</td>
+              <td class="num">0.0085</td>
+              <td class="num">8 wks</td>
+              <td><span class="table-tag ok">
+                <span data-lang-zh-hant>充足</span>
+                <span data-lang-zh-hans>充足</span>
+                <span data-lang-en>In Stock</span>
+              </span></td>
+            </tr>
+            <tr>
+              <td class="pn">C3216X5R1A476M160AC</td>
+              <td>TDK</td>
+              <td>MLCC 1206 47µF 10V X5R</td>
+              <td class="num">8,200</td>
+              <td class="num">0.0420</td>
+              <td class="num">12 wks</td>
+              <td><span class="table-tag low">
+                <span data-lang-zh-hant>吃緊</span>
+                <span data-lang-zh-hans>吃紧</span>
+                <span data-lang-en>Low</span>
+              </span></td>
+            </tr>
+            <tr>
+              <td class="pn">B82422T1105K000</td>
+              <td>EPCOS</td>
+              <td>Inductor 1.0µH 0805 ±10%</td>
+              <td class="num">0</td>
+              <td class="num">0.0310</td>
+              <td class="num">16 wks</td>
+              <td><span class="table-tag out">
+                <span data-lang-zh-hant>缺貨</span>
+                <span data-lang-zh-hans>缺货</span>
+                <span data-lang-en>Out</span>
+              </span></td>
+            </tr>
+            <tr>
+              <td class="pn">KP-2012SGC</td>
+              <td>Kingbright</td>
+              <td>LED 0805 Green 568nm</td>
+              <td class="num">56,000</td>
+              <td class="num">0.0120</td>
+              <td class="num">6 wks</td>
+              <td><span class="table-tag ok">
+                <span data-lang-zh-hant>充足</span>
+                <span data-lang-zh-hans>充足</span>
+                <span data-lang-en>In Stock</span>
+              </span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subhead" style="margin-top:var(--sp-6);">
+        <span data-lang-zh-hant>密度與使用規則</span>
+        <span data-lang-zh-hans>密度与使用规则</span>
+        <span data-lang-en>Density & Usage Rules</span>
+      </div>
+      <p style="font-size:13px;color:var(--text-2);max-width:720px;">
+        <span data-lang-zh-hant>標準密度列高 44px(上表);資料量大的庫存/BOM 場景可用緊湊模式(列高 36px,class: data-table-compact)。表格不加常態陰影(卡內降權原則),靠細邊框與表頭分層。長表格首欄(料號)可固定凍結。</span>
+        <span data-lang-zh-hans>标准密度行高 44px(上表);数据量大的库存/BOM 场景可用紧凑模式(行高 36px,class: data-table-compact)。表格不加常态阴影(卡内降权原则),靠细边框与表头分层。长表格首栏(料号)可固定冻结。</span>
+        <span data-lang-en>Standard density is 44px row height (above); use compact mode (36px, class: data-table-compact) for dense inventory/BOM views. Tables carry no resting shadow (in-card rule) — thin borders and the header provide separation. The first column (part number) may be frozen for long tables.</span>
+      </p>
+    </section>
+
     <!-- DO / DONT -->
     <section id="dodont" class="section">
-      <div class="section-eyebrow">10 · Patterns</div>
+      <div class="section-eyebrow">08 · Patterns</div>
       <h2 class="section-title">Do / Don't</h2>
       <div class="section-subtitle">
         <span data-lang-zh-hant>使用準則</span>
@@ -2382,7 +2591,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- LOGO -->
     <section id="logo" class="section">
-      <div class="section-eyebrow">11 · Brand Assets</div>
+      <div class="section-eyebrow">09 · Brand Assets</div>
       <h2 class="section-title">Logo</h2>
       <div class="section-subtitle">
         <span data-lang-zh-hant>集團識別 · WIN-HOUSE Group</span>
@@ -2565,7 +2774,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     <section id="wingo" class="section">
       <div class="wingo-header">
         <div class="wingo-header-text">
-          <div class="section-eyebrow">12 · Brand Assets</div>
+          <div class="section-eyebrow">10 · Brand Assets</div>
           <h2 class="section-title">WINGO</h2>
           <div class="section-subtitle">
             <span data-lang-zh-hant>品牌吉祥物 · AI 業務導航員</span>
@@ -2738,7 +2947,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- TOKEN TABLE -->
     <section id="tokens" class="section">
-      <div class="section-eyebrow">12 · Reference</div>
+      <div class="section-eyebrow">11 · Reference</div>
       <h2 class="section-title">Tokens</h2>
       <div class="section-subtitle">
         <span data-lang-zh-hant>CSS 變數對照表</span>
@@ -2834,7 +3043,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.11.0 · 2026-05-26</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.12.0 · 2026-05-26</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 
@@ -2904,6 +3113,33 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       }
     });
   }
+// v3.12: collapse section descriptions into ? popovers
+document.querySelectorAll('.section-intro').forEach(intro => {
+  let anchor = intro.previousElementSibling;
+  while (anchor && !(anchor.classList.contains('section-title') || anchor.classList.contains('subhead'))) {
+    anchor = anchor.previousElementSibling;
+  }
+  if (!anchor) {
+    const t = intro.closest('.section');
+    anchor = t ? t.querySelector('.section-title') : null;
+  }
+  if (!anchor) return;
+  intro.classList.add('as-tip');
+  const btn = document.createElement('button');
+  btn.className = 'info-tip';
+  btn.setAttribute('aria-label', 'Info');
+  btn.textContent = '?';
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const wasOpen = intro.classList.contains('open');
+    document.querySelectorAll('.section-intro.open').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) intro.classList.add('open');
+  });
+  anchor.appendChild(btn);
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.section-intro.open').forEach(el => el.classList.remove('open'));
+});
 </script>
 
 </body>
