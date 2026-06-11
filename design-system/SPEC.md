@@ -1,6 +1,6 @@
-# WIN-HOUSE Design System v3.10.0 · Official Specification
+# WIN-HOUSE Design System v3.11.0 · Official Specification
 
-**版本** Version: v3.10.0 (Production)
+**版本** Version: v3.11.0 (Production)
 **狀態** Status: Active · Mandatory
 **最後更新** Last Updated: 2026-05-26
 **規範負責人** Owner: Tim Fan, CEO, WIN-HOUSE Group
@@ -9,11 +9,11 @@
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.9.14 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.10.1 全部廢止)。
 
-**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.9.14 are deprecated).
+**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.10.1 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.9.14 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.10.1 全部废止)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
 
-### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.10.0)
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.11.0)
 
 **[繁中]**
 - 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
@@ -84,6 +84,10 @@
 | `--shadow-card` | `0 1px 2px rgba(28,25,20,0.03), 0 10px 30px rgba(28,25,20,0.06)` |
 | `--shadow-elevated` | `0 2px 6px rgba(28,25,20,0.05), 0 20px 48px rgba(28,25,20,0.10)` |
 
+**v3.11 Section-card layout · Section 卡片化**:
+- Every content `section` is a **white card** (`--bg` + `--card-border` + `--shadow-card`, radius 32px, padding 48px) floating on the light-gray page. Sidebar is white with a soft right border.
+- **In-card elements carry no resting shadow** — containers inside a section card (demo blocks, tables, sub-cards) use white background + thin `--card-border` only. Shadows on hover are allowed as interaction feedback. Only section cards (and the page-level Hero) cast resting shadows. 一個畫面上「會浮的」只有 section 大卡;卡內元素靠細邊框分層,不疊陰影。
+
 ### Data Palette · 數據視覺化專用 · 数据可视化专用
 
 **[繁中]** 取自 Charles Demuth《I Saw the Figure 5 in Gold》(暖金土系)與 Richard Diebenkorn《Seawall》(冷藍綠系),9 色擴展。**用於 Chart / Dashboard / 數據視覺化,以及一般強調用色**(取代原品牌五色)。
@@ -128,17 +132,27 @@
 
 **Recommended ordering**: For sequential data, use Warm gradient (Gold Light → Rust) or Cool gradient (Blue Deep → Green). For categorical data, alternate between warm and cool groups.
 
-### Semantic Colors · 語意配色 · 语义配色
+### Semantic Colors · 語意配色 · 语义配色 (v3.11 — Western convention)
 
-For Stat Delta and KPI direction indicators (up/down/warn):
+For Stat Delta and KPI direction indicators (up/down/warn). **Hex values unchanged; direction assignment follows the Western/international convention from v3.11** (green = up, red = down), replacing the Greater-China convention used in v3.9.6–v3.10.x.
 
-| Token | HEX | Semantic |
+**Swatch tokens · 色票** (hex 不變):
+
+| Token | HEX | Color |
 |---|---|---|
-| `--tw-red` | `#C9302C` | UP · 上漲 · 上涨 |
-| `--tw-green` | `#5D8722` | DOWN · 下跌 · 下跌 |
-| `--tw-yellow` | `#DF9C41` | WARN · 警示 · 警示 |
+| `--sem-red` | `#C9302C` | Red · 紅 |
+| `--sem-green` | `#5D8722` | Green · 綠 |
+| `--sem-yellow` | `#DF9C41` | Yellow · 黃 |
 
-> Color logic follows Greater-China market convention. Token naming uses `tw-*` prefix for clarity but applies to any locale where red=up / green=down is expected.
+**Assignment tokens · 語意指派** (use these in components):
+
+| Token | Resolves to | Semantic |
+|---|---|---|
+| `--sem-up` | `--sem-green` #5D8722 | **UP / Growth · 上漲 / 成長** |
+| `--sem-down` | `--sem-red` #C9302C | **DOWN / Decline · 下跌 / 衰退** |
+| `--sem-warn` | `--sem-yellow` #DF9C41 | WARN / Attention · 警示 |
+
+> Components must reference assignment tokens (`--sem-up/down/warn`), never swatch tokens directly, so a future convention switch only requires changing three assignment lines. The former `--tw-*` tokens are removed.
 
 ### Application Domain Color Mapping · 應用領域配色 · 应用领域配色
 
@@ -165,16 +179,18 @@ For Stat Delta and KPI direction indicators (up/down/warn):
 - 新增應用領域時,依照市場慣用色或物理意象建議對應顏色,並更新此表。
 - 新增应用领域时,依照市场惯用色或物理意象建议对应颜色,并更新此表。
 
-### ⚠️ Bipolar Accent v2 · 雙極對比制 v2
+### ⚠️ Bipolar Accent v3 · 雙極對比制 v3 (v3.11)
 
-The Bipolar Accent pattern is updated in v3.9.6:
+The Bipolar Accent pattern is updated in v3.11 to the Western convention, unifying "positive = green / negative = red" across the system:
 
 | Context | Positive · 正向 | Negative · 負向 |
 |---|---|---|
-| **Stat Delta** | `--tw-red` #C9302C (UP) | `--tw-green` #5D8722 (DOWN) |
-| **Stat Delta · Warning** | `--tw-yellow` #DF9C41 (WARN/LOW) | — |
-| **Do / Don't** | `--tw-red` #C9302C border | `--data-charcoal` #2D2A28 border |
-| **WINGO Decision** | `--tw-red` (warmth/use · 親切/上場) | `--data-charcoal` (premium/hold · 專業/收斂) |
+| **Stat Delta** | `--sem-up` #5D8722 (UP, green) | `--sem-down` #C9302C (DOWN, red) |
+| **Stat Delta · Warning** | `--sem-warn` #DF9C41 (WARN/LOW) | — |
+| **Do / Don't** | `--data-green` #5D8722 border + ✓ | `--data-rust` #923621 border + ✗ |
+| **WINGO Decision** | `--sem-red` (warmth/use · 親切/上場) | `--data-charcoal` (premium/hold · 專業/收斂) |
+
+> Note: WINGO Decision red expresses *warmth* (temperature semantics), not up/down — it intentionally keeps red. Do/Don't now matches the Logo and WINGO usage rules (green check / red cross) for full system-wide consistency.
 
 ---
 
@@ -310,9 +326,9 @@ When visualizing the spacing scale (bars, rulers, guides), use **mid gray (`--te
 - Large numeric: **Noto Sans** 600, 48px, letter-spacing -0.02em (Antonio reserved for headings only — but Hero meta數字使用 Antonio 36px 醒目展示)
 - Label above: Inter 600, 11px, uppercase, letter-spacing 0.1em, color #737373
 - Delta below: pill-style, **uses Taiwan Semantic Colors**:
-  - `.up` → `--tw-red` #C9302C bg + white text (上漲/成長)
-  - `.down` → `--tw-green` #5D8722 bg + white text (下跌/衰退)
-  - `.warn` → `--tw-yellow` #DF9C41 bg + white text (注意/警示)
+  - `.up` → `--sem-up` #5D8722 (green) bg + white text (上漲/成長)
+  - `.down` → `--sem-down` #C9302C (red) bg + white text (下跌/衰退)
+  - `.warn` → `--sem-warn` #DF9C41 bg + white text (注意/警示)
 
 ### Tag
 
@@ -478,13 +494,13 @@ These violate the design system. NEVER use:
 | Old `--slate-blue` #4A6B8A (brand color deprecated v3.9.6) | `--data-blue-deep` #2677A5 (from Data Palette) |
 | Old `--clay` #B57258 (brand color deprecated v3.9.6) | `--data-rust` #923621 (from Data Palette) |
 | Old `--sage` #5A8159 (brand color deprecated v3.9.6) | `--data-green` #5D8722 (from Data Palette) |
-| Pure red #FF0000 or warning red | `--tw-red` #C9302C or `--tw-yellow` #DF9C41 |
+| Pure red #FF0000 or warning red | `--sem-red` #C9302C or `--sem-yellow` #DF9C41 |
 | Purple gradients, blue-purple tech aesthetic | `--data-blue-deep` #2677A5 solid |
-| Bright/fluorescent yellow | `--tw-yellow` #DF9C41 (muted warm) |
+| Bright/fluorescent yellow | `--sem-yellow` #DF9C41 (muted warm) |
 | Serif Chinese fonts (宋體) | Noto Sans TC/SC sans-serif |
 | Logo Red #E1251B as background fill | Logo only |
 | JetBrains Mono / Fira Code | Inter 600 + uppercase letter-spacing |
-| **Green-up / Red-down (Western convention)** | **Red=up / Green=down / Yellow=warn (Greater-China convention)** |
+| **Red-up / Green-down (Greater-China convention)** | **Green=up / Red=down / Yellow=warn (Western convention, v3.11)** |
 | Black text on Gold button | White text on Gold button |
 | "Bald Eagle / 白頭海鵰" species | Just "Eagle / 老鷹" |
 | WINGO in formal external materials | WINGO internal only |
@@ -540,7 +556,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 > I am working with WIN-HOUSE Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.10.0. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.11.0. Fetch the full spec from:
 > https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -550,10 +566,11 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 > - **Only ONE protected brand color**: Logo Red #E1251B (LOGO ONLY, never as background)
 > - **Black/white/gray dominant** (80%+ of viewport)
 > - **Data Palette** (9 colors, replaces old brand 5-color): #E4AF79, #DF9C41, #AF7231, #923621, #2D2A28, #2677A5, #639BC1, #90A74A, #5D8722
-> - **Semantic Colors** (Greater-China convention):
->   - Red #C9302C = UP / growth
->   - Green #5D8722 = DOWN / decline
->   - Yellow #DF9C41 = WARN / attention
+> - **Semantic Colors** (Western/international convention, v3.11):
+>   - Green #5D8722 = UP / growth (`--sem-up`)
+>   - Red #C9302C = DOWN / decline (`--sem-down`)
+>   - Yellow #DF9C41 = WARN / attention (`--sem-warn`)
+> - **Elevation (v3.10+)**: light-gray page `--page-bg` #F4F4F3 + white section cards with soft warm shadows; in-card elements use thin `--card-border` #ECECEA, no nested shadows
 > - **Application Domain Mapping** (for industry charts):
 >   - Optical 光通訊 → #E4AF79 (warm light)
 >   - Automotive 汽車 → #2677A5 (deep blue)
@@ -585,7 +602,9 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 | Version | Date | Note |
 |---|---|---|
-| **v3.10.0** | 2026-06-11 | **Production** · Muze-inspired elevation system (color unchanged): light-gray page bg `--page-bg` #F4F4F3, top-level containers inverted to white cards with soft warm shadows, `--card-border` #ECECEA, sticky topnav float, Hero elevated. |
+| **v3.11.0** | 2026-06-11 | **Production** · SaaS refinement: (1) Semantic colors flipped to Western convention — green=up `--sem-up`, red=down `--sem-down` (hex unchanged; `--tw-*` removed, swatch+assignment token layers added). (2) Do/Don't unified to green-check/red-cross. (3) Every section becomes a white card on the light-gray page; in-card elements drop resting shadows; sidebar white. |
+| v3.10.1 | 2026-06-11 | Legacy gold cleanup: removed deprecated-gold glows on white cards; copied-state bg → `--gold-soft`; Hero glow updated to current gold value. Zero deprecated colors remain. |
+| v3.10.0 | 2026-06-11 | Muze-inspired elevation system (color unchanged): light-gray page bg `--page-bg` #F4F4F3, top-level containers inverted to white cards with soft warm shadows, `--card-border` #ECECEA, sticky topnav float, Hero elevated. |
 | v3.9.14 | 2026-05-26 | Removed duplicate "YOUR BEST PARTNER!" slogan from WINGO name-origin block (kept once in WINGO intro). |
 | v3.9.13 | 2026-05-26 | Formal Document Standard added — full registered company name required for contracts/invoices/legal docs; brand short name for informal contexts. |
 | v3.9.12 | 2026-05-26 | Spacing indicator bars use mid gray `--text-2` #737373 (auxiliary level), not near-black. |
