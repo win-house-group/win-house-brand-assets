@@ -1,6 +1,6 @@
-# WIN-HOUSE Design System v3.9.14 · Official Specification
+# WIN-HOUSE Design System v3.10.0 · Official Specification
 
-**版本** Version: v3.9.14 (Production)
+**版本** Version: v3.10.0 (Production)
 **狀態** Status: Active · Mandatory
 **最後更新** Last Updated: 2026-05-26
 **規範負責人** Owner: Tim Fan, CEO, WIN-HOUSE Group
@@ -9,11 +9,11 @@
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.9.13 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.9.14 全部廢止)。
 
-**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.9.13 are deprecated).
+**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.9.14 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.9.13 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.9.14 全部废止)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
 
-### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.9.14)
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.10.0)
 
 **[繁中]**
 - 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
@@ -60,14 +60,29 @@
 
 | Token | HEX | Role |
 |---|---|---|
-| `--bg` | `#FFFFFF` | Page background · 頁面背景 |
-| `--surface-1` | `#F5F5F5` | Card background · 卡片底 |
-| `--surface-2` | `#FAFAFA` | Secondary surface · 次層表面 |
+| `--page-bg` | `#F4F4F3` | **Page background (v3.10)** · 頁面底(微暖淺灰) |
+| `--bg` | `#FFFFFF` | Card / content background · 卡片與內容底 |
+| `--surface-1` | `#F5F5F5` | In-card secondary surface · 卡內次層(表頭、標籤底) |
+| `--surface-2` | `#FAFAFA` | In-card tertiary surface · 卡內三層(輸入框底) |
 | `--text-1` | `#1A1A1A` | Primary text · 主文字 |
 | `--text-2` | `#737373` | Secondary text · 次文字 |
 | `--text-3` | `#A3A3A3` | Tertiary text · 輔助文字 |
-| `--border` | `#E5E5E5` | Border · 邊框 |
+| `--border` | `#E5E5E5` | Divider / table border · 分隔線與表格線 |
+| `--card-border` | `#ECECEA` | **Card border (v3.10)** · 卡片柔邊框 |
 | `--hero-bg` | `#0A0A0A` | Hero showcase only · Hero 展示專用 |
+
+### 🪶 Elevation & Surface System · 層次系統 (v3.10)
+
+**[繁中]** v3.10 起,層次手法從「白頁面 + 灰卡片(邊框分層)」反轉為「**淺灰頁面 + 白卡片(柔陰影分層)**」。三層結構:頁面底 `--page-bg` #F4F4F3(微暖淺灰)> 白色卡片 + `--shadow-card` 柔陰影 + `--card-border` 柔邊框 > 卡內淺灰次層(`--surface-1/2`)。陰影使用微暖黑 `rgba(28,25,20,…)` 取代純黑,更柔和自然。**色相完全不變**——黑白灰 80%、金 20%、Data Palette 與語意色均維持 v3.9.6 鎖定值;改變的只有表面處理質感。Hero 黑底保留並加 `--shadow-elevated` 懸浮。
+
+**[English]** From v3.10, the elevation method inverts from "white page + gray cards (border-separated)" to "**light-gray page + white cards (soft-shadow-separated)**". Three layers: page `--page-bg` #F4F4F3 (warm-tinted light gray) > white cards with `--shadow-card` and `--card-border` > in-card light-gray sub-surfaces (`--surface-1/2`). Shadows use warm black `rgba(28,25,20,…)` instead of pure black for a softer feel. **Hue is fully unchanged** — black/white/gray 80%, gold 20%, Data Palette and semantic colors all keep their v3.9.6 locked values; only the surface treatment changes. The black Hero stays, elevated with `--shadow-elevated`.
+
+**[简中]** v3.10 起,层次手法从「白页面 + 灰卡片(边框分层)」反转为「**浅灰页面 + 白卡片(柔阴影分层)**」。三层结构:页面底 `--page-bg` #F4F4F3 > 白色卡片 + 柔阴影 + 柔边框 > 卡内浅灰次层。阴影使用微暖黑 `rgba(28,25,20,…)`。**色相完全不变**——黑白灰 80%、金 20%、Data Palette 与语义色均维持 v3.9.6 锁定值;改变的只有表面处理质感。Hero 黑底保留并加悬浮阴影。
+
+| Shadow Token | Value |
+|---|---|
+| `--shadow-card` | `0 1px 2px rgba(28,25,20,0.03), 0 10px 30px rgba(28,25,20,0.06)` |
+| `--shadow-elevated` | `0 2px 6px rgba(28,25,20,0.05), 0 20px 48px rgba(28,25,20,0.10)` |
 
 ### Data Palette · 數據視覺化專用 · 数据可视化专用
 
@@ -280,13 +295,15 @@ When visualizing the spacing scale (bars, rulers, guides), use **mid gray (`--te
 
 ```css
 .card {
-  background: #FFFFFF;
-  border: 1px solid #E5E5E5;
+  background: #FFFFFF;                       /* white card on light-gray page */
+  border: 1px solid #ECECEA;                 /* --card-border, soft */
   border-radius: 32px;
   padding: 24px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(28,25,20,0.03), 0 10px 30px rgba(28,25,20,0.06);  /* warm soft shadow */
 }
 ```
+
+> Page background is `--page-bg` #F4F4F3 (v3.10). Cards are white and float on soft warm shadows — see "Elevation & Surface System" in Section 01.
 
 ### Stat / Data Card
 
@@ -523,7 +540,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 > I am working with WIN-HOUSE Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.9.14. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.10.0. Fetch the full spec from:
 > https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -568,7 +585,8 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 | Version | Date | Note |
 |---|---|---|
-| **v3.9.14** | 2026-05-26 | **Production** · Removed duplicate "YOUR BEST PARTNER!" slogan from WINGO name-origin block (kept once in WINGO intro). |
+| **v3.10.0** | 2026-06-11 | **Production** · Muze-inspired elevation system (color unchanged): light-gray page bg `--page-bg` #F4F4F3, top-level containers inverted to white cards with soft warm shadows, `--card-border` #ECECEA, sticky topnav float, Hero elevated. |
+| v3.9.14 | 2026-05-26 | Removed duplicate "YOUR BEST PARTNER!" slogan from WINGO name-origin block (kept once in WINGO intro). |
 | v3.9.13 | 2026-05-26 | Formal Document Standard added — full registered company name required for contracts/invoices/legal docs; brand short name for informal contexts. |
 | v3.9.12 | 2026-05-26 | Spacing indicator bars use mid gray `--text-2` #737373 (auxiliary level), not near-black. |
 | v3.9.11 | 2026-05-26 | Spacing indicator bars default to gray, gold reserved as single accent (80/20 ratio). |
