@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.12.0</title>
+<title>Win-House Design System v3.13.4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.12.0 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.13.4 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
-   Last Updated: 2026-05-26
+   Last Updated: 2026-06-11
    ============================================================ */
 
 :root {
@@ -319,7 +319,7 @@ body {
   font-size: 12px; font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #C9941F;
+  color: var(--gold);
   margin-bottom: var(--sp-4);
 }
 .hero-title {
@@ -331,11 +331,11 @@ body {
   text-transform: uppercase;
   margin-bottom: var(--sp-5);
 }
-.hero-title em { font-style: normal; color: #C9941F; }
+.hero-title em { font-style: normal; color: var(--gold); }
 .hero-sub {
   font-size: 18px;
   font-weight: 300;
-  color: #A1A1AA;
+  color: var(--text-3);
   max-width: 540px;
   line-height: 1.6;
 }
@@ -351,7 +351,7 @@ body {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #71717A;
+  color: var(--text-3);
   font-weight: 600;
 }
 .hero-meta-item strong {
@@ -785,14 +785,20 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   text-transform: uppercase;
   padding: 4px var(--sp-3);
   border-radius: var(--r-sm);
-  border: 1px solid var(--border);
-  background: var(--surface-1);
-  color: var(--text-2);
+  border: 1px solid transparent;
+  background: var(--text-1);
+  color: var(--bg);
 }
-.tag-gold { background: var(--gold-soft); color: var(--gold-hover); border-color: transparent; }
-.tag-solid { background: var(--text-1); color: var(--bg); border-color: transparent; }
+.tag-gold { background: var(--data-gold); color: #FFFFFF; }
+.tag-solid { background: var(--text-1); color: var(--bg); }
 .tag-slate { background: var(--surface-1); color: var(--text-2); border: 1px solid var(--border); }
 .tag-red { background: rgba(225,37,27,0.08); color: var(--logo-red); border-color: transparent; }
+/* domain solid tags (v3.13.4) — fill with domain color, white text */
+.tag-net { background: var(--data-blue-light); color: #FFFFFF; }
+.tag-auto { background: var(--data-blue); color: #FFFFFF; }
+.tag-ind { background: var(--data-bronze); color: #FFFFFF; }
+.tag-power { background: var(--data-rust); color: #FFFFFF; }
+.tag-consumer { background: var(--data-gold); color: #FFFFFF; }
 
 /* INPUTS */
 .input-group {
@@ -1390,6 +1396,29 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 }
 
 /* TOKEN TABLE */
+/* CHART GALLERY (v3.13.4) */
+.chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-4); margin-bottom: var(--sp-6); }
+.chart-card { background: var(--bg); border: 1px solid var(--card-border); border-radius: var(--r-lg); padding: var(--sp-5); }
+.chart-card h6 { font-size: 14px; font-weight: 500; color: var(--text-1); margin-bottom: 2px; }
+.chart-card .cg-when { font-size: 12px; color: var(--text-2); margin-bottom: var(--sp-4); }
+.cg-cols { display: flex; align-items: flex-end; gap: 8px; height: 130px; }
+.cg-col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; position: relative; }
+.cg-col i { display: block; border-radius: 4px 4px 0 0; background: var(--data-gold); opacity: 0.45; }
+.cg-col.hot i { opacity: 1; }
+.cg-col .cg-val { position: absolute; top: -2px; width: 100%; text-align: center; font-size: 13px; font-weight: 600; color: var(--gold-hover); }
+.cg-x { display: flex; gap: 8px; margin-top: 6px; }
+.cg-x span { flex: 1; text-align: center; font-size: 12px; color: var(--text-3); }
+.cg-x span.hot { color: var(--text-1); font-weight: 600; }
+.cg-rows { display: flex; flex-direction: column; gap: 10px; }
+.cg-row { display: grid; grid-template-columns: 72px 1fr 84px; gap: 10px; align-items: center; }
+.cg-row .cg-lab { font-size: 13px; color: var(--text-1); }
+.cg-row .cg-track { background: var(--surface-1); border-radius: 9999px; height: 12px; }
+.cg-row .cg-track i { display: block; height: 12px; border-radius: 9999px; }
+.cg-row .cg-num { font-size: 13px; color: var(--text-2); text-align: right; font-variant-numeric: tabular-nums; }
+.cg-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--sp-3); }
+.cg-legend span { font-size: 12px; color: var(--text-2); display: inline-flex; align-items: center; gap: 6px; }
+.cg-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
 /* DATA TABLE (part numbers / quotes / inventory) */
 .data-table-wrap {
   background: var(--bg);
@@ -1512,7 +1541,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
       alt="WIN-HOUSE Group"
       onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
-    <span class="brand-version">DS v3.12.0</span>
+    <span class="brand-version">DS v3.13.4</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1582,6 +1611,11 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       <span data-lang-en>Hero Block</span>
     </a>
     <a href="#dodont">Do / Don't</a>
+    <a href="#dashboard">
+      <span data-lang-zh-hant>儀表板規範</span>
+      <span data-lang-zh-hans>仪表板规范</span>
+      <span data-lang-en>Dashboard</span>
+    </a>
 
     <h4 data-lang-zh-hant>品牌資產</h4>
     <h4 data-lang-zh-hans>品牌资产</h4>
@@ -1612,7 +1646,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.12.0 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.13.4 · WINGO Story Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1620,9 +1654,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.12.0 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.12.0 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.12.0 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.13.4 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.13.4 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.13.4 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1658,7 +1692,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.12.0 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Primary Gold #C9941F, Bipolar Accent (Gold positive vs Slate Blue #4A6B8A negative, never green/red), Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.13.4 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Logo Red #E1251B is LOGO-ONLY (never a UI background); black/white/gray dominant (80%+) with gold #DF9C41 as a 20% accent; use the Data Palette (9 colors) for charts; semantic direction follows Western convention (green=up, red=down, yellow=warn) via --sem-up/down/warn; Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1706,9 +1740,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Color System</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>主色定調為折衷金 #C9941F,在深色背景上識別度佳,淺色背景下亦能維持精品感不刺眼。Logo 紅 #E1251B 為 Logo 專用色,Slate Blue #4A6B8A 作為調和色與負向語意,Clay #B57258 用於警示。</span>
-        <span data-lang-zh-hans>主色定调为折衷金 #C9941F,在深色背景上识别度佳,浅色背景下亦能维持精品感不刺眼。Logo 红 #E1251B 为 Logo 专用色,Slate Blue #4A6B8A 作为调和色与负向语义,Clay #B57258 用于警示。</span>
-        <span data-lang-en>The primary color is a balanced gold #C9941F, offering strong visibility on dark backgrounds while maintaining a premium, restrained quality on light surfaces. Logo Red #E1251B is reserved exclusively for the logo. Slate Blue #4A6B8A serves as the accent and negative semantic color. Clay #B57258 is used for warnings.</span>
+        <span data-lang-zh-hant>配色以黑白灰為主視覺(80%+),金 #DF9C41 作為點綴(20%)。Logo 紅 #E1251B 為 Logo 專用色,絕不作 UI 背景。圖表使用 Data Palette 9 色;語意採西方慣例——綠漲、紅跌、黃警示,元件一律引用指派層 --sem-up/down/warn。</span>
+        <span data-lang-zh-hans>配色以黑白灰为主视觉(80%+),金 #DF9C41 作为点缀(20%)。Logo 红 #E1251B 为 Logo 专用色,绝不作 UI 背景。图表使用 Data Palette 9 色;语义采西方惯例——绿涨、红跌、黄警示,组件一律引用指派层 --sem-up/down/warn。</span>
+        <span data-lang-en>Black/white/gray dominate the visual (80%+), with gold #DF9C41 as a 20% accent. Logo Red #E1251B is logo-only, never a UI background. Charts use the 9-color Data Palette; semantics follow the Western convention — green up, red down, yellow warn — with components referencing the assignment layer --sem-up/down/warn.</span>
       </p>
 
       <div class="subhead">
@@ -1717,9 +1751,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Core Brand · Single Anchor</span>
       </div>
       <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:680px;">
-        <span data-lang-zh-hant>v3.12.0 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
-        <span data-lang-zh-hans>v3.12.0 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
-        <span data-lang-en>From v3.12.0, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
+        <span data-lang-zh-hant>v3.13.4 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
+        <span data-lang-zh-hans>v3.13.4 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
+        <span data-lang-en>From v3.13.4, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#E1251B"></div><div class="swatch-name">Logo Red</div><div class="swatch-hex">#E1251B</div><div class="swatch-role">LOGO ONLY</div></div>
@@ -1751,7 +1785,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#0A0A0A"></div><div class="swatch-name">Hero BG</div><div class="swatch-hex">#0A0A0A</div><div class="swatch-role">HERO ONLY</div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#171717"></div><div class="swatch-name">Hero Surface</div><div class="swatch-hex">#171717</div><div class="swatch-role">HERO ONLY</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#0A0A0A"></div><div class="swatch-name">Hero Surface</div><div class="swatch-hex">#0A0A0A</div><div class="swatch-role">HERO ONLY</div></div>
       </div>
 
       <div class="subhead">
@@ -2154,12 +2188,12 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span class="tag tag-red">Logo Use Only</span>
       </div>
       <div class="tag-row">
-        <span class="tag">ADAS</span>
-        <span class="tag">AI POWER 48V</span>
-        <span class="tag">800G OPTICAL</span>
-        <span class="tag">ROBOTICS</span>
-        <span class="tag">AR GLASSES</span>
-        <span class="tag">LEO SATELLITE</span>
+        <span class="tag tag-auto">ADAS</span>
+        <span class="tag tag-power">AI POWER 48V</span>
+        <span class="tag tag-net">800G OPTICAL</span>
+        <span class="tag tag-ind">ROBOTICS</span>
+        <span class="tag tag-consumer">AR GLASSES</span>
+        <span class="tag tag-slate">LEO SATELLITE</span>
       </div>
     </section>
 
@@ -2511,9 +2545,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
               <span data-lang-en>Hero and external showcase areas may use dark backgrounds as focal points</span>
             </li>
             <li>
-              <span data-lang-zh-hant>Gold #C9941F 作為強調色,出現比例控制在 5-10%</span>
-              <span data-lang-zh-hans>Gold #C9941F 作为强调色,出现比例控制在 5-10%</span>
-              <span data-lang-en>Use Gold #C9941F as accent color, kept at 5–10% of total surface</span>
+              <span data-lang-zh-hant>Gold #DF9C41 作為強調色,出現比例控制在 20% 以內</span>
+              <span data-lang-zh-hans>Gold #DF9C41 作为强调色,出现比例控制在 20% 以内</span>
+              <span data-lang-en>Use Gold #DF9C41 as accent color, kept within 20% of total surface</span>
             </li>
             <li>
               <span data-lang-zh-hant>Antonio 僅用於標題與強調(Hero、Section Title、Logo);一般數字與英文用 Noto Sans</span>
@@ -2550,9 +2584,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
               <span data-lang-en>Never use Logo Red #E1251B as background fill or semantic color</span>
             </li>
             <li>
-              <span data-lang-zh-hant>不混用 Havn 原版的飽和金 #EAB308</span>
-              <span data-lang-zh-hans>不混用 Havn 原版的饱和金 #EAB308</span>
-              <span data-lang-en>Do not mix in saturated gold #EAB308 from Havn original</span>
+              <span data-lang-zh-hant>不使用刺眼的飽和金(如 #EAB308);金色一律用 Data Palette 的 #DF9C41</span>
+              <span data-lang-zh-hans>不使用刺眼的饱和金(如 #EAB308);金色一律用 Data Palette 的 #DF9C41</span>
+              <span data-lang-en>Avoid harsh saturated golds (e.g. #EAB308); always use the Data Palette gold #DF9C41</span>
             </li>
             <li>
               <span data-lang-zh-hant>不使用紫色漸層、藍紫科技風(AI slop 視覺)</span>
@@ -2589,9 +2623,257 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       </div>
     </section>
 
+
+    <!-- DASHBOARD PATTERNS -->
+    <section id="dashboard" class="section">
+      <div class="section-eyebrow">09 · Patterns</div>
+      <h2 class="section-title">Dashboard Patterns</h2>
+      <div class="section-subtitle">
+        <span data-lang-zh-hant>儀表板設計規範 · 決策工具,不是圖表集合</span>
+        <span data-lang-zh-hans>仪表板设计规范 · 决策工具,不是图表集合</span>
+        <span data-lang-en>Dashboard rules · A decision tool, not a chart collection</span>
+      </div>
+      <p class="section-intro">
+        <span data-lang-zh-hant>整合三方準則:Stephen Few 五原則(FineReport)、五層閱讀架構與 KPI 紀律(104)、情境選圖與多狀態設計(Dashboard Design 六篇)。核心精神與 PPDACA 一致:<strong>始於終點 — 先定義要回答的問題,再決定指標與圖表</strong>。</span>
+        <span data-lang-zh-hans>整合三方准则:Stephen Few 五原则(FineReport)、五层阅读架构与 KPI 纪律(104)、情境选图与多状态设计(Dashboard Design 六篇)。核心精神与 PPDACA 一致:<strong>始于终点 — 先定义要回答的问题,再决定指标与图表</strong>。</span>
+        <span data-lang-en>Integrates three sources: Stephen Few's five principles (FineReport), the five-layer reading structure and KPI discipline (104), and context-driven chart selection with multi-state design (Dashboard Design six articles). Same spirit as PPDACA: <strong>begin with the end — define the questions first, then derive metrics and charts</strong>.</span>
+      </p>
+
+      <div class="subhead">
+        <span data-lang-zh-hant>開工三問 · 動工前必答</span>
+        <span data-lang-zh-hans>开工三问 · 动工前必答</span>
+        <span data-lang-en>Three Questions Before You Start</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sp-4);margin-bottom:var(--sp-6);">
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-4) var(--sp-5);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--gold-hover);margin-bottom:var(--sp-2);">Q1</div>
+          <div style="font-size:14px;font-weight:500;">
+            <span data-lang-zh-hant>給誰看?</span>
+            <span data-lang-zh-hans>给谁看?</span>
+            <span data-lang-en>Who is it for?</span>
+          </div>
+          <p style="font-size:13px;color:var(--text-2);margin-top:var(--sp-2);">
+            <span data-lang-zh-hant>CEO / 業務主管 / PM——不同對象需要的指標完全不同。</span>
+            <span data-lang-zh-hans>CEO / 业务主管 / PM——不同对象需要的指标完全不同。</span>
+            <span data-lang-en>CEO / sales lead / PM — different audiences need different metrics.</span>
+          </p>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-4) var(--sp-5);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--gold-hover);margin-bottom:var(--sp-2);">Q2</div>
+          <div style="font-size:14px;font-weight:500;">
+            <span data-lang-zh-hant>要回答哪 3–5 個問題?</span>
+            <span data-lang-zh-hans>要回答哪 3–5 个问题?</span>
+            <span data-lang-en>Which 3–5 questions does it answer?</span>
+          </div>
+          <p style="font-size:13px;color:var(--text-2);margin-top:var(--sp-2);">
+            <span data-lang-zh-hant>例:本月達標了嗎?哪個領域/客戶貢獻最多?哪裡缺貨?</span>
+            <span data-lang-zh-hans>例:本月达标了吗?哪个领域/客户贡献最多?哪里缺货?</span>
+            <span data-lang-en>e.g. On target this month? Which domain/customer contributes most? What is out of stock?</span>
+          </p>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-4) var(--sp-5);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--gold-hover);margin-bottom:var(--sp-2);">Q3</div>
+          <div style="font-size:14px;font-weight:500;">
+            <span data-lang-zh-hant>看完要採取什麼行動?</span>
+            <span data-lang-zh-hans>看完要采取什么行动?</span>
+            <span data-lang-en>What action follows?</span>
+          </div>
+          <p style="font-size:13px;color:var(--text-2);margin-top:var(--sp-2);">
+            <span data-lang-zh-hant>看完不知道下一步的 Dashboard,等於沒做。</span>
+            <span data-lang-zh-hans>看完不知道下一步的 Dashboard,等于没做。</span>
+            <span data-lang-en>A dashboard that suggests no next step is wasted.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="subhead">
+        <span data-lang-zh-hant>三類型 × 三版型對照</span>
+        <span data-lang-zh-hans>三类型 × 三版型对照</span>
+        <span data-lang-en>Three Types × Three Layouts</span>
+      </div>
+      <div class="data-table-wrap" style="margin-bottom:var(--sp-6);">
+        <table class="data-table">
+          <thead><tr>
+            <th><span data-lang-zh-hant>類型</span><span data-lang-zh-hans>类型</span><span data-lang-en>Type</span></th>
+            <th><span data-lang-zh-hant>版型</span><span data-lang-zh-hans>版型</span><span data-lang-en>Layout</span></th>
+            <th><span data-lang-zh-hant>對象與場景</span><span data-lang-zh-hans>对象与场景</span><span data-lang-en>Audience</span></th>
+            <th><span data-lang-zh-hant>核心結構</span><span data-lang-zh-hans>核心结构</span><span data-lang-en>Structure</span></th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="pn"><span data-lang-zh-hant>戰略型</span><span data-lang-zh-hans>战略型</span><span data-lang-en>Strategic</span></td>
+              <td>A · KPI Overview</td>
+              <td><span data-lang-zh-hant>CEO 月會 / 董事會</span><span data-lang-zh-hans>CEO 月会 / 董事会</span><span data-lang-en>CEO monthly / board</span></td>
+              <td><span data-lang-zh-hant>Stat 卡 + 趨勢 + 占比,高度概括</span><span data-lang-zh-hans>Stat 卡 + 趋势 + 占比,高度概括</span><span data-lang-en>Stat cards + trend + share, highly summarized</span></td>
+            </tr>
+            <tr>
+              <td class="pn"><span data-lang-zh-hant>分析型</span><span data-lang-zh-hans>分析型</span><span data-lang-en>Analytical</span></td>
+              <td>B · Domain Analysis</td>
+              <td><span data-lang-zh-hant>策略會 / 領域檢討</span><span data-lang-zh-hans>策略会 / 领域检讨</span><span data-lang-en>Strategy review</span></td>
+              <td><span data-lang-zh-hant>排行 + 維度切換 + 下鑽找原因</span><span data-lang-zh-hans>排行 + 维度切换 + 下钻找原因</span><span data-lang-en>Ranking + dimensions + drill-down</span></td>
+            </tr>
+            <tr>
+              <td class="pn"><span data-lang-zh-hant>營運型</span><span data-lang-zh-hans>运营型</span><span data-lang-en>Operational</span></td>
+              <td>C · Operations</td>
+              <td><span data-lang-zh-hant>業務 / PM 日常監控</span><span data-lang-zh-hans>业务 / PM 日常监控</span><span data-lang-en>Daily ops monitoring</span></td>
+              <td><span data-lang-zh-hant>警示統計 + Data Table,即時預警</span><span data-lang-zh-hans>警示统计 + Data Table,即时预警</span><span data-lang-en>Alert stats + data table, real-time warning</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subhead">
+        <span data-lang-zh-hant>五層閱讀架構 · 先結果 → 再原因 → 後行動</span>
+        <span data-lang-zh-hans>五层阅读架构 · 先结果 → 再原因 → 后行动</span>
+        <span data-lang-en>Five-Layer Reading Structure</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--sp-3);margin-bottom:var(--sp-6);">
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-5);display:grid;grid-template-columns:28px 1fr auto;gap:var(--sp-4);align-items:center;">
+          <span style="font-size:18px;font-weight:500;color:var(--gold-hover);">1</span>
+          <div style="font-size:13px;"><strong><span data-lang-zh-hant>核心指標卡</span><span data-lang-zh-hans>核心指标卡</span><span data-lang-en>Stat cards</span></strong> · <span style="color:var(--text-2);"><span data-lang-zh-hant>≤4 張,▲▼ 語意膠囊</span><span data-lang-zh-hans>≤4 张,▲▼ 语义胶囊</span><span data-lang-en>≤4 cards, ▲▼ semantic pills</span></span></div>
+          <span style="font-size:12px;color:var(--text-3);"><span data-lang-zh-hant>本期如何?</span><span data-lang-zh-hans>本期如何?</span><span data-lang-en>How are we?</span></span>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-5);display:grid;grid-template-columns:28px 1fr auto;gap:var(--sp-4);align-items:center;">
+          <span style="font-size:18px;font-weight:500;color:var(--gold-hover);">2</span>
+          <div style="font-size:13px;"><strong><span data-lang-zh-hant>趨勢變化</span><span data-lang-zh-hans>趋势变化</span><span data-lang-en>Trends</span></strong> · <span style="color:var(--text-2);"><span data-lang-zh-hant>折線/長條,單色 + 單一強調</span><span data-lang-zh-hans>折线/长条,单色 + 单一强调</span><span data-lang-en>line/bar, one color + one emphasis</span></span></div>
+          <span style="font-size:12px;color:var(--text-3);"><span data-lang-zh-hant>在變好嗎?</span><span data-lang-zh-hans>在变好吗?</span><span data-lang-en>Improving?</span></span>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-5);display:grid;grid-template-columns:28px 1fr auto;gap:var(--sp-4);align-items:center;">
+          <span style="font-size:18px;font-weight:500;color:var(--gold-hover);">3</span>
+          <div style="font-size:13px;"><strong><span data-lang-zh-hant>排行與結構</span><span data-lang-zh-hans>排行与结构</span><span data-lang-en>Ranking</span></strong> · <span style="color:var(--text-2);"><span data-lang-zh-hant>橫條圖,領域配色 = 一頁唯一多色區</span><span data-lang-zh-hans>横条图,领域配色 = 一页唯一多色区</span><span data-lang-en>h-bars; domain colors = the only multicolor zone</span></span></div>
+          <span style="font-size:12px;color:var(--text-3);"><span data-lang-zh-hant>誰大誰小?</span><span data-lang-zh-hans>谁大谁小?</span><span data-lang-en>Who leads?</span></span>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-5);display:grid;grid-template-columns:28px 1fr auto;gap:var(--sp-4);align-items:center;">
+          <span style="font-size:18px;font-weight:500;color:var(--gold-hover);">4</span>
+          <div style="font-size:13px;"><strong><span data-lang-zh-hant>明細與漏斗</span><span data-lang-zh-hans>明细与漏斗</span><span data-lang-en>Detail & funnel</span></strong> · <span style="color:var(--text-2);"><span data-lang-zh-hant>Data Table;詢價→報價→成交</span><span data-lang-zh-hans>Data Table;询价→报价→成交</span><span data-lang-en>data table; RFQ→quote→PO funnel</span></span></div>
+          <span style="font-size:12px;color:var(--text-3);"><span data-lang-zh-hant>為什麼?</span><span data-lang-zh-hans>为什么?</span><span data-lang-en>Why?</span></span>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--card-border);border-left:4px solid var(--data-gold);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-5);display:grid;grid-template-columns:28px 1fr auto;gap:var(--sp-4);align-items:center;">
+          <span style="font-size:18px;font-weight:500;color:var(--gold-hover);">5</span>
+          <div style="font-size:13px;"><strong><span data-lang-zh-hant>洞察與行動</span><span data-lang-zh-hans>洞察与行动</span><span data-lang-en>Insight & action</span></strong> · <span style="color:var(--text-2);"><span data-lang-zh-hant>主要發現 / 可能原因 / 建議行動(可由 AI 產出)</span><span data-lang-zh-hans>主要发现 / 可能原因 / 建议行动(可由 AI 产出)</span><span data-lang-en>findings / causes / actions (AI-generated)</span></span></div>
+          <span style="font-size:12px;color:var(--text-3);"><span data-lang-zh-hant>怎麼辦?</span><span data-lang-zh-hans>怎么办?</span><span data-lang-en>What next?</span></span>
+        </div>
+      </div>
+
+      <div class="subhead">
+        <span data-lang-zh-hant>圖表範例 · Chart Gallery</span>
+        <span data-lang-zh-hans>图表范例 · Chart Gallery</span>
+        <span data-lang-en>Chart Gallery</span>
+      </div>
+      <div class="chart-grid">
+
+        <div class="chart-card">
+          <h6><span data-lang-zh-hant>直條圖 · 趨勢</span><span data-lang-zh-hans>直条图 · 趋势</span><span data-lang-en>Column · Trend</span></h6>
+          <div class="cg-when"><span data-lang-zh-hant>「在變好嗎?」單色 45% 淡化,當前期滿色+數值</span><span data-lang-zh-hans>「在变好吗?」单色 45% 淡化,当前期满色+数值</span><span data-lang-en>"Improving?" — one hue at 45%, current period full + value</span></div>
+          <div class="cg-cols">
+            <div class="cg-col"><i style="height:52%;"></i></div>
+            <div class="cg-col"><i style="height:60%;"></i></div>
+            <div class="cg-col"><i style="height:68%;"></i></div>
+            <div class="cg-col"><i style="height:74%;"></i></div>
+            <div class="cg-col"><i style="height:64%;"></i></div>
+            <div class="cg-col hot"><span class="cg-val">0.82億</span><i style="height:88%;"></i></div>
+          </div>
+          <div class="cg-x"><span>1月</span><span>2月</span><span>3月</span><span>4月</span><span>5月</span><span class="hot">6月</span></div>
+        </div>
+
+        <div class="chart-card">
+          <h6><span data-lang-zh-hant>橫條圖 · 排行</span><span data-lang-zh-hans>横条图 · 排行</span><span data-lang-en>Horizontal Bar · Ranking</span></h6>
+          <div class="cg-when"><span data-lang-zh-hant>「誰大誰小?」單色族深淺分層,大者最深</span><span data-lang-zh-hans>「谁大谁小?」单色族深浅分层,大者最深</span><span data-lang-en>"Who leads?" — one color family, darker = larger</span></div>
+          <div class="cg-rows">
+            <div class="cg-row"><span class="cg-lab"><span data-lang-zh-hant>網通</span><span data-lang-zh-hans>网通</span><span data-lang-en>Networking</span></span><div class="cg-track"><i style="background:var(--data-rust);width:95%;"></i></div><span class="cg-num">1.60億</span></div>
+            <div class="cg-row"><span class="cg-lab"><span data-lang-zh-hant>工業</span><span data-lang-zh-hans>工业</span><span data-lang-en>Industrial</span></span><div class="cg-track"><i style="background:var(--data-bronze);width:60%;"></i></div><span class="cg-num">1.01億</span></div>
+            <div class="cg-row"><span class="cg-lab"><span data-lang-zh-hant>汽車</span><span data-lang-zh-hans>汽车</span><span data-lang-en>Automotive</span></span><div class="cg-track"><i style="background:var(--data-gold);width:45%;"></i></div><span class="cg-num">0.76億</span></div>
+            <div class="cg-row"><span class="cg-lab"><span data-lang-zh-hant>消費</span><span data-lang-zh-hans>消费</span><span data-lang-en>Consumer</span></span><div class="cg-track"><i style="background:var(--data-gold-light);width:30%;"></i></div><span class="cg-num">0.50億</span></div>
+            <div class="cg-row"><span class="cg-lab"><span data-lang-zh-hant>其他</span><span data-lang-zh-hans>其他</span><span data-lang-en>Others</span></span><div class="cg-track"><i style="background:var(--data-charcoal);width:21%;"></i></div><span class="cg-num">0.35億</span></div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h6><span data-lang-zh-hant>折線圖 · 連續趨勢</span><span data-lang-zh-hans>折线图 · 连续趋势</span><span data-lang-en>Line · Continuous Trend</span></h6>
+          <div class="cg-when"><span data-lang-zh-hant>長期走勢(12 期以上優先用折線);端點強調+數值</span><span data-lang-zh-hans>长期走势(12 期以上优先用折线);端点强调+数值</span><span data-lang-en>Long series (12+ periods); endpoint emphasized + value</span></div>
+          <svg viewBox="0 0 300 120" style="width:100%;height:auto;display:block;">
+            <line x1="0" y1="110" x2="300" y2="110" stroke="#E5E5E5" stroke-width="1"/>
+            <polyline points="10,85 60,72 110,78 160,55 210,48 260,28" fill="none" stroke="#DF9C41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="260" cy="28" r="4.5" fill="#AF7231"/>
+            <text x="260" y="14" text-anchor="middle" font-size="13" font-weight="600" fill="#AF7231">+18%</text>
+          </svg>
+          <div class="cg-x"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q5</span><span class="hot">Q6</span></div>
+        </div>
+
+        <div class="chart-card">
+          <h6><span data-lang-zh-hant>圓環圖 · 占比</span><span data-lang-zh-hans>圆环图 · 占比</span><span data-lang-en>Donut · Share</span></h6>
+          <div class="cg-when"><span data-lang-zh-hant>「結構如何?」高對比不相鄰選色,其餘併入「其他」炭黑;中心放總量</span><span data-lang-zh-hans>「结构如何?」高对比不相邻选色,其余并入「其他」炭黑;中心放总量</span><span data-lang-en>"What mix?" — high-contrast non-adjacent colors, rest into charcoal "Others"; total in center</span></div>
+          <div style="display:flex;align-items:center;gap:var(--sp-5);">
+            <svg viewBox="0 0 120 120" style="width:128px;height:128px;flex-shrink:0;">
+              <g transform="rotate(-90 60 60)">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#2677A5" stroke-width="16" stroke-dasharray="107.4 175.3" stroke-dashoffset="0"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#DF9C41" stroke-width="16" stroke-dasharray="67.9 214.8" stroke-dashoffset="-107.4"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#90A74A" stroke-width="16" stroke-dasharray="50.9 231.8" stroke-dashoffset="-175.3"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#2D2A28" stroke-width="16" stroke-dasharray="56.5 226.2" stroke-dashoffset="-226.2"/>
+              </g>
+              <text x="60" y="57" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A1A">4.2億</text>
+              <text x="60" y="74" text-anchor="middle" font-size="10" fill="#A3A3A3">2026 H1</text>
+            </svg>
+            <div class="cg-legend" style="flex-direction:column;align-items:flex-start;gap:8px;margin-top:0;">
+              <span><i style="background:var(--data-blue);"></i><span data-lang-zh-hant>網通 38%</span><span data-lang-zh-hans>网通 38%</span><span data-lang-en>Networking 38%</span></span>
+              <span><i style="background:var(--data-gold);"></i><span data-lang-zh-hant>工業 24%</span><span data-lang-zh-hans>工业 24%</span><span data-lang-en>Industrial 24%</span></span>
+              <span><i style="background:var(--data-olive);"></i><span data-lang-zh-hant>汽車 18%</span><span data-lang-zh-hans>汽车 18%</span><span data-lang-en>Automotive 18%</span></span>
+              <span><i style="background:var(--data-charcoal);"></i><span data-lang-zh-hant>其他 20%</span><span data-lang-zh-hans>其他 20%</span><span data-lang-en>Others 20%</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h6><span data-lang-zh-hant>雙組直條 · 對比</span><span data-lang-zh-hans>双组直条 · 对比</span><span data-lang-en>Grouped Column · Compare</span></h6>
+          <div class="cg-when"><span data-lang-zh-hant>「兩群差多少?」過去=炭黑、當前=金</span><span data-lang-zh-hans>「两群差多少?」过去=炭黑、当前=金</span><span data-lang-en>"Gap between groups?" — past charcoal, current gold</span></div>
+          <div class="cg-cols" style="height:110px;">
+            <div class="cg-col" style="flex-direction:row;align-items:flex-end;gap:3px;"><i style="flex:1;height:55%;background:var(--data-charcoal);opacity:0.25;"></i><i style="flex:1;height:66%;background:var(--data-gold);opacity:1;"></i></div>
+            <div class="cg-col" style="flex-direction:row;align-items:flex-end;gap:3px;"><i style="flex:1;height:60%;background:var(--data-charcoal);opacity:0.25;"></i><i style="flex:1;height:72%;background:var(--data-gold);opacity:1;"></i></div>
+            <div class="cg-col" style="flex-direction:row;align-items:flex-end;gap:3px;"><i style="flex:1;height:58%;background:var(--data-charcoal);opacity:0.25;"></i><i style="flex:1;height:64%;background:var(--data-gold);opacity:1;"></i></div>
+            <div class="cg-col" style="flex-direction:row;align-items:flex-end;gap:3px;"><i style="flex:1;height:68%;background:var(--data-charcoal);opacity:0.25;"></i><i style="flex:1;height:90%;background:var(--data-gold);opacity:1;"></i></div>
+          </div>
+          <div class="cg-x"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+          <div class="cg-legend">
+            <span><i style="background:var(--data-charcoal);opacity:0.25;"></i>2025</span>
+            <span><i style="background:var(--data-gold);"></i>2026</span>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="subhead">
+        <span data-lang-zh-hant>KPI 與視覺紀律</span>
+        <span data-lang-zh-hans>KPI 与视觉纪律</span>
+        <span data-lang-en>KPI & Visual Discipline</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-4);">
+        <div class="dodont do">
+          <h5><span data-lang-zh-hant>✓ 必須遵守</span><span data-lang-zh-hans>✓ 必须遵守</span><span data-lang-en>✓ Required</span></h5>
+          <ul>
+            <li><span data-lang-zh-hant>單頁核心 KPI 5–8 個上限(Stephen Few:單畫面 5–10)</span><span data-lang-zh-hans>单页核心 KPI 5–8 个上限</span><span data-lang-en>5–8 core KPIs per page max</span></li>
+            <li><span data-lang-zh-hant>每個 KPI 必有:定義+計算方式(轉換率=成交÷報價,寫清楚)</span><span data-lang-zh-hans>每个 KPI 必有:定义+计算方式</span><span data-lang-en>Every KPI: definition + formula</span></li>
+            <li><span data-lang-zh-hant>單一圖表單一色;一頁僅一個多色區(領域身分)</span><span data-lang-zh-hans>单一图表单一色;一页仅一个多色区</span><span data-lang-en>One color per chart; one multicolor zone per page</span></li>
+            <li><span data-lang-zh-hant>▲▼ 語意膠囊 ≥13px / 600;主數字 ≥28px、標籤 ≥12px、表格 ≥13px</span><span data-lang-zh-hans>▲▼ 语义胶囊 ≥13px / 600;主数字 ≥28px、标签 ≥12px、表格 ≥13px</span><span data-lang-en>▲▼ pills ≥13px/600; numerals ≥28px, labels ≥12px, tables ≥13px</span></li>
+            <li><span data-lang-zh-hant>右上角標注更新頻率(日/週/月)</span><span data-lang-zh-hans>右上角标注更新频率(日/周/月)</span><span data-lang-en>Show refresh cadence top-right</span></li>
+            <li><span data-lang-zh-hant>空狀態/載入用 WINGO(內部工具=親切場景)</span><span data-lang-zh-hans>空状态/载入用 WINGO</span><span data-lang-en>Empty/loading states use WINGO</span></li>
+          </ul>
+        </div>
+        <div class="dodont dont">
+          <h5><span data-lang-zh-hant>✗ 禁止</span><span data-lang-zh-hans>✗ 禁止</span><span data-lang-en>✗ Forbidden</span></h5>
+          <ul>
+            <li><span data-lang-zh-hant>把 Dashboard 當圖表集合——先問要回答什麼問題</span><span data-lang-zh-hans>把 Dashboard 当图表集合</span><span data-lang-en>Treating it as a chart collection</span></li>
+            <li><span data-lang-zh-hant>指標太多無主次;只有圖沒有結論</span><span data-lang-zh-hans>指标太多无主次;只有图没有结论</span><span data-lang-en>Too many metrics; charts without conclusions</span></li>
+            <li><span data-lang-zh-hant>過度裝飾:3D、動畫、漸層光暈(Stephen Few)</span><span data-lang-zh-hans>过度装饰:3D、动画、渐层光晕</span><span data-lang-en>Over-decoration: 3D, animation, glow gradients</span></li>
+            <li><span data-lang-zh-hant>單頁超過 5 種顏色(主色+強調+語意之外不再加色)</span><span data-lang-zh-hans>单页超过 5 种颜色</span><span data-lang-en>More than 5 colors per page</span></li>
+            <li><span data-lang-zh-hant>縮小字級塞更多內容——寧減內容,不縮字</span><span data-lang-zh-hans>缩小字级塞更多内容</span><span data-lang-en>Shrinking type to fit more — cut content instead</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- LOGO -->
     <section id="logo" class="section">
-      <div class="section-eyebrow">09 · Brand Assets</div>
+      <div class="section-eyebrow">10 · Brand Assets</div>
       <h2 class="section-title">Logo</h2>
       <div class="section-subtitle">
         <span data-lang-zh-hant>集團識別 · WIN-HOUSE Group</span>
@@ -2774,7 +3056,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     <section id="wingo" class="section">
       <div class="wingo-header">
         <div class="wingo-header-text">
-          <div class="section-eyebrow">10 · Brand Assets</div>
+          <div class="section-eyebrow">11 · Brand Assets</div>
           <h2 class="section-title">WINGO</h2>
           <div class="section-subtitle">
             <span data-lang-zh-hant>品牌吉祥物 · AI 業務導航員</span>
@@ -2947,7 +3229,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- TOKEN TABLE -->
     <section id="tokens" class="section">
-      <div class="section-eyebrow">11 · Reference</div>
+      <div class="section-eyebrow">12 · Reference</div>
       <h2 class="section-title">Tokens</h2>
       <div class="section-subtitle">
         <span data-lang-zh-hant>CSS 變數對照表</span>
@@ -3043,7 +3325,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.12.0 · 2026-05-26</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.13.4 · 2026-06-11</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 
@@ -3101,11 +3383,11 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         placeholder.className = 'wingo-placeholder';
         placeholder.innerHTML = `
           <svg viewBox="0 0 120 120" width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="58" fill="#C9941F" opacity="0.1"/>
+            <circle cx="60" cy="60" r="58" fill="#DF9C41" opacity="0.1"/>
             <path d="M60 35 L75 55 L65 55 L65 80 C65 84 62 87 60 87 C58 87 55 84 55 80 L55 55 L45 55 Z" fill="#1A1A1A"/>
             <circle cx="55" cy="48" r="2" fill="#FFFFFF"/>
             <circle cx="65" cy="48" r="2" fill="#FFFFFF"/>
-            <path d="M58 56 L62 56" stroke="#C9941F" stroke-width="2" stroke-linecap="round"/>
+            <path d="M58 56 L62 56" stroke="#DF9C41" stroke-width="2" stroke-linecap="round"/>
             <text x="60" y="105" text-anchor="middle" font-family="Antonio,sans-serif" font-size="11" font-weight="600" fill="#737373" letter-spacing="0.1em">WINGO</text>
           </svg>
         `;

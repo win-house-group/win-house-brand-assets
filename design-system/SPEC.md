@@ -1,19 +1,19 @@
-# WIN-HOUSE Design System v3.12.0 · Official Specification
+# WIN-HOUSE Design System v3.13.4 · Official Specification
 
-**版本** Version: v3.12.0 (Production)
+**版本** Version: v3.13.4 (Production)
 **狀態** Status: Active · Mandatory
-**最後更新** Last Updated: 2026-05-26
+**最後更新** Last Updated: 2026-06-11
 **規範負責人** Owner: Tim Fan, CEO, WIN-HOUSE Group
 
 ---
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.11.1 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.13.3 全部廢止)。
 
-**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.11.1 are deprecated).
+**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.13.3 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.11.1 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.13.3 全部废止)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
 
-### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.12.0)
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.13.4)
 
 **[繁中]**
 - 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
@@ -321,7 +321,7 @@ Apple-style easing, unified across all interactive elements:
 
 **Note**: Gold button uses **white text** (not black). Gold uses Data Palette's `#DF9C41` since v3.9.6.
 
-### Data Table · 資料表格 (v3.12.0)
+### Data Table · 資料表格 (v3.13.4)
 
 The core component for passive-components business: part-number lists, quotations, inventory, BOM.
 
@@ -334,6 +334,48 @@ The core component for passive-components business: part-number lists, quotation
 - Wrapper `.data-table-wrap`: white bg + `--card-border`, radius 12px, `overflow-x: auto`, **no resting shadow** (in-card rule)
 - Density: standard 44px row; compact 36px (`.data-table-compact`) for dense inventory/BOM views · 標準/緊湊兩種密度
 - First column (part no.) may be frozen for long tables · 長表格首欄可凍結
+
+### Dashboard Patterns · 儀表板規範 (v3.13)
+
+**A dashboard is a decision tool, not a chart collection.** Sources: Stephen Few's principles (via FineReport), the five-layer structure & KPI discipline (104), context-driven chart selection (Dashboard Design six articles). Same spirit as PPDACA: begin with the end.
+
+**Three questions before you start · 開工三問**:
+1. Who is it for? · 給誰看?(CEO / sales lead / PM)
+2. Which 3–5 questions does it answer? · 要回答哪 3–5 個問題?
+3. What action follows? · 看完要採取什麼行動?
+
+**Three types × three layouts · 三類型對照**:
+
+| Type | Layout | Audience | Structure |
+|---|---|---|---|
+| Strategic 戰略 | A · KPI Overview | CEO monthly / board | Stat cards + trend + share, summarized |
+| Analytical 分析 | B · Domain Analysis | Strategy review | Ranking + dimensions + drill-down |
+| Operational 營運 | C · Operations | Daily ops / PM | Alert stats + Data Table, real-time |
+
+**Five-layer reading structure · 五層閱讀架構** (top → bottom):
+1. **Stat cards** (≤4, ▲▼ semantic pills) — "How are we?"
+2. **Trends** (line/bar, single color + one emphasis) — "Improving?"
+3. **Ranking** (h-bars; domain colors = the only multicolor zone per page) — "Who leads?"
+4. **Detail & funnel** (Data Table; RFQ→quote→PO) — "Why?"
+5. **Insight & action** (findings / causes / actions, AI-generatable) — "What next?"
+
+**KPI & visual discipline · KPI 與視覺紀律**:
+- 5–8 core KPIs per page max; every KPI ships with definition + formula (e.g. conversion = PO ÷ quotes)
+- One color per chart; trend charts use a single hue at 45% opacity with the current/peak bar at full
+- ▲▼ pills ≥13px weight 600; numerals ≥28px, labels ≥12px, tables ≥13px — cut content, never shrink type
+- Max 5 colors per page (Stephen Few); no 3D, no animation, no glow gradients
+- Show refresh cadence top-right (daily/weekly/monthly)
+- Empty/loading states use WINGO (internal tool = warm context)
+
+**Chart Gallery · 圖表範例 (v3.13.4)** — six reference charts in pure HTML/CSS/SVG, copy-ready:
+
+| Chart | Question | Color rule |
+|---|---|---|
+| Column 直條 | Improving? 趨勢 | One hue 45%, current full + value label |
+| H-Bar 橫條 | Who leads? 排行 | One color family by depth (darker = larger), "Others" charcoal |
+| Line 折線 | Long trend (12+ periods) | One hue, endpoint dot + value |
+| Donut 圓環 | What mix? 占比 | High-contrast non-adjacent colors (blue/gold/olive), "Others" charcoal, total centered |
+| Grouped 雙組 | Gap between groups? | Past charcoal (25%) vs current gold |
 
 ### Card
 
@@ -360,6 +402,8 @@ The core component for passive-components business: part-number lists, quotation
 
 ### Tag
 
+Tags use **solid fill** (v3.13.4) for a crisp, high-contrast look — dark or domain-colored background with white text.
+
 ```css
 .tag {
   font-family: 'Inter', sans-serif;
@@ -369,8 +413,20 @@ The core component for passive-components business: part-number lists, quotation
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: 4px;
+  border: 1px solid transparent;
+  background: #1A1A1A;   /* solid dark by default */
+  color: #FFFFFF;
 }
 ```
+
+**Variants · 變體**:
+- `.tag-gold` → solid gold #DF9C41, white text
+- `.tag-solid` → solid dark (same as default)
+- `.tag-slate` → light gray + border (the one quiet/neutral variant)
+- `.tag-net / -auto / -ind / -power / -consumer` → solid domain color (see domain mapping), white text
+- `.tag-red` → **light red bg + red text only** (Logo Red #E1251B must never be a solid UI background — rule preserved)
+
+> **Status pills are different**: in Data Table, `.table-tag.ok/.low/.out` keep their **light-tint background with deep-color text** (not solid). They appear densely inside tables, where solid fills would be visually noisy. Solid fill is for standalone classification/domain tags; light-tint is for in-table status. · 資料表狀態膠囊維持淡底深字,不套實心。
 
 ---
 
@@ -585,7 +641,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 > I am working with WIN-HOUSE Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.12.0. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.13.4. Fetch the full spec from:
 > https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -600,6 +656,11 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 >   - Red #C9302C = DOWN / decline (`--sem-down`)
 >   - Yellow #DF9C41 = WARN / attention (`--sem-warn`)
 > - **For any HTML/web output, link the official tokens stylesheet first**: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/winhouse-tokens.css
+> - **Dashboard prompts (v3.13)** — four ready templates for colleagues:
+>   1. *Plan*: "I need a dashboard for 【audience】 to answer 【3–5 questions】. Propose KPIs (name/definition/formula/chart/what-to-watch) and a five-layer layout."
+>   2. *From data*: "My columns are 【…】. What analysis blocks and charts does this support? What's missing?"
+>   3. *Summary*: "Here is this period's data 【…】. Write a management summary: findings / causes / recommended actions."
+>   4. *Health check*: "Here is my dashboard structure 【…】. Check: metric count, chart fit, reading order, decision support."
 > - **Elevation (v3.10+)**: light-gray page `--page-bg` #F4F4F3 + white section cards with soft warm shadows; in-card elements use thin `--card-border` #ECECEA, no nested shadows
 > - **Application Domain Mapping** (for industry charts):
 >   - Optical 光通訊 → #E4AF79 (warm light)
@@ -632,7 +693,12 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 | Version | Date | Note |
 |---|---|---|
-| **v3.12.0** | 2026-06-11 | **Production** · Apple-style UX pass: section descriptions collapse into ? popovers (tap/click, mobile-friendly); sections merged 15→12 (Spacing&Radius, Buttons&Tags, Cards&Stats) with renumbering 01–11; motion tokens `--ease/--dur` unified across 14 transitions; button press feedback scale(0.97); smooth scroll. |
+| **v3.13.4** | 2026-06-11 | **Production** · Chart Gallery color revisions: H-bar ranking → single-color-family by depth; donut → high-contrast non-adjacent (blue/gold/olive/charcoal); grouped column → past-charcoal vs current-gold; funnel chart removed; five-layer insight row unified to gold (was rust). |
+| v3.13.3 | 2026-06-11 | Full-document color audit: purged pre-v3.9.6 legacy colors (old gold #C9941F, Slate Blue #4A6B8A, Clay #B57258, Tailwind grays), AI-ref copy rewritten to current rules, stale dates corrected. |
+| v3.13.2 | 2026-06-11 | Tags switched to solid fill (crisp, high-contrast, template-inspired): default solid dark, `.tag-gold` solid gold, new domain-color solid variants, all white text. Data Table status pills keep light-tint+deep-text (dense-context exception). `.tag-red` stays light-tint (Logo Red never a solid UI bg). |
+| v3.13.1 | 2026-06-11 | Chart Gallery added to Dashboard Patterns: six copy-ready reference charts (column, h-bar, line, donut, grouped, funnel) in pure HTML/CSS/SVG, each labeled with its question and color rule. |
+| v3.13.0 | 2026-06-11 | Dashboard Patterns section added: three questions, three types × layouts, five-layer structure, KPI & visual discipline. Sources: Stephen Few/FineReport + 104 + Dashboard Design six articles. Four AI prompt templates. |
+| v3.12.0 | 2026-06-11 | Apple-style UX pass: section descriptions collapse into ? popovers (tap/click, mobile-friendly); sections merged 15→12 (Spacing&Radius, Buttons&Tags, Cards&Stats) with renumbering 01–11; motion tokens `--ease/--dur` unified across 14 transitions; button press feedback scale(0.97); smooth scroll. |
 | v3.11.1 | 2026-06-11 | Data Table component added (part-no/quote/inventory). Design tokens extracted to standalone `winhouse-tokens.css` for CDN linking. |
 | v3.11.0 | 2026-06-11 | SaaS refinement: (1) Semantic colors flipped to Western convention — green=up `--sem-up`, red=down `--sem-down` (hex unchanged; `--tw-*` removed, swatch+assignment token layers added). (2) Do/Don't unified to green-check/red-cross. (3) Every section becomes a white card on the light-gray page; in-card elements drop resting shadows; sidebar white. |
 | v3.10.1 | 2026-06-11 | Legacy gold cleanup: removed deprecated-gold glows on white cards; copied-state bg → `--gold-soft`; Hero glow updated to current gold value. Zero deprecated colors remain. |
