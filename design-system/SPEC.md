@@ -1,6 +1,6 @@
-# WIN-HOUSE Design System v3.13.4 · Official Specification
+# WIN-HOUSE Design System v3.13.5 · Official Specification
 
-**版本** Version: v3.13.4 (Production)
+**版本** Version: v3.13.5 (Production)
 **狀態** Status: Active · Mandatory
 **最後更新** Last Updated: 2026-06-11
 **規範負責人** Owner: Tim Fan, CEO, WIN-HOUSE Group
@@ -9,11 +9,11 @@
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.13.3 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.13.4 全部廢止)。
 
-**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.13.3 are deprecated).
+**[English]** This specification is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.13.4 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.13.3 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.13.4 全部废止)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
 
-### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.13.4)
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.13.5)
 
 **[繁中]**
 - 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
@@ -321,7 +321,7 @@ Apple-style easing, unified across all interactive elements:
 
 **Note**: Gold button uses **white text** (not black). Gold uses Data Palette's `#DF9C41` since v3.9.6.
 
-### Data Table · 資料表格 (v3.13.4)
+### Data Table · 資料表格 (v3.13.5)
 
 The core component for passive-components business: part-number lists, quotations, inventory, BOM.
 
@@ -367,7 +367,7 @@ The core component for passive-components business: part-number lists, quotation
 - Show refresh cadence top-right (daily/weekly/monthly)
 - Empty/loading states use WINGO (internal tool = warm context)
 
-**Chart Gallery · 圖表範例 (v3.13.4)** — six reference charts in pure HTML/CSS/SVG, copy-ready:
+**Chart Gallery · 圖表範例 (v3.13.5)** — six reference charts in pure HTML/CSS/SVG, copy-ready:
 
 | Chart | Question | Color rule |
 |---|---|---|
@@ -402,7 +402,7 @@ The core component for passive-components business: part-number lists, quotation
 
 ### Tag
 
-Tags use **solid fill** (v3.13.4) for a crisp, high-contrast look — dark or domain-colored background with white text.
+Tags use **solid fill** (v3.13.5) for a crisp, high-contrast look — dark or domain-colored background with white text.
 
 ```css
 .tag {
@@ -489,6 +489,15 @@ WIN-HOUSE Group provides two logo variants. Choose by context while maintaining 
 |---|---|
 | Contracts, invoices, legal docs · 合約、發票、法律文件 | Full registered company name · 完整公司抬頭(法定全名) |
 | Marketing, web, presentations · 行銷、網站、簡報 | Brand short name · 品牌簡稱(WIN-HOUSE Group / 文浩集團) |
+
+**Registered legal entities · 法定登記全名**:
+
+| Location · 地區 | 中文全名 | English Legal Name |
+|---|---|---|
+| Taiwan 台灣 | 文浩實業有限公司 | Win-House Co., Ltd. |
+| Hong Kong 香港 | 文浩國際(香港)有限公司 | Win-House International (Hong Kong) Ltd. |
+| Vietnam 越南 | 文浩國際(越南)有限公司 | Win-House International (Vietnam) Ltd. |
+| Shenzhen 深圳 | 深圳市宇宙光電子有限公司 | Shenzhen Universe Light Electronic Co., Ltd. |
 
 ---
 
@@ -641,7 +650,7 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 > I am working with WIN-HOUSE Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.13.4. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.13.5. Fetch the full spec from:
 > https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -693,7 +702,8 @@ All Win-House design resources are hosted on GitHub + jsDelivr CDN + GitHub Page
 
 | Version | Date | Note |
 |---|---|---|
-| **v3.13.4** | 2026-06-11 | **Production** · Chart Gallery color revisions: H-bar ranking → single-color-family by depth; donut → high-contrast non-adjacent (blue/gold/olive/charcoal); grouped column → past-charcoal vs current-gold; funnel chart removed; five-layer insight row unified to gold (was rust). |
+| **v3.13.5** | 2026-06-11 | **Production** · Added four registered legal-entity names (Taiwan/HK/Vietnam/Shenzhen) to Formal Document Standard. Purged all EPCOS references from Data Table & typography demos (replaced with TDK part numbers) per permanent exclusion rule. |
+| v3.13.4 | 2026-06-11 | Chart Gallery color revisions: H-bar single-color-family by depth; donut high-contrast non-adjacent (blue/gold/olive/charcoal); grouped column past-charcoal vs current-gold; funnel removed; five-layer insight row unified to gold. |
 | v3.13.3 | 2026-06-11 | Full-document color audit: purged pre-v3.9.6 legacy colors (old gold #C9941F, Slate Blue #4A6B8A, Clay #B57258, Tailwind grays), AI-ref copy rewritten to current rules, stale dates corrected. |
 | v3.13.2 | 2026-06-11 | Tags switched to solid fill (crisp, high-contrast, template-inspired): default solid dark, `.tag-gold` solid gold, new domain-color solid variants, all white text. Data Table status pills keep light-tint+deep-text (dense-context exception). `.tag-red` stays light-tint (Logo Red never a solid UI bg). |
 | v3.13.1 | 2026-06-11 | Chart Gallery added to Dashboard Patterns: six copy-ready reference charts (column, h-bar, line, donut, grouped, funnel) in pure HTML/CSS/SVG, each labeled with its question and color rule. |

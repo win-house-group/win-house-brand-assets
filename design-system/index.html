@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.13.4</title>
+<title>Win-House Design System v3.13.5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.13.4 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.13.5 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
    Last Updated: 2026-06-11
    ============================================================ */
@@ -793,7 +793,7 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
 .tag-solid { background: var(--text-1); color: var(--bg); }
 .tag-slate { background: var(--surface-1); color: var(--text-2); border: 1px solid var(--border); }
 .tag-red { background: rgba(225,37,27,0.08); color: var(--logo-red); border-color: transparent; }
-/* domain solid tags (v3.13.4) — fill with domain color, white text */
+/* domain solid tags (v3.13.5) — fill with domain color, white text */
 .tag-net { background: var(--data-blue-light); color: #FFFFFF; }
 .tag-auto { background: var(--data-blue); color: #FFFFFF; }
 .tag-ind { background: var(--data-bronze); color: #FFFFFF; }
@@ -1162,6 +1162,10 @@ html[data-lang="en"] .logo-rule-label { font-family: var(--font-ui); }
 }
 
 /* Logo Formal Document Note */
+.legal-entities { margin-top: var(--sp-4); border-top: 1px solid var(--card-border); padding-top: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-2); }
+.legal-entity-row { display: grid; grid-template-columns: 80px 1fr; gap: var(--sp-3); align-items: baseline; }
+.legal-loc { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-hover); }
+.legal-name { font-size: 13px; color: var(--text-1); font-weight: 500; }
 .logo-formal-note {
   display: flex;
   gap: var(--sp-4);
@@ -1396,7 +1400,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 }
 
 /* TOKEN TABLE */
-/* CHART GALLERY (v3.13.4) */
+/* CHART GALLERY (v3.13.5) */
 .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-4); margin-bottom: var(--sp-6); }
 .chart-card { background: var(--bg); border: 1px solid var(--card-border); border-radius: var(--r-lg); padding: var(--sp-5); }
 .chart-card h6 { font-size: 14px; font-weight: 500; color: var(--text-1); margin-bottom: 2px; }
@@ -1541,7 +1545,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
       src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
       alt="WIN-HOUSE Group"
       onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
-    <span class="brand-version">DS v3.13.4</span>
+    <span class="brand-version">DS v3.13.5</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1646,7 +1650,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.13.4 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.13.5 · WINGO Story Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1654,9 +1658,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.13.4 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.13.4 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.13.4 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.13.5 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.13.5 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.13.5 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1692,7 +1696,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.13.4 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Logo Red #E1251B is LOGO-ONLY (never a UI background); black/white/gray dominant (80%+) with gold #DF9C41 as a 20% accent; use the Data Palette (9 colors) for charts; semantic direction follows Western convention (green=up, red=down, yellow=warn) via --sem-up/down/warn; Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.13.5 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Logo Red #E1251B is LOGO-ONLY (never a UI background); black/white/gray dominant (80%+) with gold #DF9C41 as a 20% accent; use the Data Palette (9 colors) for charts; semantic direction follows Western convention (green=up, red=down, yellow=warn) via --sem-up/down/warn; Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1751,9 +1755,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Core Brand · Single Anchor</span>
       </div>
       <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:680px;">
-        <span data-lang-zh-hant>v3.13.4 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
-        <span data-lang-zh-hans>v3.13.4 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
-        <span data-lang-en>From v3.13.4, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
+        <span data-lang-zh-hant>v3.13.5 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
+        <span data-lang-zh-hans>v3.13.5 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
+        <span data-lang-en>From v3.13.5, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#E1251B"></div><div class="swatch-name">Logo Red</div><div class="swatch-hex">#E1251B</div><div class="swatch-role">LOGO ONLY</div></div>
@@ -2087,7 +2091,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
           <span data-lang-zh-hans>料号 · 规格 · 数据</span>
           <span data-lang-en>P/N · Spec · Data</span>
         </div>
-        <div class="type-mono">C1608X7R1H104K / B72500T0250K062 / 2026-Q2</div>
+        <div class="type-mono">C1608X7R1H104K / MLF2012A1R0KTD25 / 2026-Q2</div>
       </div>
       <div class="type-row">
         <div class="type-meta"><strong>Label · Inter</strong>600 · 11px · 0.1em</div>
@@ -2475,8 +2479,8 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
               </span></td>
             </tr>
             <tr>
-              <td class="pn">B82422T1105K000</td>
-              <td>EPCOS</td>
+              <td class="pn">MLF2012A1R0KTD25</td>
+              <td>TDK</td>
               <td>Inductor 1.0µH 0805 ±10%</td>
               <td class="num">0</td>
               <td class="num">0.0310</td>
@@ -3048,6 +3052,24 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
             <span data-lang-zh-hans>用于<strong>合约、报价单、发票、法律文件、正式公文</strong>等正式场合时,除 Logo 外,必须使用<strong>完整公司抬头(法定登记全名)</strong>,而非简称或品牌名,才符合正规与法律效力。日常营销、演示、网站等非正式场景可使用品牌简称「WIN-HOUSE Group / 文浩集团」。</span>
             <span data-lang-en>For <strong>contracts, quotations, invoices, legal documents, and official correspondence</strong>, the <strong>full registered company name (legal entity title)</strong> must be used alongside the logo — not the abbreviation or brand name — to ensure formality and legal validity. The brand short name "WIN-HOUSE Group" may be used for marketing, presentations, websites, and other informal contexts.</span>
           </p>
+          <div class="legal-entities">
+            <div class="legal-entity-row">
+              <span class="legal-loc"><span data-lang-zh-hant>台灣</span><span data-lang-zh-hans>台湾</span><span data-lang-en>Taiwan</span></span>
+              <span class="legal-name"><span data-lang-zh-hant>文浩實業有限公司</span><span data-lang-zh-hans>文浩实业有限公司</span><span data-lang-en>Win-House Co., Ltd.</span></span>
+            </div>
+            <div class="legal-entity-row">
+              <span class="legal-loc"><span data-lang-zh-hant>香港</span><span data-lang-zh-hans>香港</span><span data-lang-en>Hong Kong</span></span>
+              <span class="legal-name"><span data-lang-zh-hant>文浩國際(香港)有限公司</span><span data-lang-zh-hans>文浩国际(香港)有限公司</span><span data-lang-en>Win-House International (Hong Kong) Ltd.</span></span>
+            </div>
+            <div class="legal-entity-row">
+              <span class="legal-loc"><span data-lang-zh-hant>越南</span><span data-lang-zh-hans>越南</span><span data-lang-en>Vietnam</span></span>
+              <span class="legal-name"><span data-lang-zh-hant>文浩國際(越南)有限公司</span><span data-lang-zh-hans>文浩国际(越南)有限公司</span><span data-lang-en>Win-House International (Vietnam) Ltd.</span></span>
+            </div>
+            <div class="legal-entity-row">
+              <span class="legal-loc"><span data-lang-zh-hant>深圳</span><span data-lang-zh-hans>深圳</span><span data-lang-en>Shenzhen</span></span>
+              <span class="legal-name"><span data-lang-zh-hant>深圳市宇宙光電子有限公司</span><span data-lang-zh-hans>深圳市宇宙光电子有限公司</span><span data-lang-en>Shenzhen Universe Light Electronic Co., Ltd.</span></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -3325,7 +3347,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.13.4 · 2026-06-11</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.13.5 · 2026-06-11</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 
