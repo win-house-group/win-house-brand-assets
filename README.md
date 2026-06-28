@@ -1,4 +1,4 @@
-# WIN-HOUSE Brand Assets
+# Win-House Brand Assets
 
 文浩集團對外公開品牌資產儲存庫。本 Repo 透過 **GitHub Pages** 服務,可供 AI 工具、簡報、文件、網站直接引用。
 
