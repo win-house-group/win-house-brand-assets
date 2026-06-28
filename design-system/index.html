@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win-House Design System v3.13.5</title>
+<title>Win-House Design System v3.14.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WIN-HOUSE DESIGN SYSTEM v3.13.5 (Tri-lingual, WINGO storytelling)
+   WIN-HOUSE DESIGN SYSTEM v3.14.0 (Tri-lingual, WINGO storytelling)
    繁中 · 简中 · English
-   Last Updated: 2026-06-11
+   Last Updated: 2026-06-28
    ============================================================ */
 
 :root {
@@ -77,8 +77,8 @@
   --font-ui: 'Inter', sans-serif;
 
   /* Spacing */
-  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
-  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 88px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 13px; --sp-4: 17px;
+  --sp-5: 25px; --sp-6: 34px; --sp-7: 50px; --sp-8: 67px; --sp-9: 92px;
 
   /* Radius */
   --r-sm: 4px; --r-md: 8px; --r-lg: 16px; --r-xl: 28px; --r-2xl: 32px; --r-pill: 9999px;
@@ -768,7 +768,7 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   font-size: 11px; font-weight: 600;
   margin-top: var(--sp-3);
   display: inline-block;
-  padding: 4px var(--sp-3);
+  padding: 4px 12px;
   border-radius: var(--r-sm);
   letter-spacing: 0.02em;
 }
@@ -783,7 +783,7 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
   font-size: 11px; font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 4px var(--sp-3);
+  padding: 4px 12px;
   border-radius: var(--r-sm);
   border: 1px solid transparent;
   background: var(--text-1);
@@ -793,7 +793,7 @@ html[data-lang="en"] .domain-name { font-family: var(--font-ui); }
 .tag-solid { background: var(--text-1); color: var(--bg); }
 .tag-slate { background: var(--surface-1); color: var(--text-2); border: 1px solid var(--border); }
 .tag-red { background: rgba(225,37,27,0.08); color: var(--logo-red); border-color: transparent; }
-/* domain solid tags (v3.13.5) — fill with domain color, white text */
+/* domain solid tags (v3.14.0) — fill with domain color, white text */
 .tag-net { background: var(--data-blue-light); color: #FFFFFF; }
 .tag-auto { background: var(--data-blue); color: #FFFFFF; }
 .tag-ind { background: var(--data-bronze); color: #FFFFFF; }
@@ -1032,6 +1032,11 @@ html[data-lang="en"] .wingo-rule-label { font-family: var(--font-ui); }
   background-size: 16px 16px;
   background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
   background-color: #FAFAFA;
+  border-bottom: 1px solid var(--border);
+}
+.logo-preview-dark {
+  background-image: none;
+  background-color: #0A0A0A;
   border-bottom: 1px solid var(--border);
 }
 .logo-preview img {
@@ -1400,7 +1405,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 }
 
 /* TOKEN TABLE */
-/* CHART GALLERY (v3.13.5) */
+/* CHART GALLERY (v3.14.0) */
 .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-4); margin-bottom: var(--sp-6); }
 .chart-card { background: var(--bg); border: 1px solid var(--card-border); border-radius: var(--r-lg); padding: var(--sp-5); }
 .chart-card h6 { font-size: 14px; font-weight: 500; color: var(--text-1); margin-bottom: 2px; }
@@ -1542,10 +1547,10 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
   <div class="topnav-brand">
     <img
       class="brand-logo"
-      src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
+      src="https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-bk.png"
       alt="WIN-HOUSE Group"
-      onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
-    <span class="brand-version">DS v3.13.5</span>
+      onerror="this.onerror=null;this.src='https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-bk.png';" />
+    <span class="brand-version">DS v3.14.0</span>
   </div>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang-btn="zh-Hant" class="active">繁中</button>
@@ -1650,7 +1655,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
 
     <!-- OVERVIEW -->
     <section id="overview" class="section">
-      <div class="section-eyebrow">v3.13.5 · WINGO Story Edition</div>
+      <div class="section-eyebrow">v3.14.0 · White-Logo + Comfort-Spacing Edition</div>
       <h1 class="section-title">Design System</h1>
       <div class="section-subtitle">
         <span data-lang-zh-hant>Win-House 集團視覺語言 — 統一強制準則</span>
@@ -1658,9 +1663,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>WIN-HOUSE Group Visual Language — Mandatory Unified Standard</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>v3.13.5 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
-        <span data-lang-zh-hans>v3.13.5 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
-        <span data-lang-en>v3.13.5 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
+        <span data-lang-zh-hant>v3.14.0 為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。本文件為強制規範,取代過往所有版本。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,必須先讀取本規範並嚴格遵循。</span>
+        <span data-lang-zh-hans>v3.14.0 为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。本文件为强制规范,取代过往所有版本。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,必须先读取本规范并严格遵循。</span>
+        <span data-lang-en>v3.14.0 is the unified visual standard for WIN-HOUSE Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multilingual pages. This is a mandatory specification superseding all previous versions. Any AI, designer, or third-party partner producing visual materials for WIN-HOUSE must read this specification first and follow it strictly.</span>
       </p>
 
       <!-- AI REF -->
@@ -1678,25 +1683,25 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
           </div>
         </div>
         <div class="ai-ref-grid">
-          <div class="ai-ref-row" data-copy="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md">
+          <div class="ai-ref-row" data-copy="https://win-house-group.github.io/winhouse-brand-assets/design-system/SPEC.md">
             <div>
               <div class="ai-ref-label">SPEC.md (Markdown)</div>
-              <div class="ai-ref-url">cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md</div>
+              <div class="ai-ref-url">win-house-group.github.io/winhouse-brand-assets/design-system/SPEC.md</div>
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="https://timfan119.github.io/winhouse-brand-assets/design-system/">
+          <div class="ai-ref-row" data-copy="https://win-house-group.github.io/winhouse-brand-assets/design-system/">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>互動規範頁(本頁)</span>
                 <span data-lang-zh-hans>互动规范页(本页)</span>
                 <span data-lang-en>Interactive Spec Page (this page)</span>
               </div>
-              <div class="ai-ref-url">timfan119.github.io/winhouse-brand-assets/design-system/</div>
+              <div class="ai-ref-url">win-house-group.github.io/winhouse-brand-assets/design-system/</div>
             </div>
             <div class="ai-ref-copy">COPY</div>
           </div>
-          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.13.5 from: https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/design-system/SPEC.md and follow it strictly. Key rules: Logo Red #E1251B is LOGO-ONLY (never a UI background); black/white/gray dominant (80%+) with gold #DF9C41 as a 20% accent; use the Data Palette (9 colors) for charts; semantic direction follows Western convention (green=up, red=down, yellow=warn) via --sem-up/down/warn; Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
+          <div class="ai-ref-row" data-copy="I am working with WIN-HOUSE Group. Before producing any visual or frontend output, fetch our Design System v3.14.0 from: https://win-house-group.github.io/winhouse-brand-assets/design-system/SPEC.md and follow it strictly. Key rules: Logo Red #E1251B is LOGO-ONLY (never a UI background); black/white/gray dominant (80%+) with gold #DF9C41 as a 20% accent; use the Data Palette (9 colors) for charts; semantic direction follows Western convention (green=up, red=down, yellow=warn) via --sem-up/down/warn; Antonio for English headings, Noto Sans TC/SC for Chinese, Inter for UI. Now produce:">
             <div>
               <div class="ai-ref-label">
                 <span data-lang-zh-hant>AI Prompt 範本</span>
@@ -1755,9 +1760,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Core Brand · Single Anchor</span>
       </div>
       <p style="font-size:13px;color:var(--text-2);margin-bottom:var(--sp-4);max-width:680px;">
-        <span data-lang-zh-hant>v3.13.5 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
-        <span data-lang-zh-hans>v3.13.5 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
-        <span data-lang-en>From v3.13.5, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
+        <span data-lang-zh-hant>v3.14.0 起,Win-House 品牌色精簡為「<strong>Logo Red 單一識別色</strong>」+「<strong>Data Palette 9 色擴展</strong>」雙系統。原 Gold / Slate Blue / Clay / Sage 品牌色全部廢止,改由 Data Palette 對應取代。黑白灰仍為主視覺(佔比 80%+),Logo Red 為品牌識別點,Data Palette 用於圖表、強調、語意色。</span>
+        <span data-lang-zh-hans>v3.14.0 起,Win-House 品牌色精简为「<strong>Logo Red 单一识别色</strong>」+「<strong>Data Palette 9 色扩展</strong>」双系统。原 Gold / Slate Blue / Clay / Sage 品牌色全部废止,改由 Data Palette 对应取代。黑白灰仍为主视觉(占比 80%+),Logo Red 为品牌识别点,Data Palette 用于图表、强调、语义色。</span>
+        <span data-lang-en>From v3.14.0, Win-House brand colors are simplified to <strong>"Logo Red as single anchor"</strong> + <strong>"Data Palette 9-color extension"</strong>. Previous Gold / Slate Blue / Clay / Sage brand colors are deprecated and replaced by corresponding Data Palette colors. Black/white/gray remain dominant (80%+); Logo Red marks brand identity; Data Palette serves charts, accents, and semantic colors.</span>
       </p>
       <div class="swatch-grid">
         <div class="swatch"><div class="swatch-color" style="background:#E1251B"></div><div class="swatch-name">Logo Red</div><div class="swatch-hex">#E1251B</div><div class="swatch-role">LOGO ONLY</div></div>
@@ -2109,20 +2114,20 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <span data-lang-en>Spacing & Radius System</span>
       </div>
       <p class="section-intro">
-        <span data-lang-zh-hant>採 4px 為基底節奏,所有間距為 4 的倍數。Section 級採 64-88px;Card 級採 24-32px;元件內距採 8-16px。標示軸線以<strong>深灰為主</strong>,僅最大值(sp-9)以金色點綴,呼應「黑灰 80% / 金 20%」配色比例。</span>
-        <span data-lang-zh-hans>采 4px 为基底节奏,所有间距为 4 的倍数。Section 级采 64-88px;Card 级采 24-32px;组件内距采 8-16px。标示轴线以<strong>深灰为主</strong>,仅最大值(sp-9)以金色点缀,呼应「黑灰 80% / 金 20%」配色比例。</span>
-        <span data-lang-en>Base 4px rhythm; all spacing is a multiple of 4. Sections use 64–88px; cards use 24–32px; component padding uses 8–16px. Indicator bars are <strong>primarily dark gray</strong>, with only the largest (sp-9) accented in gold — echoing the "80% black-gray / 20% gold" color ratio.</span>
+        <span data-lang-zh-hant>以 4px 為基底節奏,v3.14.0 起整體留白上調約 5% 提升呼吸感。Section 級約 50-92px;Card 級約 25-34px;元件內距約 8-17px。標籤(.tag)內距維持原值 4px / 12px 不受影響。標示軸線以<strong>深灰為主</strong>,僅最大值(sp-9)以金色點綴,呼應「黑灰 80% / 金 20%」配色比例。</span>
+        <span data-lang-zh-hans>以 4px 为基底节奏,v3.14.0 起整体留白上调约 5% 提升呼吸感。Section 级约 50-92px;Card 级约 25-34px;组件内距约 8-17px。标签(.tag)内距维持原值 4px / 12px 不受影响。标示轴线以<strong>深灰为主</strong>,仅最大值(sp-9)以金色点缀,呼应「黑灰 80% / 金 20%」配色比例。</span>
+        <span data-lang-en>Built on a 4px base rhythm; from v3.14.0 overall whitespace is scaled up ~5% for added breathing room. Sections ~50-92px; cards ~25-34px; component padding ~8-17px. Tag (.tag) padding is held at its original 4px / 12px and unaffected. Indicator bars are <strong>primarily dark gray</strong>, with only the largest (sp-9) accented in gold — echoing the "80% black-gray / 20% gold" color ratio.</span>
       </p>
       <div class="spacing-demo">
         <div class="spacing-bar"><div class="bar" style="width:4px;height:60px;"></div><div class="label">4 · sp-1</div></div>
         <div class="spacing-bar"><div class="bar" style="width:8px;height:60px;"></div><div class="label">8 · sp-2</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:12px;height:60px;"></div><div class="label">12 · sp-3</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:16px;height:60px;"></div><div class="label">16 · sp-4</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:24px;height:60px;"></div><div class="label">24 · sp-5</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:32px;height:60px;"></div><div class="label">32 · sp-6</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:48px;height:60px;"></div><div class="label">48 · sp-7</div></div>
-        <div class="spacing-bar"><div class="bar" style="width:64px;height:60px;"></div><div class="label">64 · sp-8</div></div>
-        <div class="spacing-bar"><div class="bar bar-gold" style="width:88px;height:60px;"></div><div class="label">88 · sp-9</div></div>
+        <div class="spacing-bar"><div class="bar" style="width:13px;height:60px;"></div><div class="label">13 · sp-3</div></div>
+        <div class="spacing-bar"><div class="bar" style="width:17px;height:60px;"></div><div class="label">17 · sp-4</div></div>
+        <div class="spacing-bar"><div class="bar" style="width:25px;height:60px;"></div><div class="label">25 · sp-5</div></div>
+        <div class="spacing-bar"><div class="bar" style="width:34px;height:60px;"></div><div class="label">34 · sp-6</div></div>
+        <div class="spacing-bar"><div class="bar" style="width:50px;height:60px;"></div><div class="label">50 · sp-7</div></div>
+        <div class="spacing-bar"><div class="bar" style="width:67px;height:60px;"></div><div class="label">67 · sp-8</div></div>
+        <div class="spacing-bar"><div class="bar bar-gold" style="width:92px;height:60px;"></div><div class="label">92 · sp-9</div></div>
       </div>
       <div class="subhead" style="margin-top:var(--sp-7);">
         <span data-lang-zh-hant>圓角 · Radius</span>
@@ -2895,9 +2900,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <div class="logo-card">
           <div class="logo-preview logo-preview-light">
             <img
-              src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1"
+              src="https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-bk.png"
               alt="WIN-HOUSE Group Logo with text"
-              onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/Win-House-Group-bk.png';" />
+              onerror="this.onerror=null;this.src='https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-bk.png';" />
           </div>
           <div class="logo-info">
             <div class="logo-tag">VARIANT 01</div>
@@ -2930,8 +2935,8 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
                 </li>
               </ul>
             </div>
-            <div class="logo-url" data-copy="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/Win-House-Group-bk.png?v=1">
-              <span class="logo-url-text">cdn.jsdelivr.net/.../Win-House-Group-bk.png</span>
+            <div class="logo-url" data-copy="https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-bk.png">
+              <span class="logo-url-text">win-house-group.github.io/.../Win-House-Group-bk.png</span>
               <span class="logo-url-copy">COPY URL</span>
             </div>
           </div>
@@ -2941,9 +2946,9 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <div class="logo-card">
           <div class="logo-preview logo-preview-light">
             <img
-              src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/winhouse%20logo%20red.png?v=1"
+              src="https://win-house-group.github.io/winhouse-brand-assets/winhouse-logo-red.png"
               alt="WIN-HOUSE Logo Mark"
-              onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/winhouse%20logo%20red.png';" />
+              onerror="this.onerror=null;this.src='https://win-house-group.github.io/winhouse-brand-assets/winhouse-logo-red.png';" />
           </div>
           <div class="logo-info">
             <div class="logo-tag">VARIANT 02</div>
@@ -2976,8 +2981,54 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
                 </li>
               </ul>
             </div>
-            <div class="logo-url" data-copy="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/winhouse%20logo%20red.png?v=1">
-              <span class="logo-url-text">cdn.jsdelivr.net/.../winhouse-logo-red.png</span>
+            <div class="logo-url" data-copy="https://win-house-group.github.io/winhouse-brand-assets/winhouse-logo-red.png">
+              <span class="logo-url-text">win-house-group.github.io/.../winhouse-logo-red.png</span>
+              <span class="logo-url-copy">COPY URL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variant 3: 反白版 Logo + 文字（深色底專用） -->
+        <div class="logo-card">
+          <div class="logo-preview logo-preview-dark">
+            <img
+              src="https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-wt.png"
+              alt="WIN-HOUSE Group Logo white (for dark backgrounds)"
+              onerror="this.onerror=null;this.src='https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-wt.png';" />
+          </div>
+          <div class="logo-info">
+            <div class="logo-tag">VARIANT 03</div>
+            <div class="logo-name">
+              <span data-lang-zh-hant>反白商標 · 深色底專用</span>
+              <span data-lang-zh-hans>反白商标 · 深色底专用</span>
+              <span data-lang-en>White Wordmark · For Dark Backgrounds</span>
+            </div>
+            <div class="logo-usage">
+              <div class="logo-usage-label">
+                <span data-lang-zh-hant>建議場景</span>
+                <span data-lang-zh-hans>建议场景</span>
+                <span data-lang-en>Recommended Use</span>
+              </div>
+              <ul class="logo-usage-list">
+                <li>
+                  <span data-lang-zh-hant>深色 Hero、深底 Banner、活動主視覺</span>
+                  <span data-lang-zh-hans>深色 Hero、深底 Banner、活动主视觉</span>
+                  <span data-lang-en>Dark Hero, dark banners, event key visuals</span>
+                </li>
+                <li>
+                  <span data-lang-zh-hant>深色簡報封面、影片片頭/片尾</span>
+                  <span data-lang-zh-hans>深色演示封面、视频片头/片尾</span>
+                  <span data-lang-en>Dark presentation covers, video intro/outro</span>
+                </li>
+                <li>
+                  <span data-lang-zh-hant>深色社群貼文、深色頁尾</span>
+                  <span data-lang-zh-hans>深色社群贴文、深色页尾</span>
+                  <span data-lang-en>Dark social posts, dark footers</span>
+                </li>
+              </ul>
+            </div>
+            <div class="logo-url" data-copy="https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-wt.png">
+              <span class="logo-url-text">win-house-group.github.io/.../Win-House-Group-wt.png</span>
               <span class="logo-url-copy">COPY URL</span>
             </div>
           </div>
@@ -3094,10 +3145,10 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
         <div class="wingo-header-image">
           <img
             id="wingo-img"
-            src="https://cdn.jsdelivr.net/gh/timfan119/winhouse-brand-assets@main/wingo/wingo-hi.png?v=2"
+            src="https://win-house-group.github.io/winhouse-brand-assets/wingo/wingo-hi.png"
             alt="WINGO"
-            data-fallback-1="https://raw.githubusercontent.com/timfan119/winhouse-brand-assets/main/wingo/wingo-hi.png"
-            data-fallback-2="https://cdn.statically.io/gh/timfan119/winhouse-brand-assets/main/wingo/wingo-hi.png" />
+            data-fallback-1="https://win-house-group.github.io/winhouse-brand-assets/wingo/wingo-hi.png"
+            data-fallback-2="https://win-house-group.github.io/winhouse-brand-assets/wingo/wingo-hi.png" />
         </div>
       </div>
 
@@ -3347,7 +3398,7 @@ html[data-lang="en"] .wingo-origin-label { font-family: var(--font-ui); }
     </section>
 
     <div class="foot">
-      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.13.5 · 2026-06-11</div>
+      <div>WIN-HOUSE GROUP · DESIGN SYSTEM v3.14.0 · 2026-06-28</div>
       <div>TRI-LINGUAL · 繁中 · 简中 · EN</div>
     </div>
 
