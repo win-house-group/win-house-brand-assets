@@ -520,7 +520,7 @@ Win-House Group provides three logo variants. Choose by context while maintainin
 
 ### Variant 02 · Standalone Mark · 純識別標誌(Logo Only)
 
-**URL**: `https://win-house-group.github.io/win-house-brand-assets/winhouse-logo-red.png`
+**URL**: `https://win-house-group.github.io/win-house-brand-assets/Win-House-Logo-red.png`
 
 **Recommended Use · 建議場景 · 建议场景**:
 - Website favicon, app icon · 網站 Favicon、App icon
@@ -547,7 +547,7 @@ White (reversed-out) version of the full wordmark, for use **only on dark backgr
 | Adobe Illustrator (vector) | `Win-House-Group-bk.ai` (in repo root) |
 | Full Wordmark PNG (black) | `Win-House-Group-bk.png` (in repo root) |
 | Full Wordmark PNG (white, dark-bg) 🆕 | `Win-House-Group-wt.png` (in repo root) |
-| Mark PNG | `winhouse-logo-red.png` (in repo root) |
+| Mark PNG | `Win-House-Logo-red.png` (in repo root) |
 
 ### ✅ Logo Do · Logo 使用規範
 
@@ -703,10 +703,10 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 |---|---|
 | **This spec (Markdown)** | `https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md` |
 | **Interactive HTML spec** | `https://win-house-group.github.io/win-house-brand-assets/design-system/` |
-| **Design Tokens CSS** | `https://win-house-group.github.io/win-house-brand-assets/design-system/winhouse-tokens.css` |
+| **Design Tokens CSS** | `https://win-house-group.github.io/win-house-brand-assets/design-system/Win-House-Tokens.css` |
 | WINGO Hi greeting | `https://win-house-group.github.io/win-house-brand-assets/wingo/wingo-hi.png` |
 | Group Logo (full wordmark) | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-bk.png` |
-| Group Logo (standalone mark) | `https://win-house-group.github.io/win-house-brand-assets/winhouse-logo-red.png` |
+| Group Logo (standalone mark) | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Logo-red.png` |
 | Logo source AI file | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-bk.ai` |
 | WINGO image fallback (raw) | `https://win-house-group.github.io/win-house-brand-assets/wingo/wingo-hi.png` |
 | Brand README | `https://win-house-group.github.io/win-house-brand-assets/README.md` |
@@ -753,7 +753,7 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 >   - Green #5D8722 = UP / growth (`--sem-up`)
 >   - Red #C9302C = DOWN / decline (`--sem-down`)
 >   - Yellow #DF9C41 = WARN / attention (`--sem-warn`)
-> - **For any HTML/web output, link the official tokens stylesheet first**: https://win-house-group.github.io/win-house-brand-assets/design-system/winhouse-tokens.css
+> - **For any HTML/web output, link the official tokens stylesheet first**: https://win-house-group.github.io/win-house-brand-assets/design-system/Win-House-Tokens.css
 > - **Dashboard prompts (v3.14)** — four ready templates for colleagues:
 >   1. *Plan*: "I need a dashboard for 【audience】 to answer 【3–5 questions】. Propose KPIs (name/definition/formula/chart/what-to-watch) and a five-layer layout."
 >   2. *From data*: "My columns are 【…】. What analysis blocks and charts does this support? What's missing?"
@@ -776,7 +776,7 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 > - WINGO image: https://win-house-group.github.io/win-house-brand-assets/wingo/wingo-hi.png
 > - **Group Logo** (two variants):
 >   - Full wordmark (logo + text): https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-bk.png
->   - Standalone mark: https://win-house-group.github.io/win-house-brand-assets/winhouse-logo-red.png
+>   - Standalone mark: https://win-house-group.github.io/win-house-brand-assets/Win-House-Logo-red.png
 > - **Formal documents** (contracts, invoices, legal docs): use the FULL registered company name, not the brand short name. Brand short name "Win-House Group" is for informal/marketing use only.
 >
 > Now produce: [your request here]
@@ -799,7 +799,7 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 | v3.13.1 | 2026-06-11 | Chart Gallery added to Dashboard Patterns: six copy-ready reference charts (column, h-bar, line, donut, grouped, funnel) in pure HTML/CSS/SVG, each labeled with its question and color rule. |
 | v3.13.0 | 2026-06-11 | Dashboard Patterns section added: three questions, three types × layouts, five-layer structure, KPI & visual discipline. Sources: Stephen Few/FineReport + 104 + Dashboard Design six articles. Four AI prompt templates. |
 | v3.12.0 | 2026-06-11 | Apple-style UX pass: section descriptions collapse into ? popovers (tap/click, mobile-friendly); sections merged 15→12 (Spacing&Radius, Buttons&Tags, Cards&Stats) with renumbering 01–11; motion tokens `--ease/--dur` unified across 14 transitions; button press feedback scale(0.97); smooth scroll. |
-| v3.11.1 | 2026-06-11 | Data Table component added (part-no/quote/inventory). Design tokens extracted to standalone `winhouse-tokens.css` for CDN linking. |
+| v3.11.1 | 2026-06-11 | Data Table component added (part-no/quote/inventory). Design tokens extracted to standalone `Win-House-Tokens.css` for CDN linking. |
 | v3.11.0 | 2026-06-11 | SaaS refinement: (1) Semantic colors flipped to Western convention — green=up `--sem-up`, red=down `--sem-down` (hex unchanged; `--tw-*` removed, swatch+assignment token layers added). (2) Do/Don't unified to green-check/red-cross. (3) Every section becomes a white card on the light-gray page; in-card elements drop resting shadows; sidebar white. |
 | v3.10.1 | 2026-06-11 | Legacy gold cleanup: removed deprecated-gold glows on white cards; copied-state bg → `--gold-soft`; Hero glow updated to current gold value. Zero deprecated colors remain. |
 | v3.10.0 | 2026-06-11 | Muze-inspired elevation system (color unchanged): light-gray page bg `--page-bg` #F4F4F3, top-level containers inverted to white cards with soft warm shadows, `--card-border` #ECECEA, sticky topnav float, Hero elevated. |
