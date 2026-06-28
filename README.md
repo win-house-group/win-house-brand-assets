@@ -3,8 +3,8 @@
 文浩集團對外公開品牌資產儲存庫。本 Repo 透過 **GitHub Pages** 服務,可供 AI 工具、簡報、文件、網站直接引用。
 
 > **權威設計規範(有衝突以它為準):**
-> 互動版 → https://win-house-group.github.io/winhouse-brand-assets/design-system/
-> 完整 SPEC → https://win-house-group.github.io/winhouse-brand-assets/design-system/SPEC.md
+> 互動版 → https://win-house-group.github.io/win-house-brand-assets/design-system/
+> 完整 SPEC → https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md
 
 ---
 
@@ -30,16 +30,16 @@
 
 ## 🔗 資產正式 URL(只用這些)
 
-基礎網域:`https://win-house-group.github.io/winhouse-brand-assets/`
+基礎網域:`https://win-house-group.github.io/win-house-brand-assets/`
 
 | 資產 | 直接連結 |
 |---|---|
-| Logo 完整商標(黑,**淺底**用) | `https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-bk.png` |
-| Logo 完整商標(白,**深底**用)🆕 | `https://win-house-group.github.io/winhouse-brand-assets/Win-House-Group-wt.png` |
-| Logo 純識別標誌(紅 Mark) | `https://win-house-group.github.io/winhouse-brand-assets/winhouse-logo-red.png` |
-| WINGO 揮手打招呼 | `https://win-house-group.github.io/winhouse-brand-assets/wingo/wingo-hi.png` |
-| Design Tokens CSS | `https://win-house-group.github.io/winhouse-brand-assets/design-system/winhouse-tokens.css` |
-| 完整規範 SPEC.md | `https://win-house-group.github.io/winhouse-brand-assets/design-system/SPEC.md` |
+| Logo 完整商標(黑,**淺底**用) | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-bk.png` |
+| Logo 完整商標(白,**深底**用)🆕 | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-wt.png` |
+| Logo 純識別標誌(紅 Mark) | `https://win-house-group.github.io/win-house-brand-assets/winhouse-logo-red.png` |
+| WINGO 揮手打招呼 | `https://win-house-group.github.io/win-house-brand-assets/wingo/wingo-hi.png` |
+| Design Tokens CSS | `https://win-house-group.github.io/win-house-brand-assets/design-system/winhouse-tokens.css` |
+| 完整規範 SPEC.md | `https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md` |
 
 > **Logo 配對鐵則**:淺底 → 黑版 `-bk`;深底 → 白版 `-wt`。**禁止手動改色**;黑 Logo 不可放深底,白 Logo 不可放淺底。
 
@@ -51,17 +51,17 @@
 
 > 我是 Win-House 集團(文浩集團)CEO Tim Fan。
 > 產出任何 Win-House 視覺/前端素材前,請先讀取我們的 Design System v3.14.0:
-> https://win-house-group.github.io/winhouse-brand-assets/design-system/SPEC.md
+> https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md
 >
 > 核心約束(不可違反):
 > - 唯一受保護品牌色 Logo Red #E1251B,僅限 Logo,絕不當 UI 底色。
 > - 黑白灰為主視覺(80%+);金 #DF9C41 是點綴/強調,不是預設鋪色。
 > - 字體:標題 Antonio、繁中 Noto Sans TC、簡中 Noto Sans SC、UI/料號 Inter。
-> - HTML 輸出請先連 tokens:https://win-house-group.github.io/winhouse-brand-assets/design-system/winhouse-tokens.css
+> - HTML 輸出請先連 tokens:https://win-house-group.github.io/win-house-brand-assets/design-system/winhouse-tokens.css
 > - 圖表務必照 SPEC 的 Chart Gallery STRICT 規範(先選圖決策樹 → 套硬規則 → 出圖前自檢)。
 >
 > 吉祥物 WINGO(白頭海鵰、黑西裝、紅領帶、胸前 WH 紅標)圖檔:
-> https://win-house-group.github.io/winhouse-brand-assets/wingo/wingo-hi.png
+> https://win-house-group.github.io/win-house-brand-assets/wingo/wingo-hi.png
 
 ---
 
