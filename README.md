@@ -147,10 +147,10 @@
 
 ## 🏢 公司正式名稱(對外文件)
 
-- 台灣:文浩實業有限公司 / WIN-HOUSE Co., Ltd.
-- 香港:文浩國際(香港)有限公司 / WIN-HOUSE International (Hong Kong) Ltd.
-- 越南:文浩國際(越南)有限公司 / WIN-HOUSE International (Vietnam) Ltd.
-- 深圳:深圳市宇宙光電子有限公司 / Shenzhen Universe Light Electronic Co., Ltd.
+- 台灣:文浩實業有限公司 / WIN-HOUSE CO., LTD.
+- 香港:文浩國際(香港)有限公司 / WIN-HOUSE INTERNATIONAL (H.K.) LTD.
+- 越南:文浩國際(越南)有限公司 / WIN-HOUSE INTERNATIONAL (VIETNAM) LTD.
+- 深圳:深圳市宇宙光電子有限公司 / SHENZHEN UNIVERSE LIGHT ELECTRONIC CO., LTD.
 
 > 單一主品牌 `Win-House Group`;不採用 `TDK × WIN-HOUSE` 共同品牌鎖定。Tagline:`Your best partner!` / 「樂觀進取」。
 
@@ -165,4 +165,4 @@
 
 ---
 
-© WIN-HOUSE Group · 文浩集團 · Since 1987
+© Win-House Group · 文浩集團 · Since 1987
