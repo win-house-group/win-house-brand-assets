@@ -22,9 +22,9 @@
 |---|---|---|
 | `/Win-House-Group-bk.png` | 完整商標(黑字,淺底用) | Active |
 | `/Win-House-Group-wt.png` | 完整商標(白字,深底用)🆕 | Active |
-| `/winhouse-logo-red.png` | 純識別標誌(紅色 Mark) | Active |
+| `/Win-House-Logo-red.png` | 純識別標誌(紅色 Mark) | Active |
 | `/wingo/` | WINGO 吉祥物姿態與表情 | Active |
-| `/design-system/` | 互動規範頁 + `SPEC.md` + `winhouse-tokens.css` | Active |
+| `/design-system/` | 互動規範頁 + `SPEC.md` + `Win-House-Tokens.css` | Active |
 
 ---
 
@@ -36,9 +36,9 @@
 |---|---|
 | Logo 完整商標(黑,**淺底**用) | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-bk.png` |
 | Logo 完整商標(白,**深底**用)🆕 | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-wt.png` |
-| Logo 純識別標誌(紅 Mark) | `https://win-house-group.github.io/win-house-brand-assets/winhouse-logo-red.png` |
+| Logo 純識別標誌(紅 Mark) | `https://win-house-group.github.io/win-house-brand-assets/Win-House-Logo-red.png` |
 | WINGO 揮手打招呼 | `https://win-house-group.github.io/win-house-brand-assets/wingo/wingo-hi.png` |
-| Design Tokens CSS | `https://win-house-group.github.io/win-house-brand-assets/design-system/winhouse-tokens.css` |
+| Design Tokens CSS | `https://win-house-group.github.io/win-house-brand-assets/design-system/Win-House-Tokens.css` |
 | 完整規範 SPEC.md | `https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md` |
 
 > **Logo 配對鐵則**:淺底 → 黑版 `-bk`;深底 → 白版 `-wt`。**禁止手動改色**;黑 Logo 不可放深底,白 Logo 不可放淺底。
@@ -57,7 +57,7 @@
 > - 唯一受保護品牌色 Logo Red #E1251B,僅限 Logo,絕不當 UI 底色。
 > - 黑白灰為主視覺(80%+);金 #DF9C41 是點綴/強調,不是預設鋪色。
 > - 字體:標題 Antonio、繁中 Noto Sans TC、簡中 Noto Sans SC、UI/料號 Inter。
-> - HTML 輸出請先連 tokens:https://win-house-group.github.io/win-house-brand-assets/design-system/winhouse-tokens.css
+> - HTML 輸出請先連 tokens:https://win-house-group.github.io/win-house-brand-assets/design-system/Win-House-Tokens.css
 > - 圖表務必照 SPEC 的 Chart Gallery STRICT 規範(先選圖決策樹 → 套硬規則 → 出圖前自檢)。
 >
 > 吉祥物 WINGO(白頭海鵰、黑西裝、紅領帶、胸前 WH 紅標)圖檔:
