@@ -2,7 +2,7 @@
    WIN-HOUSE DESIGN SYSTEM — DESIGN TOKENS
    Win-House Group · 文浩集團 · Since 1987
    ----------------------------------------------------------------------------
-   Version : v3.14.0  (2026-06-28)
+   Version : v3.15.0  (2026-06-29)  ·  synced to KPI Dashboard v17
    Source  : https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md
    Usage   : Link this file FIRST in any Win-House HTML/web output, then build on
              top of the CSS custom properties below.
@@ -51,6 +51,13 @@
   --sem-up:     var(--sem-green);
   --sem-down:   var(--sem-red);
   --sem-warn:   var(--sem-yellow);
+
+  /* ---- ACHIEVEMENT BANDS (v3.15.0 — KPI Dashboard barViz) --------------- */
+  /* Progress bars, score dots, gauge fills all share this three-band scale. */
+  --ach-ok:    #5D8722;   /* >= 90%  · on target  (= --sem-up) */
+  --ach-mid:   #AF7231;   /* 70-90%  · in progress (bronze, NOT bright gold) */
+  --ach-risk:  #C9302C;   /* < 70%   · at risk    (= --sem-down) */
+  --track:     #E2DDD6;   /* empty / remainder gray — bar track, donut rest, gauge unfilled */
 
   /* ---- SURFACES (light-gray page + white cards + soft shadows) ---------- */
   --page-bg:       #F4F4F3;

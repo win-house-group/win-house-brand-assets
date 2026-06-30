@@ -1,19 +1,19 @@
-# Win-House Design System v3.14.0 · Official Specification
+# Win-House Design System v3.15.0 · Official Specification
 
-**版本** Version: v3.14.0 (Production)
+**版本** Version: v3.15.0 (Production)
 **狀態** Status: Active · Mandatory
-**最後更新** Last Updated: 2026-06-28
+**最後更新** Last Updated: 2026-06-29
 **規範負責人** Owner: Tim Fan, CEO, Win-House Group
 
 ---
 
 ## ⚠️ 強制聲明 · MANDATORY NOTICE · 强制声明
 
-**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.13.5 全部廢止)。
+**[繁中]** 本規範為文浩集團統一視覺準則,適用於所有 frontend 介面、內部工具、對外網站、簡報範本、AI 生成素材與跨語系頁面。任何 AI、設計師、外包合作夥伴產出 Win-House 視覺素材前,**必須先讀取本規範**並嚴格遵循。本文件取代過往所有版本(v2、v3.0–v3.14.0 全部廢止)。
 
-**[English]** This specification is the unified visual standard for Win-House Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for Win-House **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.13.5 are deprecated).
+**[English]** This specification is the unified visual standard for Win-House Group, applicable to all frontend interfaces, internal tools, external websites, presentation templates, AI-generated assets, and multi-language pages. Any AI, designer, or third-party partner producing visual materials for Win-House **must read this specification first** and follow it strictly. This document supersedes all previous versions (v2, v3.0–v3.14.0 are deprecated).
 
-**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.13.5 全部废止)。
+**[简中]** 本规范为文浩集团统一视觉准则,适用于所有 frontend 界面、内部工具、对外网站、演示模板、AI 生成素材与跨语种页面。任何 AI、设计师、外包合作伙伴产出 Win-House 视觉素材前,**必须先读取本规范**并严格遵循。本文件取代过往所有版本(v2、v3.0–v3.14.0 全部废止)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[简中]** v3.9.6 起,Win-House 配色精简为**单一品牌识别色 + Data Palette 9 色扩展 + Semantic 3 色 + 应用领域对应**四层结构。原品牌五色(Gold / Slate Blue / Clay / Sage)全部废止,改由 Data Palette 对应取代。**黑白灰仍为主视觉(占比 80%+)**。
 
-### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.14.0)
+### 📝 Text & Background Rules · 文字與底色原則 · 文字与底色原则 (v3.15.0)
 
 **[繁中]**
 - 文字以**黑、灰為主**(`--text-1` / `--text-2`)。
@@ -154,6 +154,17 @@ For Stat Delta and KPI direction indicators (up/down/warn). **Hex values unchang
 
 > Components must reference assignment tokens (`--sem-up/down/warn`), never swatch tokens directly, so a future convention switch only requires changing three assignment lines. The former `--tw-*` tokens are removed.
 
+**Achievement bands · 達成率三色帶 (v3.15.0, KPI Dashboard `barViz`)** — progress bars, score dots, gauge insurance all use the same three-band scale:
+
+| Band | Color | Token | Meaning |
+|---|---|---|---|
+| `≥ 90%` | `#5D8722` | `--sem-up` | 達標 · On target |
+| `70–90%` | `#AF7231` | `--data-bronze` | 進展中 · In progress |
+| `< 70%` | `#C9302C` | `--sem-down` | 危機 · At risk |
+| `= 0 / 未填` | `#E2DDD6` | `--track` | 空 · Empty (also the bar track / donut "remainder") |
+
+> `--track` #E2DDD6 is the universal "incomplete / remainder" gray for progress bars (`.kbar`), donut rings, and gauge unfilled segments. Bright gold #DF9C41 stays reserved for **prior-period comparison lines** and **gauge warn band**, NOT for the 70–90 progress band (that's bronze #AF7231).
+
 ### Application Domain Color Mapping · 應用領域配色 · 应用领域配色
 
 **[繁中]** 從 Data Palette 中,依照各應用領域的「市場慣用色 / 物理意象」對應到最適配的顏色。此對應為 **Win-House 內部產業圖表的標準色映射**,適用於業績分布、應用占比、客戶結構等視覺化場景。
@@ -247,11 +258,11 @@ The Bipolar Accent pattern is updated in v3.11 to the Western convention, unifyi
 
 ## 📏 03 · Spacing · 間距
 
-**Base 4px rhythm, +5% comfort scale (v3.14.0) · 4px 基底節奏,v3.14.0 整體留白 +5%**
+**Base 4px rhythm, +5% comfort scale (v3.15.0) · 4px 基底節奏,v3.14.0 整體留白 +5%**
 
 > v3.14.0 起,留白整體上調約 5% 提升呼吸感。**標籤 `.tag` 內距固定維持 `4px / 12px` 不受影響**(刻意釘住,保持標籤緊湊)。
 
-| Token | Value (v3.14.0) | was | Usage |
+| Token | Value (v3.15.0) | was | Usage |
 |---|---|---|---|
 | `--sp-1` | 4px | 4px | Inline gap, icon padding |
 | `--sp-2` | 8px | 8px | Small gap |
@@ -325,7 +336,7 @@ Apple-style easing, unified across all interactive elements:
 
 **Note**: Gold button uses **white text** (not black). Gold uses Data Palette's `#DF9C41` since v3.9.6.
 
-### Data Table · 資料表格 (v3.14.0)
+### Data Table · 資料表格 (v3.15.0)
 
 The core component for passive-components business: part-number lists, quotations, inventory, BOM.
 
@@ -371,86 +382,82 @@ The core component for passive-components business: part-number lists, quotation
 - Show refresh cadence top-right (daily/weekly/monthly)
 - Empty/loading states use WINGO (internal tool = warm context)
 
-### 📊 Chart Gallery · 圖表範例 (v3.14.0) — STRICT / 強制遵循
+### 📊 Chart Gallery · 圖表範例 (v3.15.0) — STRICT / 強制遵循
 
-> ⚠️ **這一節是強制規範,不是建議。** 過往最常被忽略的就是圖表用色。任何 AI 或設計師產出圖表前,**必須**先走「選圖決策樹」,再套用對應的「硬規則」,最後跑「出圖前自檢」。違反任一條 = 不合格,需重做。
+> ⚠️ **這一節是強制規範,不是建議。** 以 KPI Dashboard v17 實作為基準(已驗證、Tim 認可)。任何 AI 或設計師產圖前,**必須**先走「選圖決策樹」→ 套「Chart.js 硬規則」→ 跑「出圖前自檢」。違反任一條 = 不合格,需重做。所有折線/雷達圖庫一律 **Chart.js**;量錶用 **inline SVG**(無時序依賴,瀏覽器一定畫得出)。
 
 #### Step 1 · 選圖決策樹 · Pick the chart (answer the question first)
 
-先確定這張圖要回答**哪一個問題**,問題決定圖種——不是先選好看的圖再塞資料:
+先確定這張圖要回答**哪一個問題**,問題決定圖種:
 
-| 你要回答的問題 | 唯一正解圖種 | 不要用 |
-|---|---|---|
-| 隨時間變好/變壞?(≤ 11 期) | **直條圖 Column** | 折線(期數太少)、圓環 |
-| 隨時間長期走勢?(≥ 12 期) | **折線圖 Line** | 直條(太擠) |
-| 誰大誰小?排名? | **橫條圖 H-Bar** | 圓環、雷達 |
-| 組成占比?結構? | **圓環圖 Donut**(類別 ≤ 5) | 多圈圓環、3D 圓餅 |
-| 兩群體差多少?(去年 vs 今年) | **雙組直條 Grouped Column** | 折線雙線 |
+| 你要回答的問題 | 唯一正解圖種 |
+|---|---|
+| 達成率/績效隨期間變化(週累計、月、年) | **折線圖 Line**(實際 vs 目標雙線) |
+| 多維度均衡度 / 哪個領域缺口最大 | **雷達圖 Radar**(實際 vs 100% 目標圈) |
+| 單一進度對目標(達成%) | **進度條 Progress bar**(`.kbar`) |
+| 占比 / 執行率 / 已用 vs 剩餘 | **環圈 Doughnut**(中心放數字) |
+| 風險分段水位(如庫存月數) | **分段量錶 SVG Gauge** |
+| 誰大誰小 / 排名 | **橫條圖 H-Bar**(單色族深淺) |
 
-> 類別超過 5 個又要看占比 → 改用橫條圖排名,不要硬塞圓環。
+#### Step 2 · Chart.js 硬規則 · Exact config(照抄,勿自由發揮)
 
-#### Step 2 · 五種圖的硬規則 · Hard rules per chart (exact hex)
+**通用鐵則**
+- 一張圖一個顏色族;多色只能出現在「領域身分」那一張圖(一頁僅一個多色區);單頁 ≤5 色。
+- 金色 `#DF9C41` 是「強調/去年同期對比」用,不是預設線色。
+- `responsive:true, maintainAspectRatio:false`;軸刻度 `font:{size:9}`;圖例 `position:'bottom'`,`labels:{boxWidth:10, boxHeight:10, font:{size:10}, padding:8, usePointStyle:true}`。
+- 禁止:3D、陰影、動畫炫技、emoji 資料點。
 
-**通用鐵則(全部圖種一律適用):**
-- **一張圖一個顏色族**。多色只能出現在「領域身分」那一張圖(一頁僅一個多色區)。
-- **單頁顏色 ≤ 5 種**(Stephen Few)。主色 + 強調 + 語意之外不再加色。
-- **金色 `#DF9C41` 是「強調那一個重點」用的,不是預設色**。其餘一律灰階。
-- 禁止:3D、陰影、漸層光暈、動畫、emoji 當資料點。
-- 數字 ≥ 28px、標籤 ≥ 12px、表格 ≥ 13px、▲▼ 語意膠囊 ≥ 13px / 600。寧可刪內容,不可縮字。
+**① 折線圖 Line — 達成率 / 趨勢(最常用)**
+- **目標線(墊底)**:`borderColor:'#A3A3A3'`、`borderDash:[5,4]`、`borderWidth:1.5`、`pointRadius:0`、`fill:false`、`tension:0`、`order:1`。
+- **實際線(主角)**:`borderColor:'#2D2A28'`(或該卡進度達成色)、`borderWidth:2.5`、`tension:0.3~0.35`、`pointRadius:2~4`、`fill:true` 搭**漸層**(主色 alpha `.28` → `.02`,`ctx.createLinearGradient(0,0,0,H)`)、`order:3`。
+- **去年同期(可選)**:`borderColor:'#DF9C41'`(金)、`borderDash:[2,3]`、`borderWidth:2`、`backgroundColor:'rgba(223,156,65,.06)'`、`fill:false`、`order:2`。
+- **狀態端點色**(達成率折線):`p>=90 → #5D8722 綠`、`p>=70 → #AF7231/#B8743C 橘`、`else → #C9302C 紅`、無資料 `#A3A3A3 灰`。
 
-**① 直條圖 Column — 「在變好嗎?」**
-- MUST:同一灰色 `#D9D9D9`,全部柱子 45% 淡化;**只有當前期/重點期**用滿色金 `#DF9C41` + 數值標籤。
-- NEVER:每根柱子不同顏色;用語意綠/紅塗整排。
+**② 雷達圖 Radar — 多維均衡**
+- **目標圈(墊底)**:`borderColor:'#A3A3A3'`、`borderDash:[5,4]`、`backgroundColor:'rgba(0,0,0,0)'`、`pointRadius:0`、`borderWidth:1.2`,值固定 100(滿格參考)。
+- **實際**:主色 = 整體平均達成率對應的進度色(綠/橘/紅);`backgroundColor:'rgba(<rgb>,.20)'`、`pointRadius:3`、`borderWidth:2`。
+- 軸:`r:{min:0,max:100,ticks:{stepSize:25}}`,開圖例。
 
-**② 橫條圖 H-Bar — 「誰大誰小?」**
-- MUST:**單一色族「深淺」分層**,值越大顏色越深。標準炭黑族:`#2D2A28 → #595550 → #8A857A → #B5B0A4 → #D9D9D9`(由大到小)。次要併入「其他」用最淺灰。
-- NEVER:彩虹多色;用領域配色(那是占比/結構圖才用)。
+**③ 環圈 Doughnut — 占比 / 執行率**
+- `cutout:'72%'`、`borderWidth:0`;資料色 = 狀態主色,剩餘 = `#E2DDD6`。
+- **中心數字**:用 `afterDraw` plugin 畫,大數 `700 26px Inter`、副標 `600 11px Noto Sans TC #737373`。
+- 超標轉紅:`pct<=100 ? #5D8722 : #C9302C`。
 
-**③ 折線圖 Line — 「長期走勢」(≥12 期)**
-- MUST:單一色線(炭黑或單一強調色);只在**端點**加圓點 + 數值;網格線極淺 `#F0F0F0`。
-- NEVER:多條線各自鮮色卻無圖例;面積填滿漸層。
+**④ 分段量錶 SVG Gauge — 風險水位(如風險庫存月數)**
+- inline SVG,半圓 13 段、段間距 ~2.6°;未到水位的段填半透明灰、無指針、中央顯示數值 + 等級字。
+- 顏色沿 **綠 `#5D8722` → 金 `#DF9C41` → 紅 `#C9302C`** 平滑插值;分級:0–1 健康綠 / 1–2 警示金 / 2+ 高風險紅。
 
-**④ 圓環圖 Donut — 「組成占比」(類別 ≤5)**
-- MUST:**高對比、不相鄰選色**(例:`#2677A5` 藍 / `#DF9C41` 金 / `#90A74A` 橄欖),其餘全部併入「其他」用炭黑 `#2D2A28`;**中心放總量數字**。
-- NEVER:超過 5 塊;相鄰色太接近難分辨;雙層圓環;3D 圓餅。
+**⑤ 橫條 H-Bar — 排名**
+- 單色族深淺,大者最深:`#2D2A28 → #595550 → #8A857A → #B5B0A4 → #D9D9D9`;其他併最淺灰。禁止彩虹色、禁止用領域色。
 
-**⑤ 雙組直條 Grouped — 「兩群差多少?」**
-- MUST:過去/基準 = 炭黑 25% `rgba(45,42,40,.25)`;當前/重點 = 金 `#DF9C41`。固定這兩色,不再加第三色。
-- NEVER:兩組都用鮮色;用綠/紅(那是語意漲跌,不是分組)。
+#### Step 3 · 語意 vs 領域 vs 深淺(不可互換)
 
-#### Step 3 · 語意色 vs 領域色 — 不要混用(最常犯的錯)
+| 用途 | 用色 |
+|---|---|
+| 達成/漲跌/警示 | **語意三色**:綠 `#5D8722` 達標(≥90)/ 橘 `#AF7231`(70–90)/ 紅 `#C9302C`(<70 或超支)。金 `#DF9C41` 僅作「去年同期對比」與「警示水位」。 |
+| 類別身分(僅占比/結構圖) | **領域配色** 9 色 Data Palette |
+| 同類比大小 | **單色族深淺** |
 
-| 用途 | 用哪組色 | 範例 |
-|---|---|---|
-| 漲/跌/警示(數字變化) | **語意色**:綠 `#5D8722` 漲 / 紅 `#C9302C` 跌 / 金 `#DF9C41` 警示 | Stat 卡 ▲▼ 膠囊、庫存吃緊 |
-| 領域/類別身分(分類) | **領域配色**(僅占比/結構圖):網通 `#639BC1`、汽車 `#2677A5`、工業 `#AF7231`、光通訊 `#E4AF79`、電源 `#923621`、消費 `#DF9C41`、機器人 `#2D2A28`、無人機 `#90A74A`、AR/衛星 `#5D8722` | 領域業績占比圓環 |
-| 程度差異(同類比大小) | **單色族深淺** | 排名橫條、庫存等級 |
+#### Step 4 · 出圖前自檢(每張圖都要過,任一不過就重做)
 
-> 三者不可互換。排名圖用領域色 = 錯;占比圖用綠紅 = 錯;漲跌用領域藍 = 錯。
-
-#### Step 4 · 出圖前自檢 · Pre-ship checklist(每張圖都要過)
-
-- [ ] 我有先回答「這張圖要回答哪個問題」,且圖種來自決策樹?
-- [ ] 一張圖只有一個顏色族?(多色僅限該頁唯一的領域身分圖)
-- [ ] 整頁顏色 ≤ 5 種?
-- [ ] 金色只用在「那一個重點」,不是預設鋪色?
-- [ ] 語意色 / 領域色 / 深淺族**沒有混用**?
-- [ ] 沒有 3D、漸層光暈、動畫、emoji 資料點?
-- [ ] 數字 ≥28px、標籤 ≥12px,沒有為了塞內容縮字?
-- [ ] 每個 KPI 都附「定義 + 計算公式」?
-- [ ] 看完這張圖,讀者知道**下一步行動**是什麼?
-
-> 任一項打不了勾 → 不要出圖,回去改。Dashboard 是決策工具,不是圖表收藏。
+- [ ] 圖種來自決策樹?
+- [ ] 折線:目標 = 灰虛線 `#A3A3A3 [5,4]` 無點;實際 = 實線 + 漸層 fill;去年 = 金虛線 `[2,3]`?
+- [ ] 達成率端點/進度條套用綠≥90 / 橘≥70 / 紅 的三色語意?
+- [ ] 一張圖一個色族?整頁 ≤5 色?金色只作對比/警示,不當預設線色?
+- [ ] 環圈有中心數字?量錶用 SVG 分段(非 canvas)?
+- [ ] 圖例 bottom、`usePointStyle`、軸 9px?無 3D/動畫/emoji?
+- [ ] 每個 KPI 附「定義 + 計算公式」?看完知道下一步行動?
 
 #### Reference summary table
 
-| Chart | Question | Hard color rule |
+| Chart | Question | Hard rule |
 |---|---|---|
-| Column 直條 | Improving? (≤11 期) | All bars gray `#D9D9D9` @45%, current bar full gold `#DF9C41` + value |
-| H-Bar 橫條 | Who leads? 排行 | One color family by depth (`#2D2A28`→`#D9D9D9`), darker = larger, "Others" lightest |
-| Line 折線 | Long trend (≥12 期) | Single hue, endpoint dot + value, grid `#F0F0F0` |
-| Donut 圓環 | What mix? (≤5 類) | High-contrast non-adjacent (blue/gold/olive), "Others" charcoal, total centered |
-| Grouped 雙組 | Gap between groups? | Past charcoal-25%, current gold `#DF9C41` |
+| Line 折線 | 達成率/趨勢 | 目標灰虛線`#A3A3A3 [5,4]` + 實際實線`#2D2A28` 2.5px 漸層 + 去年金虛線`#DF9C41 [2,3]` |
+| Radar 雷達 | 多維均衡 | 目標 100% 灰虛線圈 + 實際填色(平均達成色) |
+| Doughnut 環圈 | 占比/執行率 | cutout 72%,主色 + `#E2DDD6`,中心數字,超標轉紅 |
+| Gauge 量錶 | 風險水位 | SVG 13 段,綠→金→紅插值,中央數值 |
+| H-Bar 橫條 | 排名 | 單色族深淺 `#2D2A28→#D9D9D9` |
+
 
 ### Card
 
@@ -466,18 +473,47 @@ The core component for passive-components business: part-number lists, quotation
 
 > Page background is `--page-bg` #F4F4F3 (v3.10). Cards are white and float on soft warm shadows — see "Elevation & Surface System" in Section 01.
 
-### Stat / Data Card
+### Stat / Data Card · 統計卡 (v3.15.0 — KPI Dashboard 實作基準)
 
-- Large numeric: **Noto Sans** 600, 48px, letter-spacing -0.02em (Antonio reserved for headings only — but Hero meta數字使用 Antonio 36px 醒目展示)
-- Label above: Inter 600, 11px, uppercase, letter-spacing 0.1em, color #737373
-- Delta below: pill-style, **uses Taiwan Semantic Colors**:
-  - `.up` → `--sem-up` #5D8722 (green) bg + white text (上漲/成長)
-  - `.down` → `--sem-down` #C9302C (red) bg + white text (下跌/衰退)
-  - `.warn` → `--sem-warn` #DF9C41 bg + white text (注意/警示)
+以 KPI Dashboard v17 為基準(Tim 認可)。儀表板採 **6 張固定高度小卡**(`min-height:182px`)排列,點擊展開 (`.card-expanded`) 解除固定高度、顯示明細與引用圖。
+
+**卡片數字階層(實測值,照用)**
+- 主數字 `.sc-big` / `.dc-big`:**Noto Sans 700**,28–34px,letter-spacing −0.02em,line-height 1.1;單位 `small` 14–15px / 500,色 `--text-3`。
+- 超大主數字 `.bc-big`(單一焦點卡):38px / 700,letter-spacing −0.03em。
+- 標題 `.sc-title`:Inter/Noto 600,11.5–13px,色 `--text-2`(次級灰)。
+- 副標 `.sc-sub`:11px,色 `--text-3`。
+- KPI 分數 `.ki-score`:24px / 700;`small` 12px / 500 `--text-3`。
+
+**進度條 `.kbar`(達成率,核心元件)**
+```css
+.kbar   { position:relative; flex:1; height:9px; border-radius:9999px;
+          background:#E2DDD6; overflow:hidden; }          /* 灰底軌 */
+.kbar i { display:block; height:100%; border-radius:9999px;
+          transition:width var(--dur) var(--ease); }
+.kbar-row { display:flex; align-items:center; gap:10px; margin-top:14px; }
+.kbar-pct { font-size:11.5px; font-weight:600; min-width:38px;
+            text-align:right; font-variant-numeric:tabular-nums; }
+```
+填色規則(僅三色語意,`barViz`):
+- `<70` → 紅 `#C9302C`(危機);`70–90` → 橘 `#AF7231`(進展中);`≥90` → 綠 `#5D8722`(達標)。
+- `<100`:填色 `0→p%` + 灰尾 `p%→100%`(`linear-gradient(to right, <色> 0% p%, #E2DDD6 p% 100%)`),距 100% 的灰尾代表「未完成距離」。
+- `≥100`:整條綠、無灰尾。百分比文字同步取該色。
+- `=0`:全灰軌 `#E2DDD6`,文字 `--text-3`。
+
+**權重 / 配比 badge `.ki-w`**
+- 關鍵指標:藍 `color:#2677A5; background:rgba(38,119,165,.10)`,膠囊 `padding:2px 7px`。
+- 加分指標 `.is-bonus`:橘 `color:#AF7231; background:rgba(223,156,65,.16)`。
+
+**Delta 膠囊**(統計卡漲跌,語意色實心白字)
+- `.up` → `--sem-up` #5D8722;`.down` → `--sem-down` #C9302C;`.warn` → `--sem-warn` #DF9C41。
+
+**展開互動**
+- hover:`transform:translateY(-2px)` + `--shadow-elevated`。
+- 展開鈕 `.bc-exp`:22×22、`--text-3`,展開時 `transform:rotate(180deg)`;展開卡 `z-index` 提升、明細區內部捲動。
 
 ### Tag
 
-Tags use **solid fill** (v3.14.0) for a crisp, high-contrast look — dark or domain-colored background with white text.
+Tags use **solid fill** (v3.15.0) for a crisp, high-contrast look — dark or domain-colored background with white text.
 
 ```css
 .tag {
@@ -739,7 +775,7 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 
 > I am working with Win-House Group (文浩集團), a Taiwan-based passive electronic components distributor founded in 1987.
 >
-> Before producing any visual or frontend output, you MUST follow our Design System v3.14.0. Fetch the full spec from:
+> Before producing any visual or frontend output, you MUST follow our Design System v3.15.0 (KPI Dashboard v17 baseline). Fetch the full spec from:
 > https://win-house-group.github.io/win-house-brand-assets/design-system/SPEC.md
 >
 > Or view the interactive spec page:
@@ -754,7 +790,7 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 >   - Red #C9302C = DOWN / decline (`--sem-down`)
 >   - Yellow #DF9C41 = WARN / attention (`--sem-warn`)
 > - **For any HTML/web output, link the official tokens stylesheet first**: https://win-house-group.github.io/win-house-brand-assets/design-system/Win-House-Tokens.css
-> - **Dashboard prompts (v3.14)** — four ready templates for colleagues:
+> - **Dashboard prompts (v3.15)** — four ready templates for colleagues:
 >   1. *Plan*: "I need a dashboard for 【audience】 to answer 【3–5 questions】. Propose KPIs (name/definition/formula/chart/what-to-watch) and a five-layer layout."
 >   2. *From data*: "My columns are 【…】. What analysis blocks and charts does this support? What's missing?"
 >   3. *Summary*: "Here is this period's data 【…】. Write a management summary: findings / causes / recommended actions."
@@ -777,11 +813,9 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 > - **Group Logo** (two variants):
 >   - Full wordmark (logo + text): https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-bk.png
 >   - Standalone mark: https://win-house-group.github.io/win-house-brand-assets/Win-House-Logo-red.png
+>   - White wordmark (dark backgrounds only): https://win-house-group.github.io/win-house-brand-assets/Win-House-Group-wt.png
+> - **Charts (STRICT, KPI Dashboard v17 baseline)**: line = gray dashed target `#A3A3A3 [5,4]` (no points) + solid actual `#2D2A28` 2.5px with gradient fill + optional prior-period gold dashed `#DF9C41 [2,3]`; achievement three-band coloring green≥90 / bronze#AF7231 70–90 / red<70; progress bars `.kbar` on `#E2DDD6` track; donuts cutout 72% with centered number; risk gauges = inline SVG segments green→gold→red. Legend bottom, usePointStyle, axes 9px. One color family per chart, ≤5 colors per page.
 > - **Formal documents** (contracts, invoices, legal docs): use the FULL registered company name, not the brand short name. Brand short name "Win-House Group" is for informal/marketing use only.
->
-> Now produce: [your request here]
->
-> Now produce: [your request here]
 >
 > Now produce: [your request here]
 
@@ -791,6 +825,7 @@ All Win-House design resources are hosted on GitHub Pages (win-house-group.githu
 
 | Version | Date | Note |
 |---|---|---|
+| **v3.15.0** | 2026-06-29 | **Production** · Synced to **KPI Dashboard v17** (Tim-approved implementation). (1) **Chart Gallery → concrete Chart.js rules**: line charts standardized (gray dashed target `#A3A3A3 [5,4]` + solid actual `#2D2A28` 2.5px with gradient fill + prior-period gold dashed `#DF9C41 [2,3]`); radar (gray target ring + filled actual); doughnut (72% cutout + centered-number plugin, over-budget→red); risk gauge as inline SVG segments green→gold→red. Legend bottom + usePointStyle + 9px axes codified. (2) **Achievement three-band scale** added as tokens: green ≥90 `--sem-up` / bronze 70–90 `#AF7231` / red <70 `--sem-down` / empty `--track` #E2DDD6 (also bar track & donut remainder). (3) **Stat/Data Card spec rewritten** to v17: 6 fixed-height 182px cards with expand, numeric hierarchy (28–38px / 700 / −0.02em), `.kbar` progress bar with `barViz` fill logic, weight badge `.ki-w` (blue key / bronze bonus), expand affordance. (4) AI prompt template updated (v17 chart mandate + white logo). |
 | **v3.14.0** | 2026-06-28 | **Production** · (1) **Domain migration**: all brand assets moved from `timfan119` jsDelivr/GitHub-raw to GitHub Pages org `win-house-group.github.io/win-house-brand-assets/`; jsDelivr cache-busting retired. (2) **New asset**: white wordmark `Win-House-Group-wt.png` (Variant 03) for dark backgrounds, with pairing rule. (3) **Spacing +5%**: comfort scale (sp-3→13, sp-4→17, sp-5→25, sp-6→34, sp-7→50, sp-8→67, sp-9→92); `.tag` & `.stat-delta` padding pinned to original `4px 12px`. (4) **Chart Gallery hardened**: rewritten as a strict mandatory spec — chart-selection decision tree, per-chart MUST/NEVER hex rules, semantic-vs-domain-vs-shade separation, pre-ship checklist. Colors/fonts/radius unchanged. |
 | **v3.13.5** | 2026-06-11 | **Production** · Added four registered legal-entity names (Taiwan/HK/Vietnam/Shenzhen) to Formal Document Standard. Purged all EPCOS references from Data Table & typography demos (replaced with TDK part numbers) per permanent exclusion rule. |
 | v3.13.4 | 2026-06-11 | Chart Gallery color revisions: H-bar single-color-family by depth; donut high-contrast non-adjacent (blue/gold/olive/charcoal); grouped column past-charcoal vs current-gold; funnel removed; five-layer insight row unified to gold. |
